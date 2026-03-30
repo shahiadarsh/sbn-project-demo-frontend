@@ -1,0 +1,96 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { pricingModels } from '@/data/pricing';
+
+// Fade-up style identical to AOS / Hero section
+const fadeUp: any = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+};
+
+const Pricing = () => {
+    return (
+        <section 
+            className="relative py-24 md:py-32 bg-cover bg-center bg-no-repeat overflow-hidden border-t border-slate-100"
+            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+        >
+            {/* Overlay gradient identical to Hero section to maintain high readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="text-center mb-20 max-w-4xl mx-auto">
+                    <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={fadeUp}
+                        className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] px-5 py-2 rounded-full backdrop-blur-sm mb-6"
+                    >
+                        <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
+                        Investment Models
+                    </motion.div>
+                    
+                    <motion.h2 
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={fadeUp}
+                        className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-8"
+                    >
+                        Surgical Pricing Models. <br className="hidden md:block" /> Guaranteed Performance.
+                    </motion.h2>
+                    
+                    <motion.p 
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, margin: "-100px" }}
+                        variants={fadeUp}
+                        className="text-base md:text-lg text-gray-600 leading-relaxed font-medium tracking-tight max-w-3xl mx-auto"
+                    >
+                        We align our success directly with yours. Our transparent, results-oriented pricing is engineered to eliminate overhead and maximize your bottom line.
+                    </motion.p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {pricingModels.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            className={`group bg-white/80 backdrop-blur-md rounded-2xl overflow-hidden relative transition-all duration-500 shadow-sm hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,51,231,0.15)] border border-white flex flex-col
+                                ${item.theme === 'red' ? 'border-t-4 border-t-red-500' : 'border-t-4 border-t-[#0033e7]'}`
+                            }
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, margin: "-50px" }}
+                            variants={{
+                                hidden: { opacity: 0, y: 40 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: index * 0.15 } }
+                            } as any}
+                        >
+                            <div className="p-10 flex-1 flex flex-col relative z-20">
+                                <h3 className="text-xl font-extrabold mb-6 pb-6 border-b border-gray-200 min-h-[80px] flex items-center text-gray-900 tracking-tight leading-[1.3]">
+                                    {item.title}
+                                </h3>
+                                <p className="text-[15px] leading-relaxed text-gray-600 mb-10 flex-grow font-medium">
+                                    {item.description}
+                                </p>
+                                <div className="mt-auto pt-2">
+                                    <Link 
+                                        href="/contact-us" 
+                                        className="block w-full text-center bg-[#0033e7] hover:bg-blue-800 text-white transform hover:-translate-y-1 transition-all duration-300 font-bold uppercase text-[11px] tracking-[2px] py-4 rounded-xl shadow-md hover:shadow-lg no-underline"
+                                    >
+                                        Get Quotation
+                                    </Link>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+};
+
+export default Pricing;

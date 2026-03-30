@@ -1,0 +1,221 @@
+'use client';
+
+import React from 'react';
+import Link from 'next/link';
+import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
+import { usePathname } from 'next/navigation';
+import { motion } from 'framer-motion';
+
+const Footer = () => {
+    const pathname = usePathname();
+
+    // Hide footer on admin pages
+    if (pathname?.startsWith('/admin')) {
+        return null;
+    }
+
+    const fadeUp: any = {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    };
+
+    return (
+        <footer 
+            className="relative pt-[100px] pb-[40px] text-gray-900 overflow-hidden bg-cover bg-center bg-no-repeat border-t border-slate-100"
+            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+        >
+            {/* Overlay gradient identical to other sections */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-blue-100/70 pointer-events-none"></div>
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-[80px]">
+                    {/* Brand Info */}
+                    <div className="lg:col-span-4">
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            className="mb-8 p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-white inline-flex transition-transform hover:scale-105"
+                        >
+                            <img
+                                src="/img/logo.jpg"
+                                alt="SBN Healthcare Solution"
+                                className="h-[60px] md:h-[70px] w-auto mix-blend-multiply"
+                            />
+                        </motion.div>
+                        <motion.p 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            className="text-gray-600 text-[16px] leading-[1.8] mb-10 max-w-[340px] font-medium tracking-tight"
+                        >
+                            Next-generation RCM infrastructure engineered to accelerate cash flow and eliminate administrative friction for modern medical practices.
+                        </motion.p>
+                        <motion.div 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            className="flex gap-4"
+                        >
+                            {[
+                                { icon: <FaFacebook />, href: "https://www.facebook.com/BillingGiant/" },
+                                { icon: <FaTwitter />, href: "https://twitter.com/sbnhealthcare" },
+                                { icon: <FaLinkedin />, href: "https://in.linkedin.com/company/sbn-healthcare-solution-llc" }
+                            ].map((social, idx) => (
+                                <a
+                                    key={idx}
+                                    href={social.href}
+                                    target="_blank"
+                                    className="w-11 h-11 bg-white/50 backdrop-blur-sm border border-white flex items-center justify-center rounded-2xl text-gray-400 hover:bg-[#0033e7] hover:text-white hover:border-[#0033e7] hover:shadow-lg hover:shadow-blue-600/20 transition-all duration-500 active:scale-95 shadow-sm"
+                                >
+                                    {social.icon}
+                                </a>
+                            ))}
+                        </motion.div>
+                    </div>
+
+                    {/* Solutions */}
+                    <div className="lg:col-span-3 lg:ml-auto">
+                        <motion.h4 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block"
+                        >
+                            Platform Solutions
+                        </motion.h4>
+                        <ul className="flex flex-col gap-5 p-0 list-none">
+                            {[
+                                { name: 'Eligibility Verification', href: '/services/eligibility-verification' },
+                                { name: 'Medical Billing', href: '/services/medical-billing' },
+                                { name: 'Medical Coding', href: '/services/medical-coding' },
+                                { name: 'AR & Denials', href: '/services/ar-follow-up-and-denial-management' },
+                                { name: 'Credentialing', href: '/services/credentialing-and-contracting' },
+                                { name: 'Privacy & Security', href: '/security' }
+                            ].map((item, idx) => (
+                                <motion.li 
+                                    key={item.name}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={{
+                                        hidden: { opacity: 0, x: -10 },
+                                        visible: { opacity: 1, x: 0, transition: { delay: idx * 0.05 + 0.2 } }
+                                    }}
+                                >
+                                    <Link
+                                        href={item.href}
+                                        className="text-gray-600 text-[15px] font-bold hover:text-[#0033e7] transition-all flex items-center gap-3 group no-underline hover:translate-x-1"
+                                    >
+                                        <span className="w-1 h-4 rounded-full bg-blue-600/0 group-hover:bg-[#0033e7] transition-all"></span>
+                                        {item.name}
+                                    </Link>
+                                </motion.li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Corporate */}
+                    <div className="lg:col-span-2 lg:ml-auto">
+                        <motion.h4 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block"
+                        >
+                            Company
+                        </motion.h4>
+                        <ul className="flex flex-col gap-5 p-0 list-none">
+                            {[
+                                { name: 'About Us', href: '/about-us' },
+                                { name: 'Insights', href: '/blog' },
+                                { name: 'RCM Tool', href: '/rcm-calculator' },
+                                { name: 'Pricing', href: '/pricing' },
+                                { name: 'Contact Us', href: '/contact-us' }
+                            ].map((item, idx) => (
+                                <motion.li 
+                                    key={item.name}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={{
+                                        hidden: { opacity: 0, x: -10 },
+                                        visible: { opacity: 1, x: 0, transition: { delay: idx * 0.05 + 0.2 } }
+                                    }}
+                                >
+                                    <Link
+                                        href={item.href}
+                                        className="text-gray-600 text-[15px] font-bold hover:text-[#0033e7] transition-all flex items-center gap-3 group no-underline hover:translate-x-1"
+                                    >
+                                        <span className="w-1 h-4 rounded-full bg-blue-600/0 group-hover:bg-[#0033e7] transition-all"></span>
+                                        {item.name}
+                                    </Link>
+                                </motion.li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* HQ */}
+                    <div className="lg:col-span-3 lg:ml-auto">
+                        <motion.h4 
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={fadeUp}
+                            className="text-[11px] font-black uppercase tracking-[4px] text-[#0033e7] mb-10 border-b-2 border-blue-600/10 pb-2 inline-block"
+                        >
+                            Get In Touch
+                        </motion.h4>
+                        <div className="space-y-8">
+                            <motion.div 
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true }}
+                                variants={fadeUp}
+                                className="text-gray-600 text-[16px] leading-[1.8] font-medium"
+                            >
+                                1309 Coffeen Avenue Ste 1200<br />
+                                Sheridan, WY 82801
+                            </motion.div>
+                            <div className="space-y-4">
+                                <motion.p 
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeUp}
+                                    className="text-gray-600 text-[15px] flex items-center gap-4 transition-colors hover:text-[#0033e7]"
+                                >
+                                    <strong className="text-[#0033e7] font-black text-[10px] uppercase tracking-widest bg-blue-600/10 px-2 py-1 rounded">PH</strong>
+                                    (805) 426-4609
+                                </motion.p>
+                                <motion.p 
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    variants={fadeUp}
+                                    className="text-gray-600 text-[15px] flex items-center gap-4 transition-colors hover:text-[#0033e7]"
+                                >
+                                    <strong className="text-[#0033e7] font-black text-[10px] uppercase tracking-widest bg-blue-600/10 px-2 py-1 rounded">EX</strong>
+                                    info@sbnhealthcaresolution.com
+                                </motion.p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="border-t border-gray-200 pt-10 pb-6 text-center text-gray-400 text-[12px] font-bold uppercase tracking-[2px] relative z-10">
+                <div className="container mx-auto px-4">
+                    &copy; {new Date().getFullYear()} SBN Healthcare Solution. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    );
+};
+
+export default Footer;

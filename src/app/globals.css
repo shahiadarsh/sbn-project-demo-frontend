@@ -1,0 +1,308 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Vibrant Blue Theme (EFFAH Style) */
+  --primary: #0052FF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #0033E7;
+  --secondary-foreground: #FFFFFF;
+  --accent: #F1F5F9;
+  --accent-foreground: #0F172A;
+  --background: #FFFFFF;
+  --foreground: #020817;
+  --muted: #64748B;
+  --muted-foreground: #94A3B8;
+  --border: #E2E8F0;
+  --radius: 1rem;
+
+  --font-family: 'Barlow', sans-serif;
+  --max-width: 1200px;
+  --header-height: 90px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--foreground);
+  background-color: var(--background);
+  line-height: 1.6;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--accent);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--foreground);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 30px;
+  /* Rounded buttons as per source */
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #005d3f;
+  /* from source hover */
+  color: white;
+}
+
+/* Premium Slide-Up Animation Utility */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.1rem 2.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 12px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.btn-premium .btn-text-default {
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-premium .btn-text-hover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Only apply hover animation on devices that actually support hover (desktops) */
+@media (hover: hover) {
+  .btn-premium:hover .btn-text-default {
+    transform: translateY(-100%);
+  }
+
+  .btn-premium:hover .btn-text-hover {
+    transform: translateY(-100%);
+  }
+}
+
+
+.btn-premium-teal {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 20px 40px rgba(31, 166, 160, 0.2);
+}
+
+.btn-premium-teal:hover {
+  background: var(--secondary-color);
+  box-shadow: 0 25px 50px rgba(31, 166, 160, 0.3);
+  transform: translateY(-5px);
+}
+
+.btn-premium-dark {
+  background: var(--secondary-color);
+  color: white;
+  box-shadow: 0 20px 40px rgba(11, 31, 51, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-premium-dark:hover {
+  background: var(--primary-color);
+  box-shadow: 0 25px 50px rgba(11, 31, 51, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Enterprise Hero Styles */
+.hero-enterprise-bg {
+  background: linear-gradient(135deg, #0B1F2A 0%, #102D3F 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.hero-radial-glow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.08), transparent 70%);
+  border-radius: full;
+  filter: blur(100px);
+  transform: translate(25%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.animated-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(circle at center, black, transparent 80%);
+  animation: grid-move 20s linear infinite;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+@keyframes grid-move {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 60px 60px;
+  }
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #C89B2C 100%);
+  color: white;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  padding: 18px 40px;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.btn-gold:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #E5C048 0%, #D9AC3D 100%);
+}
+
+.trust-indicator {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+.trust-indicator span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.trust-indicator span::before {
+  content: '✓';
+  color: var(--primary-color);
+}
+
+.float-animation {
+  animation: float 8s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: perspective(1200px) rotateY(-10deg) rotateX(2deg) translateY(0);
+  }
+
+  50% {
+    transform: perspective(1200px) rotateY(-10deg) rotateX(2deg) translateY(-15px);
+  }
+}
+
+.footer-enterprise {
+  background: linear-gradient(180deg, #0B1F33 0%, #071624 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+}

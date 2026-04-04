@@ -103,7 +103,7 @@ export default function BlogManagement() {
             {/* Status Notifications */}
             <AnimatePresence>
                 {status.message && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 20 }}
@@ -120,7 +120,7 @@ export default function BlogManagement() {
             {/* Form Section */}
             <AnimatePresence>
                 {isEditing && (
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
@@ -138,8 +138,8 @@ export default function BlogManagement() {
                                     </h2>
                                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[3px] mt-2 ml-14">Fill in the details below</p>
                                 </div>
-                                <button 
-                                    onClick={() => setIsEditing(false)} 
+                                <button
+                                    onClick={() => setIsEditing(false)}
                                     className="w-10 h-10 rounded-xl bg-slate-50 text-slate-400 hover:text-red-500 hover:bg-red-50 transition-all flex items-center justify-center"
                                 >
                                     <FaTimes size={18} />
@@ -154,7 +154,7 @@ export default function BlogManagement() {
                                         </label>
                                         <input
                                             className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:border-[var(--primary-color)] focus:bg-white transition-all font-bold text-slate-800 placeholder:text-slate-300"
-                                            placeholder="Healthcare Transformation 2026"
+                                            placeholder="Healthcare Transformation 2022"
                                             value={formData.title}
                                             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
                                             required
@@ -223,15 +223,15 @@ export default function BlogManagement() {
                                 </div>
 
                                 <div className="flex flex-col md:flex-row gap-4 pt-6">
-                                    <button 
-                                        type="submit" 
+                                    <button
+                                        type="submit"
                                         className="flex-1 bg-slate-900 text-white px-10 py-5 rounded-2xl font-black flex items-center justify-center gap-3 shadow-2xl hover:bg-[var(--primary-color)] transition-all uppercase tracking-[2px] text-xs"
                                     >
                                         <FaCheck /> {formData._id ? 'Save Changes' : 'Create Blog'}
                                     </button>
-                                    <button 
-                                        type="button" 
-                                        onClick={() => setIsEditing(false)} 
+                                    <button
+                                        type="button"
+                                        onClick={() => setIsEditing(false)}
                                         className="px-10 py-5 rounded-2xl bg-slate-100 text-slate-500 font-black hover:bg-slate-200 transition-all uppercase text-[10px] tracking-[3px]"
                                     >
                                         Cancel
@@ -247,11 +247,11 @@ export default function BlogManagement() {
             <div className={`space-y-10 ${isEditing ? 'opacity-20 pointer-events-none scale-[0.98] blur-sm' : 'animate-fadeIn transition-all duration-700'}`}>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {blogs.map((blog: any, index: number) => (
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.05 }}
-                            key={blog._id} 
+                            key={blog._id}
                             className="bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden group hover:shadow-2xl transition-all duration-500"
                         >
                             <div className="relative h-56 overflow-hidden">

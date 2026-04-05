@@ -1,8 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import axios from 'axios';
 import RCMCalculator from '@/components/tools/RCMCalculator';
 
 const fadeUp: any = {
@@ -40,6 +41,36 @@ const faqs = [
 ];
 
 export default function RCMCalculatorPageClient() {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        practiceName: '',
+        revenue: ''
+    });
+    const [status, setStatus] = useState({ type: '', message: '' });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setStatus({ type: 'loading', message: 'Sending request...' });
+
+        try {
+            await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/contacts`, {
+                name: formData.name,
+                email: formData.email,
+                subject: 'RCM Detailed Revenue Analysis Request',
+                message: `Practice Name: ${formData.practiceName}\nMonthly Revenue: ${formData.revenue || 'Not provided'}`
+            });
+            setStatus({ type: 'success', message: 'Request submitted successfully! We will contact you soon.' });
+            setFormData({ name: '', email: '', practiceName: '', revenue: '' });
+        } catch (error) {
+            setStatus({ type: 'error', message: 'An error occurred. Please try again.' });
+        }
+    };
+
     return (
         <main className="bg-[#f8faff] relative selection:bg-[#0033e7] selection:text-white pb-20">
             {/* Custom Premium Hero */}
@@ -150,26 +181,37 @@ export default function RCMCalculatorPageClient() {
                         <p className="text-lg text-slate-600 font-medium max-w-2xl mx-auto mb-8">
                             Want more than just estimates? We can give you a deeper breakdown of your revenue cycle and exactly where you’re losing money.
                         </p>
-                        <form className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8 text-left">
+                        <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8 text-left relative">
+                            {status.message && (
+                                <div className={`md:col-span-2 p-4 rounded-xl text-sm font-bold border ${status.type === 'success' ? 'bg-green-50 text-green-600 border-green-100' :
+                                    status.type === 'error' ? 'bg-red-50 text-red-600 border-red-100' :
+                                        'bg-blue-50 text-[#0033e7] border-blue-100'
+                                    }`}>
+                                    <div className="flex items-center gap-3 justify-center">
+                                        {status.type === 'loading' && <span className="w-4 h-4 border-2 border-[#0033e7] border-t-transparent rounded-full animate-spin"></span>}
+                                        {status.message}
+                                    </div>
+                                </div>
+                            )}
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 mb-2">Name</label>
-                                <input type="text" className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="Your Name" />
+                                <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="Your Name" />
                             </div>
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 mb-2">Email</label>
-                                <input type="email" className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="Your Email" />
+                                <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="Your Email" />
                             </div>
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 mb-2">Practice Name</label>
-                                <input type="text" className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="Clinic / Facility Name" />
+                                <input type="text" name="practiceName" value={formData.practiceName} onChange={handleChange} required className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="Clinic / Facility Name" />
                             </div>
                             <div>
                                 <label className="block text-sm font-bold text-slate-700 mb-2">Monthly Revenue (Optional)</label>
-                                <input type="text" className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="$ Amount" />
+                                <input type="text" name="revenue" value={formData.revenue} onChange={handleChange} className="w-full bg-white border border-slate-200 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#0033e7] transition-shadow shadow-sm" placeholder="$ Amount" />
                             </div>
                             <div className="md:col-span-2 text-center mt-4">
-                                <button type="button" className="inline-block bg-[#0033e7] text-white px-10 py-5 rounded-xl font-black uppercase tracking-[2px] transition-all hover:bg-blue-800 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,51,231,0.3)] shadow-xl w-full md:w-auto">
-                                    Request Detailed Report
+                                <button type="submit" disabled={status.type === 'loading'} className="inline-block bg-[#0033e7] text-white px-10 py-5 rounded-xl font-black uppercase tracking-[2px] transition-all hover:bg-blue-800 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,51,231,0.3)] shadow-xl w-full md:w-auto disabled:opacity-50">
+                                    {status.type === 'loading' ? 'Sending Request...' : 'Request Detailed Report'}
                                 </button>
                             </div>
                         </form>

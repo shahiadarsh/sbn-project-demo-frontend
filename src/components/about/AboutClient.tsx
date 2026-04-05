@@ -10,40 +10,40 @@ const fadeUp: any = {
 };
 
 const focusAreas = [
-  { t: "Fixing inefficiencies in billing" },
-  { t: "Reducing denial rates" },
-  { t: "Improving cash flow visibility" },
-  { t: "Keeping everything compliant" }
+    { t: "Fixing inefficiencies in billing" },
+    { t: "Reducing denial rates" },
+    { t: "Improving cash flow visibility" },
+    { t: "Keeping everything compliant" }
 ];
 
 const operationsLookLike = [
-  { t: "Standard workflows" },
-  { t: "Multiple quality checks" },
-  { t: "Controlled data access" },
-  { t: "Continuous performance tracking" }
+    { t: "Standard workflows" },
+    { t: "Multiple quality checks" },
+    { t: "Controlled data access" },
+    { t: "Continuous performance tracking" }
 ];
 
 const makesUsDifferent = [
-  { t: "We focus on systems, not just tasks" },
-  { t: "Everything is performance-driven" },
-  { t: "Compliance is built in" },
-  { t: "Models are scalable" },
-  { t: "Work is transparent" }
+    { t: "We focus on systems, not just tasks" },
+    { t: "Everything is performance-driven" },
+    { t: "Compliance is built in" },
+    { t: "Models are scalable" },
+    { t: "Work is transparent" }
 ];
 
 const takeaways = [
-  "Most billing issues come from weak systems",
-  "Structured workflows improve results",
-  "Leadership = strategy + execution",
-  "Better systems = better revenue",
-  "Simplicity + structure = long-term growth"
+    "Most billing issues come from weak systems",
+    "Structured workflows improve results",
+    "Leadership = strategy + execution",
+    "Better systems = better revenue",
+    "Simplicity + structure = long-term growth"
 ];
 
 const faqs = [
-  { q: "What services does SBN Healthcare offer?", a: "Complete revenue cycle support — billing, coding, denial management, and workflow optimization." },
-  { q: "How can I book an appointment with SBN Healthcare online?", a: "You can easily schedule a consultation through the website." },
-  { q: "What insurance plans are accepted by SBN Healthcare providers?", a: "We work with multiple payer systems based on client needs." },
-  { q: "Where is the nearest SBN Healthcare facility located?", a: "We operate globally and provide services remotely with structured systems." }
+    { q: "What services does SBN Healthcare offer?", a: "Complete revenue cycle support — billing, coding, denial management, and workflow optimization." },
+    { q: "How can I book an appointment with SBN Healthcare online?", a: "You can easily schedule a consultation through the website." },
+    { q: "What insurance plans are accepted by SBN Healthcare providers?", a: "We work with multiple payer systems based on client needs." },
+    { q: "Where is the nearest SBN Healthcare facility located?", a: "We operate globally and provide services remotely with structured systems." }
 ];
 
 export default function AboutClient() {
@@ -52,7 +52,7 @@ export default function AboutClient() {
             {/* Banner Section */}
             <div
                 className="relative bg-cover bg-center py-[120px] text-center overflow-hidden"
-                style={{ backgroundImage: "url('/img/bg1.jpg')" }}
+                style={{ backgroundImage: "url('/About.png')" }}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0033e7]/90 to-[#0B1F33]/90 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
@@ -77,7 +77,7 @@ export default function AboutClient() {
                         className="text-4xl md:text-[3.5rem] lg:text-[4rem] font-extrabold m-0 text-white drop-shadow-lg tracking-tight leading-[1.1]"
                     >
                         Building Better Revenue Systems
-                        <br/>for Modern Healthcare
+                        <br />for Modern Healthcare
                     </motion.h1>
                 </div>
             </div>
@@ -98,7 +98,7 @@ export default function AboutClient() {
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={fadeUp} className="bg-white/80 backdrop-blur-xl border border-blue-50 p-10 md:p-14 rounded-2xl shadow-[0_15px_40px_rgba(0,51,231,0.06)] flex flex-col md:flex-row items-center gap-10">
                         <div className="w-24 h-24 bg-blue-50 rounded-full flex items-center justify-center text-[#0033e7] flex-shrink-0 relative overflow-hidden">
                             <div className="absolute inset-0 bg-[#0033e7]/10 animate-pulse"></div>
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                         </div>
                         <div>
                             <h2 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">A Team That Understands Both Strategy & Ground Reality</h2>
@@ -195,7 +195,7 @@ export default function AboutClient() {
                 <div className="absolute inset-0 bg-[#f8faff]/95 pointer-events-none z-0"></div>
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        
+
                         {/* What We Actually Do */}
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-[#f8faff] p-10 rounded-2xl border border-blue-100 shadow-sm transition-all hover:shadow-[0_20px_40px_rgba(0,51,231,0.08)] flex flex-col h-full">
                             <h3 className="text-2xl font-black text-slate-900 mb-4">What We Actually Do</h3>
@@ -248,64 +248,64 @@ export default function AboutClient() {
                 </div>
             </section>
 
-             {/* Takeaways & FAQ Split */}
-             <section className="py-20 lg:py-28 relative border-t border-blue-50/50 bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
-                    <div className="absolute inset-0 bg-[#f8faff]/85 backdrop-blur-sm pointer-events-none z-0"></div>
-                    <div className="container mx-auto px-4 max-w-6xl relative z-10">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                            {/* Quick Takeaways */}
-                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                                <div className="bg-[#0033e7]/90 backdrop-blur-md rounded-3xl p-10 md:p-14 text-white shadow-[0_20px_50px_rgba(0,51,231,0.2)] border border-[#0033e7]/20 relative overflow-hidden h-full">
-                                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[60px] -mr-32 -mt-32 pointer-events-none"></div>
-                                    <h3 className="text-3xl font-black mb-8 relative z-10 tracking-tight text-white">Quick Takeaways</h3>
-                                    <ul className="space-y-6 relative z-10">
-                                        {takeaways.map((item, idx) => (
-                                            <li key={idx} className="flex items-center gap-4 text-lg font-medium">
-                                                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
-                                                    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                                </div>
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </motion.div>
-
-                            {/* FAQs */}
-                            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                                <div className="h-full">
-                                    <h3 className="text-3xl font-black text-slate-900 mb-8 tracking-tight">Frequently Asked Questions</h3>
-                                    <div className="space-y-6">
-                                        {faqs.map((faq, idx) => (
-                                            <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-sm hover:shadow-md transition-shadow">
-                                                <h4 className="text-lg font-extrabold text-slate-900 mb-2">{faq.q}</h4>
-                                                <p className="text-slate-600 font-medium">{faq.a}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </div>
-                </section>
-
-                {/* Final CTA */}
-                <section className="pt-10 pb-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
-                   <div className="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none z-0"></div>
-                   <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
+            {/* Takeaways & FAQ Split */}
+            <section className="py-20 lg:py-28 relative border-t border-blue-50/50 bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+                <div className="absolute inset-0 bg-[#f8faff]/85 backdrop-blur-sm pointer-events-none z-0"></div>
+                <div className="container mx-auto px-4 max-w-6xl relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        {/* Quick Takeaways */}
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-                            <h2 className="text-4xl font-extrabold text-slate-900 leading-[1.2] tracking-tight mb-6">
-                                Let’s Build Something That Actually Works
-                            </h2>
-                            <p className="text-xl text-slate-600 font-medium mb-10 max-w-2xl mx-auto">
-                                If your current billing setup feels confusing, slow, or inconsistent — you’re not alone. But it can be fixed. That’s what About SBN Healthcare is really about — making your revenue cycle simpler, stronger, and more reliable.
-                            </p>
-                            <Link href="/contact-us" className="inline-block bg-teal-500 text-white px-10 py-5 rounded-xl font-black uppercase tracking-[2px] transition-all hover:bg-teal-600 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(20,184,166,0.3)] shadow-xl">
-                                Schedule a Consultation
-                            </Link>
+                            <div className="bg-[#0033e7]/90 backdrop-blur-md rounded-3xl p-10 md:p-14 text-white shadow-[0_20px_50px_rgba(0,51,231,0.2)] border border-[#0033e7]/20 relative overflow-hidden h-full">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[60px] -mr-32 -mt-32 pointer-events-none"></div>
+                                <h3 className="text-3xl font-black mb-8 relative z-10 tracking-tight text-white">Quick Takeaways</h3>
+                                <ul className="space-y-6 relative z-10">
+                                    {takeaways.map((item, idx) => (
+                                        <li key={idx} className="flex items-center gap-4 text-lg font-medium">
+                                            <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
+                                                <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                            </div>
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </motion.div>
-                   </div>
-                </section>
+
+                        {/* FAQs */}
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+                            <div className="h-full">
+                                <h3 className="text-3xl font-black text-slate-900 mb-8 tracking-tight">Frequently Asked Questions</h3>
+                                <div className="space-y-6">
+                                    {faqs.map((faq, idx) => (
+                                        <div key={idx} className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 border border-white shadow-sm hover:shadow-md transition-shadow">
+                                            <h4 className="text-lg font-extrabold text-slate-900 mb-2">{faq.q}</h4>
+                                            <p className="text-slate-600 font-medium">{faq.a}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Final CTA */}
+            <section className="pt-10 pb-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+                <div className="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none z-0"></div>
+                <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
+                    <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+                        <h2 className="text-4xl font-extrabold text-slate-900 leading-[1.2] tracking-tight mb-6">
+                            Let’s Build Something That Actually Works
+                        </h2>
+                        <p className="text-xl text-slate-600 font-medium mb-10 max-w-2xl mx-auto">
+                            If your current billing setup feels confusing, slow, or inconsistent — you’re not alone. But it can be fixed. That’s what About SBN Healthcare is really about — making your revenue cycle simpler, stronger, and more reliable.
+                        </p>
+                        <Link href="/contact-us" className="inline-block bg-teal-500 text-white px-10 py-5 rounded-xl font-black uppercase tracking-[2px] transition-all hover:bg-teal-600 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(20,184,166,0.3)] shadow-xl">
+                            Schedule a Consultation
+                        </Link>
+                    </motion.div>
+                </div>
+            </section>
 
         </main>
     );

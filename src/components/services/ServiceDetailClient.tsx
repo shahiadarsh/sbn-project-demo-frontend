@@ -10,6 +10,7 @@ import AIIndicator from '@/components/sections/AIIndicator';
 import ComplianceShield from '@/components/sections/ComplianceShield';
 import { servicesList } from '@/data/services';
 import { notFound } from 'next/navigation';
+import { FaArrowRight } from 'react-icons/fa';
 
 const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -25,31 +26,24 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             className="relative selection:bg-[#0033e7] selection:text-white pb-0 bg-cover bg-center bg-fixed"
             style={{ backgroundImage: 'url("/background%20image.webp")' }}
         >
-            {/* Global Light Glass Overlay over the image */}
             <div className="absolute inset-0 bg-white/20 z-0 pointer-events-none"></div>
 
-            {/* Custom Premium Hero (Light Theme) */}
-            <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 relative overflow-hidden z-10">
-                <div className="absolute inset-0 pointer-events-none overflow-hidden">
-                    <div className="absolute top-[-10%] right-[15%] w-[600px] h-[600px] bg-[#0033e7]/10 rounded-full blur-[120px] mix-blend-multiply"></div>
-                    <div className="absolute bottom-[-20%] left-[5%] w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[100px] mix-blend-multiply"></div>
-                    <div className="absolute inset-0 bg-[linear-gradient(rgba(0,51,231,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,51,231,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-                </div>
-                
-                <div className="container mx-auto max-w-4xl relative z-10">
+            {/* Custom Premium Hero */}
+            <section className="pt-32 pb-16 md:pt-44 md:pb-28 text-center px-4 relative overflow-hidden z-10">
+                <div className="container mx-auto max-w-5xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-[#0033e7] font-bold uppercase text-[11px] tracking-[3px] mb-8 px-5 py-2 rounded-full shadow-sm">
+                        <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-[#0033e7] font-bold uppercase text-[11px] tracking-[4px] mb-8 px-6 py-2 rounded-full shadow-sm">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
                             Enterprise Solutions
                         </div>
-                        <h1 className="text-4xl md:text-[3.5rem] lg:text-[4rem] font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
+                        <h1 className="text-4xl md:text-[4rem] lg:text-[4.5rem] font-black text-slate-900 leading-[1.1] mb-8 tracking-tighter">
                             {service.bannerTitle}
                         </h1>
-                        <p className="text-[17px] md:text-[19px] text-slate-600 font-medium leading-[1.7] max-w-2xl mx-auto">
+                        <p className="text-lg md:text-xl text-slate-600 font-semibold leading-relaxed max-w-3xl mx-auto">
                             {service.description}
                         </p>
                     </motion.div>
@@ -57,12 +51,10 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
             </section>
 
             <div className="relative flex flex-col pt-10 border-t border-white/50 z-10">
-                <div className="relative z-10">
-                    {/* Dynamic Sections */}
+                <div className="relative z-10 pb-24">
                     {service.sections.map((section: any, index: number) => {
                         const isCta = section.type === 'cta';
 
-                        // Handle Specialized Section Types
                         if (section.type === 'problem-snapshot') {
                             return <ProblemSnapshot key={index} title={section.title} points={section.data || []} />;
                         }
@@ -83,103 +75,80 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                             return <ComplianceShield key={index} />;
                         }
 
-                        // For CTA Type
                         if (isCta) {
                             return (
                                 <section key={index} 
-                                    className="text-white relative py-20 overflow-hidden my-16 rounded-3xl mx-4 lg:mx-auto max-w-7xl shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
+                                    className="text-white relative py-20 overflow-hidden my-16 rounded-2xl mx-4 lg:mx-auto max-w-7xl shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
                                     style={{ backgroundImage: 'url("/background%20image.webp")' }}
                                 >
-                                    {/* Sub-block Dark Overlay to keep text readable against the background image */}
-                                    <div className="absolute inset-0 bg-[#0B1F33]/85 z-0"></div>
-                                     <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#0033e7]/30 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none z-0"></div>
-                                    <div className="container mx-auto px-10 relative z-10">
-                                        <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-                                            <div className="flex-1">
-                                                <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight">
-                                                    {section.title}
-                                                </h2>
-                                                {section.content && (
-                                                    <p className="text-lg text-slate-300 max-w-[600px] leading-relaxed font-medium">
-                                                        {section.content}
-                                                    </p>
-                                                )}
-                                            </div>
-                                            <div className="flex-shrink-0">
-                                                <Link href="/contact-us" className="bg-[#0033e7] text-white px-10 py-5 rounded-2xl font-bold inline-block transition-all duration-300 uppercase tracking-[2px] hover:bg-blue-800 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,51,231,0.3)] text-sm shadow-xl no-underline">
-                                                    Talk To An Expert
-                                                </Link>
-                                            </div>
-                                        </div>
+                                    <div className="absolute inset-0 bg-[#0B1F33]/90 z-0"></div>
+                                    <div className="container mx-auto px-10 relative z-10 text-center">
+                                        <h2 className="text-3xl md:text-5xl font-black mb-8 text-white tracking-tighter">
+                                            {section.title}
+                                        </h2>
+                                        {section.content && (
+                                            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed font-bold mb-12">
+                                                {section.content}
+                                            </p>
+                                        )}
+                                        <Link href="/contact-us" className="bg-[#0033e7] text-white px-12 py-5 rounded-xl font-black inline-flex items-center gap-4 transition-all duration-300 uppercase tracking-[2px] hover:bg-blue-800 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(0,51,231,0.3)] shadow-xl no-underline">
+                                            Talk To An Expert <FaArrowRight />
+                                        </Link>
                                     </div>
                                 </section>
                             );
                         }
 
-                        // Regular Text/Image Section
+                        // Regular Content Section (Glass Card Style)
                         return (
-                            <section key={index} className="py-20 lg:py-28 relative">
+                            <section key={index} className="py-12 lg:py-16 relative">
                                 <div className="container mx-auto px-4 max-w-7xl">
                                     <motion.div 
                                         initial="hidden"
                                         whileInView="visible"
                                         viewport={{ once: true }}
                                         variants={fadeUp}
-                                        className="flex flex-col md:flex-row items-center gap-16"
+                                        className={`flex flex-col md:flex-row items-stretch gap-8 md:gap-16 bg-white/90 backdrop-blur-2xl rounded-2xl p-8 md:p-16 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)] ${section.imagePosition === 'right' ? '' : 'md:flex-row-reverse'}`}
                                     >
-                                        {/* Image Left */}
-                                        {section.image && section.imagePosition === 'left' && (
-                                            <div className="flex-1 w-full order-2 md:order-1">
-                                                <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,51,231,0.08)] border border-white group">
-                                                    <img
-                                                        src={section.image}
-                                                        alt={section.title || service.title}
-                                                        className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
-                                                    />
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {/* Content Block */}
-                                        <div className={`flex-1 w-full ${section.image && section.imagePosition === 'left' ? 'order-1 md:order-2' : ''}`}>
+                                        <div className="flex-1 flex flex-col justify-center">
                                             {section.title && (
-                                                <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-[1.2] tracking-tight">
+                                                <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 leading-[1.1] tracking-tighter">
                                                     {section.title}
                                                 </h2>
                                             )}
 
-                                            {section.content && (
-                                                <div className="space-y-6">
-                                                    {Array.isArray(section.content) ? (
-                                                        section.content.map((para: string, i: number) => <p key={i} className="text-slate-600 leading-[1.8] text-[17px] font-medium">{para}</p>)
-                                                    ) : (
-                                                        <p className="text-slate-600 leading-[1.8] text-[17px] font-medium">{section.content}</p>
-                                                    )}
-                                                </div>
-                                            )}
+                                            <div className="space-y-6">
+                                                {Array.isArray(section.content) ? (
+                                                    section.content.map((para: string, i: number) => (
+                                                        <p key={i} className="text-slate-600 leading-[1.8] text-[18px] md:text-[20px] font-bold tracking-tight">{para}</p>
+                                                    ))
+                                                ) : (
+                                                    <p className="text-slate-600 leading-[1.8] text-[18px] md:text-[20px] font-bold tracking-tight">{section.content}</p>
+                                                )}
+                                            </div>
 
                                             {section.list && (
-                                                <ul className="mt-8 space-y-4">
+                                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-10">
                                                     {section.list.map((item: string, i: number) => (
-                                                        <li key={i} className="flex items-start gap-4">
-                                                            <div className="w-6 h-6 rounded-full bg-[#0033e7]/10 text-[#0033e7] flex items-center justify-center flex-shrink-0 mt-1">
-                                                                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                                        <div key={i} className="flex items-center gap-4 p-5 rounded-xl bg-blue-50/50 border border-blue-100 group hover:bg-[#0033e7] transition-all duration-300">
+                                                            <div className="w-10 h-10 rounded-full bg-white text-[#0033e7] flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-110 transition-transform">
+                                                                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
                                                             </div>
-                                                            <span className="text-slate-700 text-[17px] font-semibold tracking-tight">{item}</span>
-                                                        </li>
+                                                            <span className="text-slate-900 text-[15px] font-black group-hover:text-white transition-colors">{item}</span>
+                                                        </div>
                                                     ))}
-                                                </ul>
+                                                </div>
                                             )}
                                         </div>
 
-                                        {/* Image Right */}
-                                        {section.image && section.imagePosition === 'right' && (
-                                            <div className="flex-1 w-full order-2">
-                                                <div className="relative rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(0,51,231,0.08)] border border-white group">
+                                        {section.image && (
+                                            <div className="flex-1 w-full relative group min-h-[300px]">
+                                                <div className="absolute inset-0 bg-[#0033e7]/5 rounded-2xl transform translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-transform duration-500"></div>
+                                                <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
                                                     <img
                                                         src={section.image}
                                                         alt={section.title || service.title}
-                                                        className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                                        className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
                                                     />
                                                 </div>
                                             </div>
@@ -191,45 +160,38 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                     })}
                 </div>
 
-                {/* High-Impact Features Section */}
                 {service.features && (
-                    <section className="py-20 lg:py-28 relative z-10 border-t border-slate-100">
-                        <div className="absolute inset-0 bg-[#f8faff]/70 pointer-events-none"></div>
+                    <section className="py-24 relative z-10 overflow-hidden bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+                        <div className="absolute inset-0 bg-slate-900/95 pointer-events-none"></div>
                         <div className="container mx-auto px-4 max-w-7xl relative z-20">
                             {service.featuresTitle && (
-                                <motion.div 
-                                    initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-                                    className="text-center mb-16"
-                                >
-                                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
-                                        {service.featuresTitle}
-                                    </h2>
+                                <div className="text-center mb-20">
+                                    <span className="text-teal-400 font-black uppercase text-[12px] tracking-[6px] mb-4 block">Core Competencies</span>
+                                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6">{service.featuresTitle}</h2>
                                     {service.featuresDescription && (
-                                        <p className="text-slate-600 max-w-2xl mx-auto text-[17px] font-medium leading-[1.7]">
-                                            {service.featuresDescription}
-                                        </p>
+                                        <p className="text-slate-400 font-bold text-lg max-w-2xl mx-auto">{service.featuresDescription}</p>
                                     )}
-                                </motion.div>
+                                </div>
                             )}
                             
                             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                 {service.features.map((feature: any, index: number) => (
                                     <motion.div 
-                                        key={index} 
+                                        key={index}
                                         initial={{ opacity: 0, y: 30 }}
                                         whileInView={{ opacity: 1, y: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ duration: 0.6, delay: index * 0.1 }}
-                                        className="bg-white/90 backdrop-blur-xl p-10 rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-white h-full group hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,51,231,0.08)] transition-all duration-500"
+                                        className="bg-white/5 backdrop-blur-xl p-12 rounded-[2.5rem] border border-white/10 group hover:border-[#0033e7]/50 transition-all duration-500"
                                     >
-                                        <div className="text-3xl text-[#0033e7] mb-6 bg-blue-50 w-16 h-16 flex items-center justify-center rounded-xl transition-all duration-500 group-hover:bg-[#0033e7] group-hover:text-white group-hover:shadow-[0_10px_20px_rgba(0,51,231,0.2)]">
+                                        <div className="text-4xl text-teal-400 mb-8 group-hover:scale-110 transition-transform">
                                             <feature.icon />
                                         </div>
-                                        <h3 className="text-[22px] font-extrabold mb-4 text-slate-900 tracking-tight">
+                                        <h3 className="text-2xl font-black mb-4 text-white tracking-tight group-hover:text-teal-400">
                                             {feature.title}
                                         </h3>
                                         {feature.description && (
-                                            <p className="text-slate-600 leading-[1.7] font-medium text-[15px]">
+                                            <p className="text-slate-400 leading-relaxed font-bold text-[16px] group-hover:text-white transition-colors">
                                                 {feature.description}
                                             </p>
                                         )}

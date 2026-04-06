@@ -3,10 +3,9 @@ import type { Metadata } from 'next';
 import WhitePaperClient from '@/components/white-paper/WhitePaperClient';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const dynamic = await getDynamicMetadata('white-paper');
     return {
-        title: dynamic?.title || 'White Paper - SBN Healthcare Solution',
-        description: 'Read our latest insights and white papers on healthcare billing and RCM.',
+        title: 'Resource Guide: Hidden Revenue Leakage in Healthcare',
+        description: 'Discover how the right resource helps reduce revenue leakage and why the best resource medical billing service for small clinics improves cash flow.',
     };
 }
 

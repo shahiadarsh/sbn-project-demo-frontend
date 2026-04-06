@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaExclamationCircle, FaCheckCircle, FaArrowRight, FaChartLine } from 'react-icons/fa';
+import Link from 'next/link';
 
 const fadeUp: any = {
     hidden: { opacity: 0, y: 30 },
@@ -10,207 +12,154 @@ const fadeUp: any = {
 
 export default function WhitePaperClient() {
     return (
-        <main className="bg-[#f8faff] relative selection:bg-[#0033e7] selection:text-white">
-            {/* Custom Clean Header (No Image, Smaller Text) */}
-            <section className="bg-gradient-to-b from-[#f0f4ff] to-[#f8faff] pt-32 pb-8 md:pt-40 md:pb-16 text-center px-4 relative overflow-hidden">
-                {/* Soft glow effects without any heavy images */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 right-[10%] w-[500px] h-[500px] bg-blue-100/60 rounded-full blur-[100px] mix-blend-multiply"></div>
-                    <div className="absolute top-20 left-[10%] w-[400px] h-[400px] bg-blue-100/40 rounded-full blur-[100px] mix-blend-multiply"></div>
-                </div>
-                
-                <div className="container mx-auto max-w-4xl relative z-10">
+        <main 
+            className="relative selection:bg-[#0033e7] selection:text-white bg-cover bg-center bg-fixed"
+            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+        >
+            <div className="absolute inset-0 bg-white/40 z-0 pointer-events-none"></div>
+
+            {/* Premium Hero Section */}
+            <section className="pt-32 pb-16 md:pt-44 md:pb-28 text-center px-4 relative overflow-hidden z-10">
+                <div className="container mx-auto max-w-5xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <div className="inline-flex items-center gap-2 bg-white/60 border border-blue-100 text-[#0033e7] font-bold uppercase text-[11px] tracking-[3px] mb-8 px-5 py-2 rounded-full shadow-sm backdrop-blur-md">
-                            <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
-                            Industry Intelligence
+                        <div className="inline-flex items-center gap-2 bg-white/80 border border-blue-200 text-[#0033e7] font-bold uppercase text-[11px] tracking-[4px] mb-8 px-6 py-2.5 rounded-full shadow-sm backdrop-blur-md">
+                            <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
+                            Premium Resource Guide
                         </div>
-                        <h1 className="text-3xl md:text-[3.25rem] font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
-                            Insights & Analytics
+                        <h1 className="text-4xl md:text-[4rem] lg:text-[4.5rem] font-black text-slate-900 leading-[1] mb-8 tracking-tighter">
+                            The Hidden <span className="text-[#0033e7]">Revenue Leakage</span> in Your Cycle
                         </h1>
-                        <p className="text-[17px] md:text-[19px] text-slate-600 font-medium leading-[1.7] max-w-2xl mx-auto">
-                            The business of healthcare is changing, and you need a partner that takes your business forward. Find insights and perspectives on the latest trends in healthcare revenue cycle management.
+                        <p className="text-lg md:text-xl text-slate-600 font-semibold leading-relaxed max-w-3xl mx-auto">
+                            Healthcare organizations today are not struggling with volume. They are struggling with visibility. This is where the right resource becomes important.
                         </p>
                     </motion.div>
                 </div>
             </section>
 
-            {/* Main Content Wrapper */}
-            <div 
-                className="relative bg-cover bg-center bg-no-repeat overflow-hidden pt-8 pb-20 lg:pt-12 lg:pb-32"
-                style={{ backgroundImage: 'url("/background%20image.webp")' }}
-            >
-                {/* Smooth blend top gradient from the solid hero into the image background */}
-                <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-[#f8faff] to-transparent z-0 pointer-events-none"></div>
-
-                {/* Glass overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-[#f8faff]/85 to-blue-50/70 pointer-events-none"></div>
-
-                <div className="container mx-auto px-4 relative z-10">
-                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start">
-                        
-                        {/* LEFT COLUMN: Content */}
-                        <div className="flex-[2.2] min-w-0">
-                            
-                            {/* Featured Resource Block */}
-                            <motion.div 
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-50px" }}
-                                variants={fadeUp}
-                                className="bg-white rounded-[2rem] p-8 md:p-12 flex flex-col md:flex-row gap-10 items-center shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-slate-100 hover:shadow-[0_30px_70px_rgba(0,51,231,0.1)] transition-all duration-500 mb-16 group"
-                            >
-                                <div className="flex-[1.2]">
-                                    <div className="inline-flex items-center gap-2 bg-[#0033e7]/10 text-[#0033e7] font-extrabold uppercase text-[10px] tracking-[2px] mb-5 px-3 py-1.5 rounded-md">
-                                        Featured Guide
-                                    </div>
-                                    <h2 className="text-2xl md:text-[28px] font-extrabold mb-6 text-slate-900 leading-[1.25] tracking-tight group-hover:text-[#0033e7] transition-colors duration-300">
-                                        What To Look For In A Medical Billing Company
-                                    </h2>
-                                    <p className="text-[16px] leading-[1.7] text-slate-600 mb-5 font-medium">
-                                        Download our free whitepaper and see what any smart physician will take into account when interviewing potential billing company partners.
-                                    </p>
-                                    <p className="text-[16px] leading-[1.7] text-slate-600 font-medium">
-                                        "What To Look For In A Medical Billing Company" will give you an insider's view of...well...what to look for in a medical billing company! This is insight you won't want to leave out of your deliberations.
-                                    </p>
+            {/* Main Article Content */}
+            <section className="pb-24 relative z-10">
+                <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                    <div className="space-y-12">
+                        {/* Reality Section - Glass Card */}
+                        <motion.div 
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                            className="bg-white/90 backdrop-blur-2xl rounded-2xl p-10 md:p-16 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]"
+                        >
+                            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 tracking-tighter">The Reality of Revenue Leakage</h2>
+                            <p className="text-[18px] md:text-[20px] text-slate-600 font-bold leading-relaxed mb-8 tracking-tight">
+                                Revenue leakage does not happen in one place. It happens quietly across the entire revenue cycle. Small issues often go unnoticed, but over time, they lead to serious financial loss.
+                            </p>
+                            <div className="bg-blue-50/50 rounded-2xl p-8 border border-blue-100 flex gap-6 items-center">
+                                <div className="text-[#0033e7] text-3xl flex-shrink-0 animate-bounce">
+                                    <FaExclamationCircle />
                                 </div>
-                                <div className="flex-1 w-full relative">
-                                    <div className="relative rounded-2xl overflow-hidden shadow-[0_15px_30px_rgba(0,0,0,0.12)]">
-                                        <img src="/img/white-paper.jpg" alt="White Paper Guide" className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
-                                        <div className="absolute inset-0 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)] rounded-2xl pointer-events-none"></div>
-                                    </div>
-                                    {/* Offset shadow decoration */}
-                                    <div className="absolute inset-0 bg-blue-100 rounded-2xl -z-10 translate-x-4 translate-y-4 opacity-50 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
-                                </div>
-                            </motion.div>
-
-                            {/* Additional Resources Grid */}
-                            <div>
-                                <motion.div
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-50px" }}
-                                    variants={fadeUp}
-                                    className="mb-10 flex items-center justify-between"
-                                >
-                                    <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center gap-3">
-                                        Latest Resources
-                                    </h3>
-                                    <div className="h-[2px] flex-grow bg-gradient-to-r from-slate-200 to-transparent ml-6"></div>
-                                </motion.div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                    {[
-                                        {
-                                            img: '/img/white-paper2.jpg',
-                                            title: 'Patient Centric Billing in a Post-Pandemic World',
-                                            desc: 'Even before the onset of the Covid-19 pandemic, the healthcare sector was being tested to its limits.'
-                                        },
-                                        {
-                                            img: '/img/white-paper3.jpg',
-                                            title: 'The Growth of Medical Billing in Telemedicine',
-                                            desc: 'The need for better access to medical care has contributed significantly to the radical changes.'
-                                        },
-                                        {
-                                            img: '/img/white-paper1.jpg',
-                                            title: 'Healthcare in 2021: Optimal Revenue Cycle',
-                                            desc: 'The Covid-19 pandemic tested the mettle of the healthcare sector like no other development in history.'
-                                        }
-                                    ].map((item, index) => (
-                                        <motion.div
-                                            key={index}
-                                            initial="hidden"
-                                            whileInView="visible"
-                                            viewport={{ once: true, margin: "-50px" }}
-                                            variants={{
-                                                hidden: { opacity: 0, y: 30 },
-                                                visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: index * 0.15 } }
-                                            } as any}
-                                            className="bg-white rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_rgba(0,51,231,0.12)] border border-slate-100 flex flex-col group h-full shadow-[0_10px_30px_rgba(0,0,0,0.04)]"
-                                        >
-                                            <div className="h-[220px] overflow-hidden relative p-3 pb-0">
-                                                <div className="w-full h-full rounded-2xl overflow-hidden relative">
-                                                    <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                                                    <div className="absolute inset-0 bg-[#0033e7]/0 group-hover:bg-[#0033e7]/10 transition-colors duration-500 pointer-events-none"></div>
-                                                </div>
-                                            </div>
-                                            <div className="p-8 flex-1 flex flex-col relative">
-                                                <h4 className="text-[18px] font-extrabold text-slate-900 mb-3 leading-[1.4] transition-colors group-hover:text-[#0033e7]">
-                                                    {item.title}
-                                                </h4>
-                                                <p className="text-[15px] text-slate-500 mb-8 flex-grow leading-[1.6]">
-                                                    {item.desc}
-                                                </p>
-                                                <div className="mt-auto">
-                                                    <a href="#" className="inline-flex items-center justify-start gap-2 text-[#0033e7] font-bold text-[14px] uppercase tracking-[1px] no-underline transition-all duration-300 group-hover:gap-4">
-                                                        Download PDF
-                                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                                        </svg>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                                </div>
+                                <p className="text-slate-900 font-black leading-tight text-[17px] mb-0">
+                                    Identify common failures like missed eligibility checks, delayed submissions, and repeated denials before they impact your bottom line.
+                                </p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* RIGHT COLUMN: Sidebar Form */}
-                        <aside className="hidden lg:block flex-1 min-w-[380px] w-full mt-2 sticky top-[100px]">
-                            <motion.div 
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                transition={{ duration: 0.8, delay: 0.2 }}
-                                className="bg-white rounded-[2rem] p-10 shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-slate-100 relative overflow-hidden group hover:shadow-[0_40px_80px_rgba(0,51,231,0.1)] transition-shadow duration-500"
-                            >
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-[2rem] -mr-10 -mt-10 transition-transform duration-700 group-hover:scale-150 group-hover:rotate-12 pointer-events-none"></div>
-                                
-                                <div className="relative z-10">
-                                    <div className="w-12 h-1.5 bg-[#0033e7] rounded-full mb-8"></div>
-                                    <h3 className="text-[22px] font-extrabold text-slate-900 mb-3 tracking-tight">
-                                        Download Free Guide
-                                    </h3>
-                                    <p className="text-[15px] text-slate-500 mb-8 font-medium leading-relaxed">
-                                        Fill out the form below to access our premium healthcare content.
-                                    </p>
-                                    
-                                    <form className="space-y-4">
-                                        <div className="grid grid-cols-2 gap-4">
-                                            <div>
-                                                <input type="text" placeholder="First Name*" className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl text-[14px] font-medium transition-all duration-300 focus:border-[#0033e7] focus:bg-white focus:shadow-[0_0_0_4px_rgba(0,51,231,0.1)] outline-none placeholder:text-slate-400" required />
-                                            </div>
-                                            <div>
-                                                <input type="text" placeholder="Last Name*" className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl text-[14px] font-medium transition-all duration-300 focus:border-[#0033e7] focus:bg-white focus:shadow-[0_0_0_4px_rgba(0,51,231,0.1)] outline-none placeholder:text-slate-400" required />
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <input type="email" placeholder="Work Email*" className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl text-[14px] font-medium transition-all duration-300 focus:border-[#0033e7] focus:bg-white focus:shadow-[0_0_0_4px_rgba(0,51,231,0.1)] outline-none placeholder:text-slate-400" required />
-                                        </div>
-                                        <div>
-                                            <input type="tel" placeholder="Phone Number" className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl text-[14px] font-medium transition-all duration-300 focus:border-[#0033e7] focus:bg-white focus:shadow-[0_0_0_4px_rgba(0,51,231,0.1)] outline-none placeholder:text-slate-400" />
-                                        </div>
-                                        <div>
-                                            <input type="text" placeholder="Organization" className="w-full p-4 bg-slate-50 border border-slate-100 rounded-xl text-[14px] font-medium transition-all duration-300 focus:border-[#0033e7] focus:bg-white focus:shadow-[0_0_0_4px_rgba(0,51,231,0.1)] outline-none placeholder:text-slate-400" />
-                                        </div>
-                                        <button type="submit" className="w-full bg-[#0033e7] text-white border-none py-4 px-6 mt-4 font-bold rounded-xl cursor-pointer text-[14px] uppercase tracking-[2px] shadow-[0_8px_20px_rgba(0,51,231,0.25)] transition-all duration-300 hover:bg-[#0026b3] hover:shadow-[0_12px_25px_rgba(0,51,231,0.35)] hover:-translate-y-1 flex justify-center items-center gap-2 group/btn">
-                                            Access Content
-                                            <svg className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg>
-                                        </button>
-                                    </form>
-                                </div>
-                            </motion.div>
-                        </aside>
+                        {/* Where it Starts - Grid Points */}
+                        <motion.div 
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                            className="bg-white/90 backdrop-blur-2xl rounded-2xl p-10 md:p-16 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]"
+                        >
+                            <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-10 tracking-tighter flex items-center gap-4">
+                                <span className="p-3 bg-red-50 text-red-500 rounded-xl"><FaExclamationCircle size={24} /></span>
+                                Where It Typically Starts
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {[
+                                    "Incomplete or inaccurate eligibility verification",
+                                    "Coding inconsistencies across providers and specialties",
+                                    "Lack of real-time claim validation",
+                                    "Reactive denial management instead of fixing the root cause"
+                                ].map((item, idx) => (
+                                    <div key={idx} className="flex gap-4 p-6 rounded-xl bg-slate-50 border border-slate-100 items-center group hover:bg-slate-100 transition-colors">
+                                        <div className="w-2.5 h-2.5 rounded-full bg-red-400 flex-shrink-0"></div>
+                                        <p className="text-[16px] font-black text-slate-700 leading-tight mb-0">{item}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </motion.div>
 
+                        {/* Why it Matters - Dark Contrast Card */}
+                        <motion.div 
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                            className="bg-slate-900 rounded-2xl p-10 md:p-16 relative overflow-hidden text-white"
+                        >
+                            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#0033e7]/20 rounded-full blur-[100px] -mr-48 -mt-48 pointer-events-none"></div>
+                            <h3 className="text-2xl md:text-3xl font-black mb-8 tracking-tighter text-white">Why It Matters</h3>
+                            <p className="text-[18px] md:text-[20px] text-slate-300 font-bold leading-relaxed mb-12 tracking-tight">
+                                These gaps do more than delay payments. They affect how smoothly your operations run. Without the right resource, problems keep repeating. Practices face longer A/R cycles, workload increases, and reimbursement accuracy goes down.
+                            </p>
+                            <div className="p-8 rounded-xl bg-white/5 border border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
+                                <p className="text-lg md:text-xl font-black mb-0 text-white leading-tight flex-1">
+                                    This is why many providers look for the best resource medical billing service for small clinics to stabilize their cash flow.
+                                </p>
+                                <Link href="/contact-us" className="bg-[#0033e7] text-white px-8 py-4 rounded-xl font-black inline-flex items-center gap-4 transition-all duration-300 uppercase tracking-[2px] hover:bg-blue-800 hover:-translate-y-1 shadow-xl no-underline text-xs shrink-0">
+                                    Get Fix Audit <FaArrowRight />
+                                </Link>
+                            </div>
+                        </motion.div>
+
+                        {/* High Performing Organizations Section */}
+                        <motion.div 
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                            className="bg-white/90 backdrop-blur-2xl rounded-2xl p-10 md:p-16 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.04)]"
+                        >
+                            <h3 className="text-2xl md:text-3xl font-black text-slate-900 mb-10 tracking-tighter">What High-Performing Organizations Do Differently</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                {[
+                                    { t: "Real-time Validation", p: "They use real-time eligibility and data validation." },
+                                    { t: "Structured Workflows", p: "They follow structured and audit-ready coding workflows." },
+                                    { t: "Proactive Fixes", p: "They fix denial issues before they happen." },
+                                    { t: "Timely Submissions", p: "They submit claims on time, every time." }
+                                ].map((item, idx) => (
+                                    <div key={idx} className="p-8 rounded-xl bg-blue-50/50 border border-blue-100 group hover:bg-[#0033e7] transition-all duration-500">
+                                        <div className="w-12 h-12 rounded-xl bg-white text-[#0033e7] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-sm">
+                                            <FaCheckCircle size={22} />
+                                        </div>
+                                        <h4 className="font-black text-slate-900 uppercase text-[12px] tracking-widest mb-3 group-hover:text-white transition-colors">{item.t}</h4>
+                                        <p className="text-slate-600 font-bold mb-0 group-hover:text-white/80 transition-colors">{item.p}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <p className="text-[13px] text-[#0033e7] font-black italic mt-12 text-center uppercase tracking-widest bg-blue-50 py-4 rounded-xl">
+                                They also understand how to choose a resource medical billing service for my practice.
+                            </p>
+                        </motion.div>
+
+                        {/* The Result Section */}
+                        <motion.div 
+                            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+                            className="pt-12 text-center"
+                        >
+                            <h3 className="text-3xl md:text-5xl font-black text-slate-900 mb-8 tracking-tighter">The Result</h3>
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-12 px-4">
+                                {["Efficient", "Predictable", "Scalable", "Financially Strong"].map((stat, idx) => (
+                                    <div key={idx} className="bg-white/80 backdrop-blur-md border border-white p-6 rounded-xl shadow-sm hover:translate-y-[-5px] transition-all">
+                                        <span className="text-[13px] font-black text-teal-600 uppercase tracking-widest">{stat}</span>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="bg-white/90 backdrop-blur-2xl rounded-2xl p-10 md:p-12 border border-white shadow-lg inline-block max-w-3xl">
+                                <div className="text-[#0033e7] text-4xl mb-6 flex justify-center"><FaChartLine /></div>
+                                <p className="text-xl md:text-2xl text-slate-700 font-black leading-relaxed mb-0">
+                                    A revenue cycle that is efficient. With the right resource, practices gain better control and stability.
+                                </p>
+                                <p className="text-[12px] text-slate-400 mt-8 font-black uppercase tracking-[4px] mb-0">
+                                    The right resource for small clinics
+                                </p>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
     );
 }

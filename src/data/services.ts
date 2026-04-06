@@ -41,162 +41,225 @@ export const specialtiesList: Service[] = [
     {
         title: "Behavioral Health",
         slug: "behavioral-health",
-        bannerTitle: "Specialized Revenue Solutions for Behavioral Health",
-        description: "Optimizing mental health and substance abuse billing with precision and compliance.",
+        bannerTitle: "Specialized RCM for Behavior Health Services",
+        description: "Improve behavior health billing with simple workflows. Reduce denials, manage authorizations, and get faster, more reliable payments.",
+        metaTitle: "Behavior Health Billing for Faster Payments",
+        metaDescription: "Improve behavior health billing with simple workflows. Reduce denials, manage authorizations, and get faster, more reliable payments.",
         sections: [
             {
+                type: 'standard',
+                content: "Behavior health services need extra care, not just in treatment but also in billing. The process is different from general healthcare. If billing is not handled properly, it can lead to delays, denials, and lost revenue."
+            },
+            {
+                type: 'standard',
+                content: "Many people still ask, what is behavior health? It includes mental and emotional health services such as therapy, counseling, and ongoing care. In high-demand areas like Mental Health New York, providers see many patients every day. This makes a fast and accurate billing system very important."
+            },
+            {
+                type: 'standard',
+                content: "Patients often search for behavior health near me when they need help. They also want to know how to find behavior health therapists covered by insurance near me. If your billing system is slow or confusing, it can affect both patient trust and your income."
+            },
+            {
                 type: 'problem-snapshot',
-                title: 'Behavioral Health Billing Hurdles',
+                title: 'Challenges in Behavior Health Billing',
+                description: "Behavior health billing has many moving parts that can lead to common problems:",
                 data: [
-                    { title: 'Complex Prior Auth', description: 'Mental health services often require multi-layered approvals that slow down care.' },
-                    { title: 'Coding Variances', description: 'Unique CPT codes for psychotherapy and group sessions often lead to errors.' },
-                    { title: 'Session Tracking', description: 'Difficulties in tracking unit limits per patient per benefit period.' }
+                    { title: 'Session Billing', description: 'Repetitive session-based billing that requires constant accuracy.' },
+                    { title: 'Strict Approvals', description: 'Rigorous insurance pre-approvals needed before treatment starts.' },
+                    { title: 'Case Documentation', description: 'Sensitive and detailed documentation required for every encounter.' },
+                    { title: 'Frequent Rejections', description: 'High claim rejection rates due to complex modifier and session rules.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'The SBN Behavioral Cycle',
-                subtitle: 'Precision Process',
+                title: 'Our Simple Billing Approach',
+                subtitle: 'Strategic Clarity',
+                description: "We make behavior health billing easy, clear, and reliable. Our system is built to reduce stress and save time.",
                 data: [
-                    { title: 'Verify', description: 'Real-time check for mental health benefits and visit limits.' },
-                    { title: 'Authorize', description: 'Automated workflow for obtaining prior authorization for intensive outpatient care.' },
-                    { title: 'Bill', description: 'Clean claim submission with specialized behavioral health coding.' },
-                    { title: 'Optimize', description: 'Continuous audit to ensure session limits are never exceeded.' }
+                    { title: 'Verify', description: 'Check insurance and authorizations on time for every single session.' },
+                    { title: 'Code', description: 'Use specialized codes for therapy sessions to ensure maximum coverage.' },
+                    { title: 'Track', description: 'Actively track payer rules and updates to stay ahead of changes.' },
+                    { title: 'Resolve', description: 'Fix denied claims quickly to maintain a steady and predictable income.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Behavioral Recovery Metrics',
-                subtitle: 'Real Results',
+                title: 'What You Get',
+                subtitle: 'Practice Stability',
                 data: [
-                    { value: '25%', label: 'Revenue Increase', description: 'Average lift for mental health clinics within 90 days.' },
-                    { value: '99%', label: 'Authorization Success', description: 'Ensuring your services are pre-approved every single time.' }
+                    { value: 'Fast', label: 'Paid Faster', description: 'Accelerating your reimbursement cycle through audit-ready claims.' },
+                    { value: 'Clean', label: 'Compliance', description: 'Staying fully compliant with rules while reducing coding errors.' }
                 ]
+            },
+            {
+                type: 'cta',
+                title: "Ready to Stabilize Your Behavior Health Practice?",
+                content: "A strong billing process helps your practice grow and keeps your revenue stable. Focus more on patient care while we handle the complexities of your behavior health RCM."
             }
         ]
     },
     {
         title: "DME / Orthopedics",
         slug: "dme-orthopedics",
-        bannerTitle: "Precision Billing for DME & Orthopedic Practices",
-        description: "Specialized RCM for durable medical equipment and surgical orthopedic workflows.",
+        bannerTitle: "RCM Built for Orthopedic and DME Billing",
+        description: "Improve orthopedic billing with accurate workflows. Reduce denials, manage authorizations, and speed up reimbursements for better cash flow.",
+        metaTitle: "Orthopedic Billing Solutions for Faster Revenue",
+        metaDescription: "Improve orthopedic billing with accurate workflows. Reduce denials, manage authorizations, and speed up reimbursements for better cash flow.",
         sections: [
             {
+                type: 'standard',
+                content: "Orthopedic services and Durable Medical Equipment (DME) billing can be complex. Every claim must meet strict rules. Even a small mistake can lead to delays or denials. Orthopedic care often includes surgeries, therapy, and equipment support. Patients searching for an Orthopedic surgeon or even the Best orthopedic in Jersey City expect smooth service from start to finish. Your billing system plays a big role in that experience."
+            },
+            {
+                type: 'standard',
+                content: "Many patients also search for terms like Doctor Jersey City, ortho, or even pedic near me medicaid. This shows how important it is to verify insurance and follow payer rules carefully. Large providers like Orthopedic Montefiore already use structured billing systems to manage these challenges."
+            },
+            {
                 type: 'problem-snapshot',
-                title: 'DME Lifecycle Challenges',
+                title: 'Challenges in Orthopedic Billing',
+                description: "Orthopedic and DME billing comes with several challenges that can slow down your revenue:",
                 data: [
-                    { title: 'Complex Modifiers', description: 'RR, UE, NU modifiers for rental vs purchase often lead to preventable denials.' },
-                    { title: 'Prior Auth Delays', description: 'Equipment delivery stalled by slow payer authorization responses.' },
-                    { title: 'Documentation Gaps', description: 'Ensuring medical necessity certificates (CMN) are perfectly executed before billing.' }
+                    { title: 'Strict Documentation', description: 'Detailed clinical documentation needed for every single claim submission.' },
+                    { title: 'Prior Authorizations', description: 'Pre-approvals required before treatment or equipment use to ensure payment.' },
+                    { title: 'Payer-Specific Rules', description: 'Different billing and coding rules for each individual insurance payer.' },
+                    { title: 'High Denial Rates', description: 'Frequent rejections due to missing or incorrect patient and procedure details.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'DME Order-to-Cash Workflow',
-                subtitle: 'Seamless Logistics',
+                title: 'Our Simple and Accurate Approach',
+                subtitle: 'Precision Process',
+                description: "We build billing workflows designed for orthopedic practices and DME providers. Our goal is to make your billing process smooth, fast, and reliable.",
                 data: [
-                    { title: 'Intake', description: 'Validation of physician orders and insurance eligibility for specific equipment.' },
-                    { title: 'Authorize', description: 'Rapid procurement of prior authorization via direct payer integrations.' },
-                    { title: 'Deliver', description: 'Proof of delivery (POD) capture to trigger compliant billing.' },
-                    { title: 'Audit', description: 'Continuous surveillance of rental cycles to ensure ongoing reimbursement.' }
+                    { title: 'Validate', description: 'Check and validate all documents before the claim is ever submitted.' },
+                    { title: 'Track', description: 'Continuously track authorizations before services are provided.' },
+                    { title: 'Apply', description: 'Correctly apply payer-specific billing rules to every encounter.' },
+                    { title: 'Resolve', description: 'Identify and fix denied claims quickly to maintain a steady cash flow.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Orthopedic Recovery',
-                subtitle: 'Surgical Precision',
+                title: 'What You Get',
+                subtitle: 'Strategic Advantage',
                 data: [
-                    { value: '35%', label: 'Revenue Acceleration', description: 'Speeding up the cash cycle for expensive surgical implants and equipment.' },
-                    { value: '97%+', label: 'Audit Acceptance', description: 'Rigorous documentation standards that withstand DME Medicare audits.' }
+                    { value: 'Fewer', label: 'Rejections', description: 'Significantly reducing claim denials through front-end auditing.' },
+                    { value: 'Faster', label: 'Approvals', description: 'Speeding up the reimbursement cycle for equipment and surgeries.' }
                 ]
+            },
+            {
+                type: 'cta',
+                title: "Ready to Scale Your Orthopedic Practice?",
+                content: "A strong billing system helps your orthopedic practice grow and stay efficient in a competitive market. Focus more on patient care while we handle the complexities of your RCM."
             }
         ]
     },
     {
         title: "Urgent Care & Telehealth",
         slug: "urgent-care-telehealth",
-        bannerTitle: "Optimized RCM for Urgent Care & Telehealth",
-        description: "Accelerating revenue for high-volume urgent care centers and virtual health platforms.",
+        bannerTitle: "Fast, Accurate Billing for Urgent Care Centers",
+        description: "Boost urgent care revenue with fast, accurate billing. Reduce denials, verify insurance instantly, and handle high patient volume with ease.",
+        metaTitle: "Fast Urgent Care Billing for Better Cash Flow",
+        metaDescription: "Boost urgent care revenue with fast, accurate billing. Reduce denials, verify insurance instantly, and handle high patient volume with ease.",
         sections: [
             {
+                type: 'standard',
+                content: "Urgent care centers and telehealth providers move fast. Patients walk in, get treated, and leave quickly. Because of this, your billing system must work just as fast. If your urgent care billing is slow or full of mistakes, you will face delayed payments and more claim denials. This can hurt your revenue. Many patients searching for urgent care near me or even urgent care near me within 5 mi expect quick service. Your billing process should match that speed."
+            },
+            {
                 type: 'problem-snapshot',
-                title: 'High-Velocity Billing Challenges',
+                title: 'Challenges in Urgent Care Billing',
+                description: "Urgent care centers deal with a high number of patients every day, which creates common problems:",
                 data: [
-                    { title: 'Real-Time Verification', description: 'Urgent care requires instant insurance validation to prevent front-end revenue leakage.' },
-                    { title: 'Telehealth Modifiers', description: 'Navigating frequently changing POS and GT/95 modifier rules for virtual visits.' },
-                    { title: 'Volume Management', description: 'Processing high volumes of encounters without sacrificing coding accuracy or speed.' }
+                    { title: 'Front-End Speed', description: 'Fast patient check-in and check-out often leads to skipped insurance checks.' },
+                    { title: 'Documentation Gaps', description: 'Missing or incomplete clinical documentation due to high patient volume.' },
+                    { title: 'Eligibility Errors', description: 'High chances of claim errors if eligibility is not verified in real time.' },
+                    { title: 'Patient Queries', description: 'Patients often ask about the cost of a visit without insurance or if you accept their plan.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'Rapid-Response Billing Cycle',
+                title: 'Our Simple and Fast Billing Solution',
                 subtitle: 'Velocity Verified',
+                description: "We create billing workflows that are easy, fast, and accurate. Our system is built for urgent care speed.",
                 data: [
-                    { title: 'Verify', description: 'Instant, automated eligibility checks before the patient is seen.' },
-                    { title: 'Code', description: 'Same-day coding of urgent care encounters with specialized modifier logic.' },
-                    { title: 'Submit', description: 'Real-time claim submission to ensure the fastest possible reimbursement.' },
-                    { title: 'Monitor', description: '24/7 surveillance of claim status to catch and fix rejections immediately.' }
+                    { title: 'Verify', description: 'Check insurance eligibility in real time before the patient is seen.' },
+                    { title: 'Code', description: 'Use clear and accurate coding for high-volume encounters.' },
+                    { title: 'Submit', description: 'Submit claims quickly to ensure the fastest possible reimbursement.' },
+                    { title: 'Resolve', description: 'Fix denied claims without delay to maintain steady cash flow.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Urgent Care Impact',
-                subtitle: 'Operational Speed',
+                title: 'What You Get',
+                subtitle: 'Operational Impact',
                 data: [
-                    { value: '48h', label: 'Billing Turnaround', description: 'Average time from encounter to clean claim submission.' },
-                    { value: '20%', label: 'Efficiency Gain', description: 'Reduction in administrative overhead for clinic staff.' }
+                    { value: 'Fast', label: 'Paid Faster', description: 'Accelerating your payment cycle through clean claim submissions.' },
+                    { value: '99%', label: 'Lower Denials', description: 'Significantly reducing errors to protect your revenue stream.' }
                 ]
             },
             {
-                type: 'ai-indicator',
-                stage: 'Virtual Visit Compliance',
-                description: 'Our AI engine automatically validates telehealth-specific coding requirements based on the latest state and payer guidelines.',
-                data: '100% Compliance Accuracy'
+                type: 'cta',
+                title: "Ready to Grow Your Urgent Care Center?",
+                content: "A fast and reliable billing system helps your urgent care center grow. It also improves the experience for your patients. Focus more on patient care while we handle the speed of your RCM."
             }
         ]
     },
     {
         title: "Small–Mid Practices",
         slug: "small-mid-practices",
-        bannerTitle: "Enterprise-Grade Solutions for Independent Practices",
-        description: "Empowering small to mid-sized practices with high-performance revenue cycle management.",
+        bannerTitle: "RCM Solutions for Private Practices and Clinics",
+        description: "Optimize RCM for private practices. Reduce denials, improve billing efficiency, and boost cash flow with structured workflows for clinics.",
+        metaTitle: "Meta Private Practices RCM Services | Improve Cash Flow Fast",
+        metaDescription: "Optimize RCM for private practices. Reduce denials, improve billing efficiency, and boost cash flow with structured workflows for clinics.",
         sections: [
             {
+                type: 'standard',
+                title: 'Efficient RCM Workflows for Growing Private Practices',
+                content: "Running private practices isn't easy. You're not just managing patients, you're also dealing with billing, claims, and constant follow-ups. And honestly, that's where things often start to break down. Many clinics struggle with delayed payments, rising denials, and unclear financial visibility. It's not always about effort, it's usually about systems that aren't structured properly."
+            },
+            {
+                type: 'standard',
+                content: "If you've ever searched for private practices near me offering smooth operations, the difference often comes down to how well their revenue cycle is managed."
+            },
+            {
                 type: 'problem-snapshot',
-                title: 'Small Practice Constraints',
+                title: 'Common Challenges Faced by Private Practices',
+                description: "These issues are common, especially when clinics don't have access to the right systems or tools:",
                 data: [
-                    { title: 'Limited Resources', description: 'Staff stretched thin between patient care and administrative billing tasks.' },
-                    { title: 'Inconsistent Cash Flow', description: 'Fluctuations in revenue due to delayed billing or high denial rates.' },
-                    { title: 'Overhead Pressure', description: 'The high cost of maintaining expert in-house billing and coding teams.' }
+                    { title: 'Limited Resources', description: 'Small teams handling too many responsibilities at once.' },
+                    { title: 'Manual Workflows', description: 'Increased chances of errors and delays due to manual processes.' },
+                    { title: 'Inconsistent Coding', description: 'Leads to frequent claim rejections and significant revenue loss.' },
+                    { title: 'Zero Visibility', description: 'Difficulty in tracking actual practice performance and financial health.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'Seamless Integration Workflow',
-                subtitle: 'Simplified Management',
+                title: 'Our Approach to Simplifying Billing',
+                subtitle: 'Practice Optimization',
+                description: "We focus on making things simple, structured, and efficient. Our workflows are designed specifically for private practices.",
                 data: [
-                    { title: 'Connect', description: 'Direct integration with your existing EMR/EHR system for data flow.' },
-                    { title: 'Manage', description: 'Full-service management of charges, payments, and denials.' },
-                    { title: 'Report', description: 'Monthly transparency reports on practice performance and financial health.' },
-                    { title: 'Consult', description: 'Regular strategy sessions to optimize operations and growth.' }
+                    { title: 'Accurate Verification', description: 'Ensuring everything is clear and verified before the patient visit even begins.' },
+                    { title: 'Simplified Coding', description: 'Reducing errors and improving accuracy through standardized clinical coding.' },
+                    { title: 'Fast Submission', description: 'Quicker turnaround means faster payments and a healthier cash cycle.' },
+                    { title: 'Proactive Fixes', description: 'Fixing denial issues before they become bigger problems for your practice.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Practice Growth',
-                subtitle: 'Financial Strength',
+                title: 'Better Systems = Better Outcomes',
+                subtitle: 'Operational Results',
+                description: "When your processes are structured, everything improves. This is what leading companies offer for private practices.",
                 data: [
-                    { value: '18%', label: 'Revenue Growth', description: 'Average increase for independent practices in their first year with SBN.' },
-                    { value: '100%', label: 'Peace of Mind', description: 'Total focus on patients while we handle the complexities of RCM.' }
+                    { value: 'Better', label: 'Cash Flow', description: 'Increasing your actual collected revenue through clean claims.' },
+                    { value: 'Less', label: 'Stress', description: 'Drastic reduction in administrative overhead for your front desk.' }
                 ]
             },
             {
-                title: "Ready to Scale Your Practice?",
-                content: "Experience the benefits of a full-scale billing department without the overhead. Let's build your financial future together.",
-                type: "cta"
+                type: 'cta',
+                title: "Ready to Transform Your Practice?",
+                content: "At the end of the day, private practices don't need more work, they need better systems. Once that's in place, everything starts running smoother."
             }
         ]
-    }
+    },
 ];
 
 export const servicesList: Service[] = [
@@ -318,85 +381,114 @@ export const servicesList: Service[] = [
     {
         title: "Prior Authorization",
         slug: "prior-authorization",
-        bannerTitle: "Prior Authorization Management",
-        description: "We check if approval is needed and obtain it before the treatment is provided.",
-        metaTitle: "Advanced Prior Authorization Management for Providers | SBN",
-        metaDescription: "Streamline your pre-approval process with SBN's automated prior authorization management. Avoid claim denials by capturing approval before care.",
+        bannerTitle: "Streamlined Prior Authorization for Faster Approvals",
+        description: "Speed up prior authorization with fewer errors and faster approvals. Reduce delays, avoid denials, and keep your billing process smooth.",
+        metaTitle: "Simple Prior Authorization for Faster Approvals",
+        metaDescription: "Speed up prior authorization with fewer errors and faster approvals. Reduce delays, avoid denials, and keep your billing process smooth.",
         sections: [
             {
-                type: 'ai-indicator',
-                stage: 'Smart Approval Check',
-                description: 'Our system automatically identifies services that require prior approval from the payer.',
-                data: 'Simple Verification System'
+                type: 'standard',
+                content: "Prior authorization is an important step in healthcare billing. It makes sure that treatments, services, and medications are approved before they are given. But in many cases, this process becomes slow and difficult to manage. When prior authorization is not handled properly, it can cause serious problems. Claims may get denied. Treatments may get delayed. Revenue can also suffer. This often happens with prior authorization for medication and prior authorization prescription, where timing is very important."
+            },
+            {
+                type: 'standard',
+                content: "Many healthcare providers hire a Prior authorization Specialist or build a Prior authorization Department to handle this work. But without a simple and clear system, mistakes can still happen."
+            },
+            {
+                type: 'problem-snapshot',
+                title: 'Common Challenges',
+                description: "Prior authorization can be challenging because of manual hurdles and complex rules:",
+                data: [
+                    { title: 'Variable Rules', description: 'Each insurance company has vastly different rules for approval.' },
+                    { title: 'Manual Delays', description: 'Heavy manual work slows down the entire submission process.' },
+                    { title: 'Missing Info', description: 'Missing or incomplete important documents lead to instant rejections.' },
+                    { title: 'Lack of Tracking', description: 'No proper tracking or follow-up system leads to stalled requests.' }
+                ]
             },
             {
                 type: 'workflow',
-                title: 'Authorization Pipeline',
-                subtitle: 'Efficiency at Scale',
+                title: 'Our Simple and Clear Approach',
+                subtitle: 'Authorization Pipeline',
+                description: "We make prior authorization easy to manage. Our process is fast, simple, and accurate.",
                 data: [
-                    { title: 'Identify', description: 'Step 1: Collecting patient details and service codes.' },
-                    { title: 'Verify', description: 'Step 2: Checking authorization requirements against payer rules.' },
-                    { title: 'Obtain', description: 'Step 3: Strategic submission of authorization requests to payers.' },
-                    { title: 'Confirm', description: 'Step 4: Confirming payment responsibility after approval.' }
+                    { title: 'Verify', description: 'We check payer-specific rules thoroughly before starting the request.' },
+                    { title: 'Submit', description: 'We submit all authorization requests quickly through secure channels.' },
+                    { title: 'Audit', description: 'We make sure all clinical documents are complete and accurate.' },
+                    { title: 'Track', description: 'We track every single request until a final approval is shared.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Results & Success',
-                subtitle: 'Measured Excellence',
+                title: 'What You Can Expect',
+                subtitle: 'Operational Excellence',
+                description: "With our prior authorization system, you can avoid delays in patient care and keep your revenue cycle healthy.",
                 data: [
-                    { value: 'Fewer', label: 'Denials', description: 'Significantly reducing claim denials by ensuring authorization is set.' },
-                    { value: 'Better', label: 'Cash Flow', description: 'Less rework and faster reimbursements through precise front-end work.' }
+                    { value: 'Fast', label: 'Approvals', description: 'Accelerating the pre-approval timeline for services and medications.' },
+                    { value: 'Lower', label: 'Denials', description: 'Significantly reducing front-end claim denials through clean authorizations.' }
                 ]
             },
             {
-                type: 'standard',
-                title: 'Safe and Compliant',
-                content: 'We follow HIPAA rules strictly. Your data is safe, work is accurate, and fully compliant with healthcare regulations.'
+                type: 'cta',
+                title: "Ready to Streamline Your Authorizations?",
+                content: "In the end, a simple and strong prior authorization process helps your practice run smoothly and keeps your patients satisfied. Let us handle the complexity for you."
             }
         ],
         featuresTitle: "Why Choose Authorization Services",
         features: [
             { title: "HIPAA Compliant", icon: FaHandshake, description: "Following all HIPAA rules to keep your data safe and private." },
             { title: "Accurate Work", icon: FaCheckCircle, description: "Ensuring all approvals are correct the first time." },
-            { title: "NY Providers", icon: FaLocationArrow, description: "We support New York providers remotely with precision." },
+            { title: "Expert Support", icon: FaLocationArrow, description: "Professional specialists handling your complex authorization needs." },
         ]
     },
     {
         title: "Exclusion Check",
         slug: "exclusion-check",
-        bannerTitle: "Identify Policy Exclusions Early",
-        description: "We find services that are not covered by the patient's plan to avoid billing errors.",
-        metaTitle: "Medical Policy Exclusion Check | HIPAA Compliant | SBN",
-        metaDescription: "Reduce billing errors and rework by identifying policy exclusions up front. Our HIPAA compliant platform ensures precision policy mapping.",
+        bannerTitle: "Comprehensive Exclusion Check for Compliance and Risk Reduction",
+        description: "Protect your practice with a reliable exclusion check. Avoid penalties, reduce risk, and stay audit-ready with simple and accurate screening.",
+        metaTitle: "Exclusion Check for Safe and Compliant Billing",
+        metaDescription: "Protect your practice with a reliable exclusion check. Avoid penalties, reduce risk, and stay audit-ready with simple and accurate screening.",
         sections: [
             {
+                type: 'standard',
+                content: "An exclusion check is an important step in healthcare. It helps you confirm that your staff, providers, and partners are not listed on federal or insurance exclusion lists. If this step is missed, it can create serious problems. Claims may be denied. Your practice may face financial penalties. Your reputation can also be affected. That is why many providers ask, which companies provide reliable exclusion check services for healthcare providers?"
+            },
+            {
                 type: 'problem-snapshot',
-                title: 'Avoid Unbillable Services',
+                title: 'Common Risk Areas',
+                description: "Exclusion check issues usually happen because of simple mistakes that turn into big risks:",
                 data: [
-                    { title: 'Policy Exclusions', description: 'Hidden exclusions in patient policies can lead to services that cannot be billed.' },
-                    { title: 'In-State Rules', description: 'Specific rules for New York providers require accuracy over location.' }
+                    { title: 'Irregular Screening', description: 'Screening is not performed on a regular or consistent schedule.' },
+                    { title: 'Outdated Lists', description: 'Exclusion lists and databases are not updated in a timely manner.' },
+                    { title: 'Poor Record Keeping', description: 'Records are not properly saved or organized for future retrieval.' },
+                    { title: 'Manual Error', description: 'Manual checks lead to oversight and critical screening errors.' }
                 ]
             },
             {
                 type: 'workflow',
-                title: 'Exclusion Verification Process',
-                subtitle: 'Strategic Analysis',
+                title: 'Our Simple Approach',
+                subtitle: 'Compliance Shield',
+                description: "We make the exclusion check process easy, clear, and reliable. This ensures that every step is handled correctly.",
                 data: [
-                    { title: 'Gather', description: 'Step 1: Collecting all necessary patient and policy information.' },
-                    { title: 'Analyze', description: 'Step 2: Checking policy language for specific service exclusions.' },
-                    { title: 'Alert', description: 'Step 3: Notifying the provider of unbillable services before treatment.' },
-                    { title: 'Validate', description: 'Step 4: Confirming alternate payment responsibility if excluded.' }
+                    { title: 'Monitor', description: 'We monitor federal and payer exclusion lists on a recurring basis.' },
+                    { title: 'Automate', description: 'We use automated OIG exclusion monitoring services to reduce manual work.' },
+                    { title: 'Record', description: 'We maintain and keep proper electronic records for future audits.' },
+                    { title: 'Integrate', description: 'We connect screening protocols with your hiring and onboarding steps.' }
                 ]
             },
             {
                 type: 'kpi',
-                title: 'Performance FAQ',
-                subtitle: 'Answers & Insights',
+                title: 'What You Can Expect',
+                subtitle: 'Risk Management',
+                description: "Compliance is a must in healthcare. You cannot take risks with it. It also gives you confidence that your billing and operations are fully compliant.",
                 data: [
-                    { value: 'Yes', label: 'NY Support', description: 'We support New York providers with remote, accurate services.' },
-                    { value: 'Yes', label: 'Error Reduction', description: 'Significantly reducing billing errors by identifying coverage gaps.' }
+                    { value: 'Zero', label: 'Penalty Risk', description: 'Avoiding costly federal and State penalties through rigorous screening.' },
+                    { value: 'Clean', label: 'Audit Ready', description: 'Staying fully prepared and documented for any healthcare audit.' }
                 ]
+            },
+            {
+                type: 'cta',
+                title: "Ready to Protect Your Practice?",
+                content: "A simple and reliable exclusion check helps protect your practice and supports long-term success. Stay safe and avoid compliance problems today."
             }
         ],
     }

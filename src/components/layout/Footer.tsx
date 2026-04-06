@@ -20,8 +20,8 @@ const Footer = () => {
     };
 
     return (
-        <footer 
-            className="relative pt-[100px] pb-[40px] text-gray-900 overflow-hidden bg-cover bg-center bg-no-repeat border-t border-slate-100"
+        <footer
+            className="relative pt-[1px] pb-[40px] text-gray-900 overflow-hidden bg-cover bg-center bg-no-repeat border-t border-slate-100"
             style={{ backgroundImage: 'url("/background%20image.webp")' }}
         >
             {/* Overlay gradient identical to other sections */}
@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-[80px]">
                     {/* Brand Info */}
                     <div className="lg:col-span-4">
-                        <motion.div 
+                        <motion.div
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -44,7 +44,7 @@ const Footer = () => {
                                 className="h-[60px] md:h-[70px] w-auto mix-blend-multiply"
                             />
                         </motion.div>
-                        <motion.p 
+                        <motion.p
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -53,7 +53,7 @@ const Footer = () => {
                         >
                             Next-generation RCM infrastructure engineered to accelerate cash flow and eliminate administrative friction for modern medical practices.
                         </motion.p>
-                        <motion.div 
+                        <motion.div
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -79,7 +79,7 @@ const Footer = () => {
 
                     {/* Solutions */}
                     <div className="lg:col-span-3 lg:ml-auto">
-                        <motion.h4 
+                        <motion.h4
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -96,7 +96,7 @@ const Footer = () => {
                                 { name: 'Exclusion Check', href: '/services/exclusion-check' },
                                 { name: 'Privacy & Security', href: '/security' }
                             ].map((item, idx) => (
-                                <motion.li 
+                                <motion.li
                                     key={item.name}
                                     initial="hidden"
                                     whileInView="visible"
@@ -120,7 +120,7 @@ const Footer = () => {
 
                     {/* Corporate */}
                     <div className="lg:col-span-2 lg:ml-auto">
-                        <motion.h4 
+                        <motion.h4
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -137,7 +137,7 @@ const Footer = () => {
                                 { name: 'Pricing', href: '/pricing' },
                                 { name: 'Contact Us', href: '/contact-us' }
                             ].map((item, idx) => (
-                                <motion.li 
+                                <motion.li
                                     key={item.name}
                                     initial="hidden"
                                     whileInView="visible"
@@ -161,7 +161,7 @@ const Footer = () => {
 
                     {/* HQ */}
                     <div className="lg:col-span-3 lg:ml-auto">
-                        <motion.h4 
+                        <motion.h4
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true }}
@@ -171,7 +171,7 @@ const Footer = () => {
                             Get In Touch
                         </motion.h4>
                         <div className="space-y-8">
-                            <motion.div 
+                            <motion.div
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
@@ -182,7 +182,7 @@ const Footer = () => {
                                 Sheridan, WY 82801
                             </motion.div>
                             <div className="space-y-4">
-                                <motion.p 
+                                <motion.p
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}
@@ -192,7 +192,7 @@ const Footer = () => {
                                     <strong className="text-[#0033e7] font-black text-[10px] uppercase tracking-widest bg-blue-600/10 px-2 py-1 rounded">PH</strong>
                                     (805) 426-4609
                                 </motion.p>
-                                <motion.p 
+                                <motion.p
                                     initial="hidden"
                                     whileInView="visible"
                                     viewport={{ once: true }}

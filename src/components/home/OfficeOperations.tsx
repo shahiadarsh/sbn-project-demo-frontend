@@ -31,7 +31,7 @@ const OfficeOperations = () => {
     };
 
     return (
-        <section 
+        <section
             className="py-24 md:py-32 bg-cover bg-center bg-no-repeat overflow-hidden relative border-t border-slate-100"
             style={{ backgroundImage: 'url("/background%20image.webp")' }}
         >
@@ -51,8 +51,8 @@ const OfficeOperations = () => {
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                         Behind The Scenes
                     </motion.div>
-                    
-                    <motion.h2 
+
+                    <motion.h2
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -61,8 +61,8 @@ const OfficeOperations = () => {
                     >
                         Sovereign Operations Center
                     </motion.h2>
-                    
-                    <motion.p 
+
+                    <motion.p
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -131,7 +131,7 @@ const OfficeOperations = () => {
                     {[
                         { value: '200+', label: 'Billing Specialists' },
                         { value: '24/7/365', label: 'Operations Coverage' },
-                        { value: '11+ Yrs', label: 'Market Leadership' },
+                        { value: '14+ Yrs', label: 'Market Leadership' },
                     ].map((stat, i) => (
                         <motion.div
                             key={i}

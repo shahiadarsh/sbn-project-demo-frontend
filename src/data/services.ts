@@ -260,6 +260,61 @@ export const specialtiesList: Service[] = [
             }
         ]
     },
+    {
+        title: "Multi-Speciality Hospitals",
+        slug: "multi-speciality-hospitals",
+        bannerTitle: "RCM Solutions for Complex Multi-Specialities Hospital Environments",
+        description: "Optimize hospital billing with unified workflows. Reduce denials, improve compliance, and boost revenue across all your medical specialties.",
+        metaTitle: "RCM Solutions for Multi-Specialities Hospitals",
+        metaDescription: "Optimize billing across hospital specialities with smart RCM solutions. Reduce denials, improve compliance, and boost revenue efficiency.",
+        sections: [
+            {
+                type: 'standard',
+                content: "Running a hospital is not easy. There are many moving parts, and billing is one of the most complicated. When multiple specialities are involved, things become even more challenging. Each department works differently. Each payer has its own rules. And even a small mistake can delay payments or cause claim denials. That’s why hospitals need simple, clear, and reliable Revenue Cycle Management (RCM) solutions."
+            },
+            {
+                type: 'standard',
+                title: 'Why Multi-Speciality Hospitals Face More Challenges',
+                content: "Hospitals handle a wide range of specialities like cardiology, surgery, and mental health. Each one comes with its own billing process. Because of this, many providers find that typical systems can't handle the level of variety required."
+            },
+            {
+                type: 'problem-snapshot',
+                title: 'Common Problems Hospitals Face',
+                description: "Hospitals struggle with issues that slow down revenue and compliance:",
+                data: [
+                    { title: 'Variable Rules', description: 'Too many claims, each with different payer and specialty rules.' },
+                    { title: 'Department Gaps', description: 'Poor communication between clinical and billing departments.' },
+                    { title: 'Slow Submissions', description: 'Large volume of claims leading to slow and late submissions.' },
+                    { title: 'Precision Errors', description: 'High denial rates due to small documentation errors in complex cases.' }
+                ]
+            },
+            {
+                type: 'workflow',
+                title: 'A Simple and Smart Approach to RCM',
+                subtitle: 'Structured Clarity',
+                data: [
+                    { title: 'Centralized', description: 'Patient details are checked before services begin to reduce errors.' },
+                    { title: 'Standardized', description: 'All specialities follow clear and consistent coding rules (ICD/CPT).' },
+                    { title: 'Real-Time', description: 'Every claim is tracked from start to finish for rapid resolution.' },
+                    { title: 'Resolution', description: 'Denials are sorted and fixed fast, regardless of the speciality.' }
+                ]
+            },
+            {
+                type: 'kpi',
+                title: 'Measurable Outcomes',
+                subtitle: 'Performance Proof',
+                data: [
+                    { value: 'Zero', label: 'Lag', description: 'Eliminating clinical documentation bottlenecks through automated workflows.' },
+                    { value: 'Custom', label: 'Reporting', description: 'Detailed insights on how each separate department is performing.' }
+                ]
+            },
+            {
+                type: 'cta',
+                title: "Ready to Optimize Your Hospital RCM?",
+                content: "The goal is to make billing easier, not harder. Bring structure and clarity to every step of your multi-speciality hospital operations today."
+            }
+        ]
+    },
 ];
 
 export const servicesList: Service[] = [

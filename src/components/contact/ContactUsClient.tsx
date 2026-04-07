@@ -28,11 +28,12 @@ export default function ContactUsClient() {
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
                             Contact Us
                         </div>
-                        <h1 className="text-4xl md:text-[3.5rem] lg:text-[4rem] font-extrabold text-slate-900 leading-[1.1] mb-6 tracking-tight">
-                            Speak With Our Experts
+                        <h1 className="text-4xl md:text-[3.5rem] lg:text-[4.5rem] font-black text-slate-900 leading-[1.1] mb-8 tracking-tighter">
+                            Unlock Your Practice's <br className="hidden md:block" />
+                            <span className="text-[#0033e7]">Financial Potential</span>
                         </h1>
-                        <p className="text-[17px] md:text-[19px] text-slate-600 font-medium leading-[1.7] max-w-2xl mx-auto">
-                            Have questions about our services or need a customized quote? Join our network of successful providers by getting in touch today.
+                        <p className="text-[17px] md:text-xl text-slate-600 font-bold leading-[1.7] max-w-3xl mx-auto tracking-tight">
+                            Stop the revenue leakage. Get the expert guide to structured RCM workflows and start improving your cash flow predictability today.
                         </p>
                     </motion.div>
                 </div>
@@ -49,8 +50,8 @@ export default function ContactUsClient() {
                 {/* Glass overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/85 to-blue-50/70 pointer-events-none"></div>
 
-                <div className="container mx-auto px-4 relative z-10 py-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 max-w-6xl mx-auto items-start">
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 max-w-7xl mx-auto items-center">
                         <ContactDetails />
                         <ContactForm />
                     </div>

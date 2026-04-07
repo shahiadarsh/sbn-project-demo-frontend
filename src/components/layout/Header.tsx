@@ -28,6 +28,7 @@ const navLinks = [
             { name: 'DME / Orthopedics', href: '/specialties/dme-orthopedics' },
             { name: 'Urgent Care & Telehealth', href: '/specialties/urgent-care-telehealth' },
             { name: 'Small–Mid Practices', href: '/specialties/small-mid-practices' },
+            { name: 'Multi-Speciality Hospitals', href: '/specialties/multi-speciality-hospitals' },
         ]
     },
     { name: 'Resources', href: '/white-paper' },

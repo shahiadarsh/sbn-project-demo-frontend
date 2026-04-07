@@ -3,8 +3,8 @@ import type { Metadata } from 'next';
 import ServicesClient from '@/components/services/ServicesClient';
 
 export const metadata: Metadata = {
-    title: 'Solutions & Specialties - SBN Healthcare Solution',
-    description: 'Explore our enterprise-grade RCM solutions and specialized healthcare billing services.',
+    title: 'More Solutions for Easy Revenue Cycle Management',
+    description: 'Discover more solutions for full RCM support. Reduce errors, improve cash flow, and manage your billing process in a simple and smooth way.',
 };
 
 export default function ServicesListing() {

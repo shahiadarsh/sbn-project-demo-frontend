@@ -138,8 +138,8 @@ export default function AboutClient() {
                                     Iftikhar Ali Khan leads SBN Healthcare with a clear vision to build systems that are scalable, structured, and actually deliver results. He looks after strategy and growth alignment.
                                 </p>
                                 <div className="flex gap-3 relative z-10">
-                                    <a href="#" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-[#0033e7] transition-colors"><FaLinkedin size={14} /></a>
-                                    <a href="#" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-[#0033e7] transition-colors"><FaEnvelope size={14} /></a>
+                                    <a href="https://www.linkedin.com/in/iftikhar-ali-khan/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-[#0033e7] transition-colors"><FaLinkedin size={14} /></a>
+                                    <a href="mailto:iakhan@sbnhealthcaresolution.com" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-[#0033e7] transition-colors"><FaEnvelope size={14} /></a>
                                 </div>
                             </div>
                         </motion.div>
@@ -165,8 +165,8 @@ export default function AboutClient() {
                                     Md Nematullah handles what happens behind the scenes including operations and workflows. His focus is on smooth, efficient, and error-free execution.
                                 </p>
                                 <div className="flex gap-3 relative z-10">
-                                    <a href="#" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-teal-400 transition-colors"><FaLinkedin size={14} /></a>
-                                    <a href="#" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-teal-400 transition-colors"><FaEnvelope size={14} /></a>
+                                    <a href="https://www.linkedin.com/in/md-nematullah-356b0b219/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-teal-400 transition-colors"><FaLinkedin size={14} /></a>
+                                    <a href="mailto:md.nematullah@sbnhealthcaresolution.com" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-teal-400 transition-colors"><FaEnvelope size={14} /></a>
                                 </div>
                             </div>
                         </motion.div>

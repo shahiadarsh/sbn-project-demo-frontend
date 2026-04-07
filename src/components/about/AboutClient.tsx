@@ -162,7 +162,7 @@ export default function AboutClient() {
                                 <h3 className="text-2xl font-black text-white tracking-tighter mb-1 relative z-10">Md Nematullah</h3>
                                 <p className="text-teal-400 font-bold uppercase text-[11px] tracking-[3px] mb-4 relative z-10">Head of Operations (COO)</p>
                                 <p className="text-slate-400 font-bold leading-relaxed text-[14px] relative z-10 mb-6">
-                                    Md Nematullah handles what happens behind the scenes including operations and workflows. His focus is on smooth, efficient, and error-free execution.
+                                    MD Nematullah is Operations Head at SBN Healthcare Solutions, overseeing revenue cycle management, team performance, and client success. Drives operational excellence, ensures compliance, and implements strategic solutions to optimize billing efficiency and maximize healthcare practice profitability.
                                 </p>
                                 <div className="flex gap-3 relative z-10">
                                     <a href="https://www.linkedin.com/in/md-nematullah-356b0b219/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-teal-400 transition-colors"><FaLinkedin size={14} /></a>

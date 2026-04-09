@@ -15,6 +15,7 @@ const asap = Asap({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sbnhealthcaresolution.com'),
   title: 'SBN Healthcare Solution | Medical Insurance Verification Service in New York',
   description: 'SBN offers professional medical insurance verification and billing services in New York. Reduce claim denials, improve cash flow, and ensure HIPAA-compliant accuracy.',
   icons: {

@@ -205,7 +205,7 @@ const Footer = () => {
                                     <div className="w-8 h-8 rounded-lg bg-blue-600/10 flex items-center justify-center text-[#0033e7] group-hover:bg-[#0033e7] group-hover:text-white transition-all">
                                         <FaPhoneAlt size={12} />
                                     </div>
-                                    <span className="font-bold">(805) 426-4609</span>
+                                    <span className="font-bold">+1 (805) 426-4609</span>
                                 </motion.a>
                                 <motion.a
                                     href="mailto:info@sbnhealthcaresolution.com"

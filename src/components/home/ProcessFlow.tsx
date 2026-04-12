@@ -25,8 +25,8 @@ const ProcessFlow = () => {
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                         Our Process
                     </motion.div>
-                    
-                    <motion.h2 
+
+                    <motion.h2
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -55,9 +55,9 @@ const ProcessFlow = () => {
                                 } as any}
                             >
                                 {/* Colorful Background Image */}
-                                <div 
+                                <div
                                     className="absolute inset-0 bg-cover bg-center opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                                    style={{ backgroundImage: `url('/Phase%20${imgIndex}.png?v=6')` }}
+                                    style={{ backgroundImage: `url('/Phase%20${imgIndex}.webp?v=6')` }}
                                 ></div>
                                 {/* Smooth Gradient to protect text visibility */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d0d]/80 via-[#0d0d0d]/20 to-transparent pointer-events-none transition-colors duration-500"></div>
@@ -80,7 +80,7 @@ const ProcessFlow = () => {
                     })}
                 </div>
             </div>
-            
+
             {/* Subtle glow behind the section */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#0033e7]/10 rounded-full blur-[150px] pointer-events-none"></div>
         </section>

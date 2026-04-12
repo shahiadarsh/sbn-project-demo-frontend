@@ -17,6 +17,8 @@ const navLinks = [
             { name: 'Benefits Check', href: '/services/benefits-check' },
             { name: 'Prior Authorization', href: '/services/prior-authorization' },
             { name: 'Exclusion Check', href: '/services/exclusion-check' },
+            { name: 'Patient Collection & AR Recovery', href: '/services/patient-collections-ar-recovery' },
+            { name: 'Consulting', href: '/services/consulting' },
             { name: 'More Solutions', href: '/services' },
         ]
     },

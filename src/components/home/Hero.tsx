@@ -116,7 +116,7 @@ const Hero = () => {
                             <div className="absolute inset-x-0 bottom-0 top-10 bg-gradient-to-b from-[#0033e7]/20 to-[#0033e7]/5 rounded-[32px] blur-[60px] opacity-70 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
 
                             <img
-                                src="/Home%20image.png"
+                                src="/Home%20image1.webp"
                                 alt="SBN Healthcare Solution"
                                 className="w-full h-auto max-w-[850px] mx-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] rounded-[32px]"
                             />

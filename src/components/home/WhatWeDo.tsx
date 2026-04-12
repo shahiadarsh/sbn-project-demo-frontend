@@ -16,7 +16,7 @@ const WhatWeDo = () => {
     const benefitTags = ["Automation First", "High Accuracy", "Fast Turnaround"];
 
     return (
-        <section 
+        <section
             className="bg-cover bg-center bg-no-repeat py-24 md:py-32 relative overflow-hidden border-t border-slate-100"
             style={{ backgroundImage: 'url("/background%20image.webp")' }}
         >
@@ -35,8 +35,8 @@ const WhatWeDo = () => {
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                         Capabilities
                     </motion.div>
-                    
-                    <motion.h2 
+
+                    <motion.h2
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -45,8 +45,8 @@ const WhatWeDo = () => {
                     >
                         One Strategic Platform. <br className="hidden md:block" /> Superior Performance.
                     </motion.h2>
-                    
-                    <motion.p 
+
+                    <motion.p
                         initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, margin: "-100px" }}
@@ -60,7 +60,7 @@ const WhatWeDo = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {featuresData.map((feature, index) => {
                         const imgNum = index + 1;
-                        const imgSrc = `/Section 4-${imgNum}.png`;
+                        const imgSrc = `/Section 4-${imgNum}.webp`;
 
                         return (
                             <motion.div

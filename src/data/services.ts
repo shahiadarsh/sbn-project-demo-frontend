@@ -546,5 +546,119 @@ export const servicesList: Service[] = [
                 content: "A simple and reliable exclusion check helps protect your practice and supports long-term success. Stay safe and avoid compliance problems today."
             }
         ],
+    },
+    {
+        title: "Patient Collection & AR Recovery",
+        slug: "patient-collections-ar-recovery",
+        bannerTitle: "Patient Collections & Revenue Recovery",
+        description: "Make collections easy with quick follow-ups and faster A/R recovery. Reduce unpaid balances and improve cash flow with a simple system.",
+        metaTitle: "Fast and Simple Patient Collections System",
+        metaDescription: "Make collections easy with quick follow-ups and faster A/R recovery. Reduce unpaid balances and improve cash flow with a simple system.",
+        sections: [
+            {
+                type: 'standard',
+                content: [
+                    "Patient payments are a big part of healthcare today. This is why collections must be clear and easy to manage. When follow-ups are delayed, payments slow down and balances keep growing.",
+                    "Many practices deal with increasing collections debt. Even a well-staffed Collections Department can face problems without a simple system. If the process is not organized, payments are missed and accounts stay unpaid for longer.",
+                    "Patients also prefer simple communication for collections for medical bills and collections on medical bills. Clear messages and easy payment options help them respond faster."
+                ]
+            },
+            {
+                type: 'problem-snapshot',
+                title: 'Common Issues',
+                description: "Collections often become difficult because of manual hurdles and tracking gaps:",
+                data: [
+                    { title: 'Delayed Follow-ups', description: 'Follow-ups are late or missed, allowing balances to grow over time.' },
+                    { title: 'Patient Confusion', description: 'Patients do not understand their bills or payment responsibility.' },
+                    { title: 'Aging AR', description: 'A/R balances keep aging without a proactive recovery plan.' },
+                    { title: 'Tracking Gaps', description: 'There is no proper tracking or follow-up system for overdue accounts.' }
+                ]
+            },
+            {
+                type: 'workflow',
+                title: 'Our Simple Process',
+                subtitle: 'Strategic Recovery',
+                description: "We make collections easy and smooth. Our system is built to reduce friction and accelerate payments.",
+                data: [
+                    { title: 'Follow-up', description: 'We follow up using professional calls, SMS, and secure emails.' },
+                    { title: 'Reminders', description: 'We send automated payment reminders to keep patients informed.' },
+                    { title: 'Early Action', description: 'We start early follow-ups to avoid long-term collection delays.' },
+                    { title: 'AR Recovery', description: 'We recover overdue A/R step by step using a structured approach.' },
+                    { title: 'Flexibility', description: 'We offer flexible payment plans to help patients clear balances.' }
+                ]
+            },
+            {
+                type: 'kpi',
+                title: 'What You Get',
+                subtitle: 'Financial Strength',
+                description: "A strong collections system helps your practice grow and stay financially healthy.",
+                data: [
+                    { value: 'Faster', label: 'Payments', description: 'Accelerate your reimbursement cycle from patient responsibilities.' },
+                    { value: '99%', label: 'Stability', description: 'Structured systems leading to consistent and predictable cash flow.' }
+                ]
+            },
+            {
+                type: 'cta',
+                title: "Ready to Strengthen Your Collections?",
+                content: "In the end, a simple collections process helps your practice grow and stay financially strong. Let us handle the complexity for you."
+            }
+        ]
+    },
+    {
+        title: "Consulting",
+        slug: "consulting",
+        bannerTitle: "Consulting for Better RCM and Smarter Operations",
+        description: "Get practical consulting services to improve your revenue cycle. Fix gaps, reduce errors, and build a smooth, reliable billing process.",
+        metaTitle: "RCM Consulting That Helps You Grow Faster",
+        metaDescription: "Get practical consulting services to improve your revenue cycle. Fix gaps, reduce errors, and build a smooth, reliable billing process.",
+        sections: [
+            {
+                type: 'standard',
+                content: [
+                    "Running a healthcare practice today is not easy. Rules keep changing. Payments get delayed. Small mistakes can turn into bigger problems. That’s where consulting really helps.",
+                    "Most providers don’t need complicated strategies. They need simple answers. They want to know where money is being lost and how to fix it. That’s exactly what good consulting services are meant to do.",
+                    "In some specialties, like consulting ophthalmology, the process can be even more detailed. And when you look at different consulting healthcare companies, it’s clear that not every solution is practical. The goal is not complexity — it’s clarity. That’s what makes the best consulting healthcare support stand out."
+                ]
+            },
+            {
+                type: 'problem-snapshot',
+                title: 'Where Things Usually Go Wrong',
+                description: "In many practices, problems build up slowly due to unclear workflows and fragmented systems:",
+                data: [
+                    { title: 'Unclear Workflows', description: 'Workflows are not clear, leading to confusion and repeated errors.' },
+                    { title: 'Information Gaps', description: 'Tasks get missed between teams because of poor communication.' },
+                    { title: 'Disconnected Systems', description: 'Systems don’t talk to each other, creating manual data entry silos.' },
+                    { title: 'Lack of Insight', description: 'Reports don’t show the full picture, making it hard to track performance.' }
+                ]
+            },
+            {
+                type: 'workflow',
+                title: 'How We Actually Help',
+                subtitle: 'Operational Clarity',
+                description: "We don’t overcomplicate things. We look at what’s happening and fix what’s not working.",
+                data: [
+                    { title: 'Audit', description: 'We go through your current process step by step to find leakage points.' },
+                    { title: 'Identify', description: 'We find where things are slowing down and causing bottlenecks.' },
+                    { title: 'Simplify', description: 'We simplify your workflows to make them easy for your team to follow.' },
+                    { title: 'Optimize', description: 'We help you choose tools and systems that actually fit your specific needs.' },
+                    { title: 'Track', description: 'We track results and provide insights so you can see real improvement over time.' }
+                ]
+            },
+            {
+                type: 'kpi',
+                title: 'What Changes for You',
+                subtitle: 'Practice Growth',
+                description: "Once the system is clear, things start to improve quickly with measurable outcomes.",
+                data: [
+                    { value: 'Fewer', label: 'Errors', description: 'Significant reduction in billing and administrative mistakes.' },
+                    { value: 'Faster', label: 'Payments', description: 'Accelerated reimbursement through cleaner claim submissions.' }
+                ]
+            },
+            {
+                type: 'cta',
+                title: "Ready to Fix Your RCM Gaps?",
+                content: "Consulting should make your work easier — not harder. Let us bring clarity and efficiency to your practice today."
+            }
+        ]
     }
 ];

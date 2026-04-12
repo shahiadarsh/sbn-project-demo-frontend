@@ -1,5 +1,6 @@
 
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Asap } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/layout/Header';
@@ -21,6 +22,9 @@ export const metadata: Metadata = {
   icons: {
     icon: '/Logo.png',
   },
+  verification: {
+    google: 'koWn4TcdBUJq__U9GvO8JbLXvDDlBDBL2iF0ZJsTp58',
+  },
 };
 
 export default function RootLayout({
@@ -31,6 +35,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={asap.variable}>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              `}
+            </Script>
+          </>
+        )}
         <ReduxProvider>
           {children}
         </ReduxProvider>

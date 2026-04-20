@@ -15,13 +15,20 @@ export const getDynamicMetadata = async (pageId: string) => {
 
 export const constructMetadata = (data: any, fallback: any = {}): Metadata => {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sbnhealthcaresolution.com';
+    let image = data?.ogImage || fallback?.image || '/sbnlogo.png';
+    
+    // Ensure absolute URL for image
+    if (image.startsWith('/')) {
+        image = `${siteUrl}${image}`;
+    }
+
     const title = data?.title || fallback?.title || 'SBN Healthcare Solution';
     const description = data?.description || fallback?.description || 'Export in Healthcare Billing Services';
-    const image = data?.ogImage || fallback?.image || '/Logo.png';
     const keywords = data?.keywords || data?.primaryKeyword || fallback?.keywords || 'medical billing, rcm, healthcare';
     const canonical = data?.slug ? `${siteUrl}/${data.slug}` : (fallback?.slug ? `${siteUrl}/${fallback.slug}` : siteUrl);
 
     return {
+        metadataBase: new URL(siteUrl),
         title,
         description,
         keywords: Array.isArray(keywords) ? keywords : keywords.split(',').map((k: string) => k.trim()),

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaShieldAlt, FaLock, FaUserSecret, FaRegFileAlt } from 'react-icons/fa';
+import Image from 'next/image';
 
 const ComplianceShield = () => {
     const protocols = [
@@ -14,9 +15,14 @@ const ComplianceShield = () => {
 
     return (
         <section 
-            className="py-20 relative overflow-hidden rounded-3xl mx-4 lg:mx-auto max-w-7xl my-16 shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
-            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+            className="py-20 relative overflow-hidden rounded-3xl mx-4 lg:mx-auto max-w-7xl my-16 shadow-[0_30px_60px_rgba(0,0,0,0.15)] group"
         >
+            <Image
+                src="/background image.webp"
+                alt="Background"
+                fill
+                className="object-cover object-center pointer-events-none -z-20"
+            />
             <div className="absolute inset-0 bg-[#0B1F33]/85 z-0 pointer-events-none"></div>
             {/* Background Accents */}
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0033e7]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import axios from 'axios';
 import RCMCalculator from '@/components/tools/RCMCalculator';
 
@@ -74,7 +75,14 @@ export default function RCMCalculatorPageClient() {
     return (
         <main className="bg-[#f8faff] relative selection:bg-[#0033e7] selection:text-white pb-20">
             {/* Custom Premium Hero */}
-            <section className="bg-cover bg-center pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 relative overflow-hidden" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+            <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 relative overflow-hidden">
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                    priority
+                />
                 <div className="absolute inset-0 bg-white/10 pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/40 to-[#0033e7]/5 pointer-events-none z-10"></div>
                 
@@ -95,7 +103,13 @@ export default function RCMCalculatorPageClient() {
             </section>
 
             {/* Calculator Section */}
-            <div className="relative bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col pt-10 border-t border-blue-50/50" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+            <div className="relative overflow-hidden flex flex-col pt-10 border-t border-blue-50/50">
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                />
                 <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#f8faff] to-transparent z-0 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/85 to-blue-50/70 pointer-events-none"></div>
 
@@ -167,7 +181,13 @@ export default function RCMCalculatorPageClient() {
             </section>
 
             {/* Detailed Analysis Form View */}
-            <section className="py-20 border-b border-blue-50/50 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+            <section className="py-20 border-b border-blue-50/50 relative">
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                />
                 <div className="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none z-0"></div>
                 <div className="container mx-auto px-4 max-w-4xl relative z-10">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white border border-blue-100 rounded-[3rem] p-10 md:p-14 shadow-2xl text-center">
@@ -214,7 +234,13 @@ export default function RCMCalculatorPageClient() {
             </section>
 
             {/* Takeaways & FAQ Split */}
-            <section className="py-24 relative border-t border-blue-50/50 bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+            <section className="py-24 relative border-t border-blue-50/50">
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                />
                     <div className="absolute inset-0 bg-[#f8faff]/95 backdrop-blur-sm pointer-events-none z-0"></div>
                     <div className="container mx-auto px-4 max-w-6xl relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -255,7 +281,13 @@ export default function RCMCalculatorPageClient() {
                 </section>
 
                 {/* Final CTA */}
-                <section className="pt-10 pb-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+                <section className="pt-10 pb-20 relative">
+                    <Image
+                        src="/background image.webp"
+                        alt="Background"
+                        fill
+                        className="object-cover object-center pointer-events-none -z-10"
+                    />
                    <div className="absolute inset-0 bg-[#f8faff]/95 backdrop-blur-sm pointer-events-none z-0"></div>
                    <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>

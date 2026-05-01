@@ -3,6 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay, FaQuoteLeft, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Image from 'next/image';
 
 interface Testimonial {
     id: number;
@@ -82,9 +83,14 @@ const Testimonials = () => {
 
     return (
         <section
-            className="py-24 md:py-32 bg-cover bg-center bg-no-repeat overflow-hidden relative border-t border-slate-100"
-            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+            className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100"
         >
+            <Image
+                src="/background image.webp"
+                alt="Background"
+                fill
+                className="object-cover object-center pointer-events-none -z-20"
+            />
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
 

@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { servicesList, specialtiesList } from '@/data/services';
 import { FaArrowRight, FaCheckCircle, FaProjectDiagram, FaShieldAlt, FaChartLine, FaRegCheckCircle, FaClock } from 'react-icons/fa';
 
@@ -14,9 +15,15 @@ const fadeUp: any = {
 export default function ServicesClient() {
     return (
         <main 
-            className="relative selection:bg-[#0033e7] selection:text-white bg-cover bg-center bg-fixed"
-            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+            className="relative selection:bg-[#0033e7] selection:text-white overflow-hidden"
         >
+            <Image
+                src="/background image.webp"
+                alt="Background"
+                fill
+                className="object-cover object-center bg-fixed pointer-events-none -z-20"
+                priority
+            />
             <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-[#f0f4ff]/80 to-white/95 z-0 pointer-events-none"></div>
             
             {/* Animated Decorative Elements */}

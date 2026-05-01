@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import ContactDetails from '@/components/contact/ContactDetails';
 import ContactForm from '@/components/contact/ContactForm';
+import Image from 'next/image';
 
 export default function ContactUsClient() {
     return (
@@ -41,9 +42,14 @@ export default function ContactUsClient() {
 
             {/* Main Content Wrapper */}
             <div 
-                className="relative bg-cover bg-center bg-no-repeat overflow-hidden flex flex-col pt-10 pb-24 border-t border-blue-50/50"
-                style={{ backgroundImage: 'url("/background%20image.webp")' }}
+                className="relative overflow-hidden flex flex-col pt-10 pb-24 border-t border-blue-50/50"
             >
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                />
                 {/* Smooth blend from light hero to bright content */}
                 <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-[#f8faff] to-transparent z-0 pointer-events-none"></div>
 

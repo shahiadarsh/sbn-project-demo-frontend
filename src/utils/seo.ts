@@ -15,7 +15,7 @@ export const getDynamicMetadata = async (pageId: string) => {
 
 export const constructMetadata = (data: any, fallback: any = {}): Metadata => {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sbnhealthcaresolution.com';
-    let image = data?.ogImage || fallback?.image || '/sbnlogo.webp';
+    let image = data?.ogImage || fallback?.image || '/Logo.webp';
 
     // Ensure absolute URL for image
     if (image.startsWith('/')) {

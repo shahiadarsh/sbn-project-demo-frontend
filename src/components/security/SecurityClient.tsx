@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const fadeUp: any = {
     hidden: { opacity: 0, y: 30 },
@@ -130,7 +131,14 @@ export default function SecurityClient() {
     return (
         <main className="bg-[#f8faff] relative selection:bg-[#0033e7] selection:text-white">
             {/* Custom Premium Security Hero (Light Theme) */}
-            <section className="bg-cover bg-center pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 relative overflow-hidden" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+            <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 relative overflow-hidden">
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                    priority
+                />
                 <div className="absolute inset-0 bg-[#f8faff]/90 pointer-events-none z-0"></div>
                 {/* Security Glowing Orbs */}
                 <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -161,7 +169,13 @@ export default function SecurityClient() {
             </section>
 
             {/* Introduction Section */}
-            <section className="py-20 lg:py-24 bg-cover bg-center relative border-b border-blue-50/50" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+            <section className="py-20 lg:py-24 relative border-b border-blue-50/50">
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-[#f8faff]/90 pointer-events-none z-0"></div>
                 <div className="container mx-auto px-4 relative z-10">
                         <motion.div 

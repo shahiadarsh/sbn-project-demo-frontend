@@ -61,17 +61,29 @@ const caseStudiesTemplate = [
 export default function AboutClient() {
     return (
         <main
-            className="relative selection:bg-[#0033e7] selection:text-white bg-cover bg-center bg-fixed"
-            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+            className="relative selection:bg-[#0033e7] selection:text-white overflow-hidden"
         >
+            <Image
+                src="/background image.webp"
+                alt="Background"
+                fill
+                className="object-cover object-center bg-fixed pointer-events-none -z-20"
+                priority
+            />
             <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/90 to-[#f0f4ff]/85 z-0 pointer-events-none"></div>
 
             {/* Banner Section */}
             <div
-                className="relative bg-cover bg-center py-[120px] md:py-[180px] text-center overflow-hidden z-10"
-                style={{ backgroundImage: "url('/About.webp')" }}
+                className="relative py-[120px] md:py-[180px] text-center overflow-hidden z-10"
             >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0033e7]/85 to-[#0B1F33]/85 mix-blend-multiply"></div>
+                <Image
+                    src="/About.webp"
+                    alt="About Banner"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0033e7]/85 to-[#0B1F33]/85 mix-blend-multiply -z-10"></div>
 
                 <div className="container mx-auto px-4 relative z-10">
                     <motion.div

@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 import { statsData } from '@/data/home';
+import Image from 'next/image';
 
 // Fade-up style identical to AOS / Hero section
 const fadeUp: any = {
@@ -12,7 +13,7 @@ const fadeUp: any = {
 
 const Counter = ({ value }: { value: string }) => {
     const nodeRef = React.useRef<HTMLSpanElement>(null);
-    const inView = useInView(nodeRef, { once: true, margin: "-50px" });
+    const inView = useInView(nodeRef, { once: true, amount: 0.2 });
 
     // Parse number and suffix
     const numericMatch = value.match(/\d+/);
@@ -56,9 +57,14 @@ const Stats = () => {
 
     return (
         <section 
-            className="relative py-24 md:py-32 bg-cover bg-center bg-no-repeat overflow-hidden border-t border-slate-100"
-            style={{ backgroundImage: 'url("/background%20image.webp")' }}
+            className="relative py-24 md:py-32 overflow-hidden border-t border-slate-100"
         >
+            <Image
+                src="/background image.webp"
+                alt="Background"
+                fill
+                className="object-cover object-center pointer-events-none -z-20"
+            />
             {/* Overlay gradient identical to Hero section to maintain high readability */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
 

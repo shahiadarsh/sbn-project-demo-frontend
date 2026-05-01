@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const fadeUp: any = {
     hidden: { opacity: 0, y: 30 },
@@ -84,7 +85,14 @@ export default function PricingPageClient() {
     return (
         <main className="bg-[#f8faff] relative selection:bg-[#0033e7] selection:text-white pb-20">
             {/* Custom Premium Hero */}
-            <section className="bg-cover bg-center pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 relative overflow-hidden" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
+            <section className="pt-32 pb-16 md:pt-40 md:pb-24 text-center px-4 relative overflow-hidden">
+                <Image
+                    src="/background image.webp"
+                    alt="Background"
+                    fill
+                    className="object-cover object-center pointer-events-none -z-10"
+                    priority
+                />
                 <div className="absolute inset-0 bg-[#f8faff]/80 pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff] via-white/40 to-[#0033e7]/5 pointer-events-none z-10"></div>
                 

@@ -201,7 +201,8 @@ export default function BlogManagement() {
             }
             resetForm();
         } catch (err: any) {
-            showStatus('error', err || 'Something went wrong');
+            const errorMessage = typeof err === 'string' ? err : (err.message || err.error || 'Something went wrong');
+            showStatus('error', errorMessage);
         }
     };
 
@@ -458,12 +459,99 @@ export default function BlogManagement() {
                                         <motion.div key="social" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 10 }} className="space-y-12">
                                             <div className="p-10 bg-slate-50 rounded-[2rem] border border-slate-100">
                                                 <h4 className="text-[10px] font-black uppercase tracking-[4px] text-slate-400 mb-8 flex items-center gap-3">
-                                                    <FaShareAlt className="text-[var(--primary-color)]" /> Open Graph Preview
+                                                    <FaShareAlt className="text-[var(--primary-color)]" /> Social Media Graph & Preview
                                                 </h4>
                                                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                                                     <div className="space-y-6">
-                                                        <input className="w-full px-7 py-4 rounded-xl bg-white border border-slate-200 font-bold text-slate-800" value={formData.ogTitle} onChange={(e) => setFormData({ ...formData, ogTitle: e.target.value })} placeholder="OG Title" />
-                                                        <textarea className="w-full px-7 py-4 rounded-xl bg-white border border-slate-200 font-bold text-slate-800 resize-none" rows={3} value={formData.ogDescription} onChange={(e) => setFormData({ ...formData, ogDescription: e.target.value })} placeholder="OG Description" />
+                                                        <div className="space-y-3">
+                                                            <label className="text-[9px] font-black uppercase text-slate-400 tracking-[2px]">OG Title</label>
+                                                            <input className="w-full px-7 py-4 rounded-xl bg-white border border-slate-200 font-bold text-slate-800" value={formData.ogTitle} onChange={(e) => setFormData({ ...formData, ogTitle: e.target.value, twitterTitle: e.target.value })} placeholder="Custom Social Title" />
+                                                        </div>
+                                                        <div className="space-y-3">
+                                                            <label className="text-[9px] font-black uppercase text-slate-400 tracking-[2px]">OG Description</label>
+                                                            <textarea className="w-full px-7 py-4 rounded-xl bg-white border border-slate-200 font-bold text-slate-800 resize-none" rows={3} value={formData.ogDescription} onChange={(e) => setFormData({ ...formData, ogDescription: e.target.value, twitterDescription: e.target.value })} placeholder="Short social summary..." />
+                                                        </div>
+                                                        
+                                                        <div className="space-y-3">
+                                                            <label className="text-[9px] font-black uppercase text-slate-400 tracking-[2px]">Social Image (OG/Twitter)</label>
+                                                            <div className="flex flex-col gap-3">
+                                                                <div className="flex gap-3">
+                                                                    <input className="flex-1 px-7 py-4 rounded-xl bg-white border border-slate-200 font-bold text-slate-800 text-[10px]" value={formData.ogImage} onChange={(e) => setFormData({ ...formData, ogImage: e.target.value, twitterImage: e.target.value })} placeholder="https://..." />
+                                                                    <button type="button" onClick={() => setFormData({ ...formData, ogImage: formData.image, twitterImage: formData.image })} className="px-5 rounded-xl bg-white border border-slate-200 text-slate-600 text-[9px] font-black uppercase tracking-widest hover:border-[var(--primary-color)] hover:text-[var(--primary-color)] transition-all">
+                                                                        Sync Main
+                                                                    </button>
+                                                                </div>
+                                                                <button type="button" onClick={() => {
+                                                                    const input = document.createElement('input');
+                                                                    input.type = 'file';
+                                                                    input.accept = 'image/*';
+                                                                    input.onchange = async (e: any) => {
+                                                                        const file = e.target.files?.[0];
+                                                                        if (file) {
+                                                                            const formDataUpload = new FormData();
+                                                                            formDataUpload.append('image', file);
+                                                                            setIsUploading(true);
+                                                                            try {
+                                                                                const token = localStorage.getItem('adminToken');
+                                                                                const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formDataUpload, {
+                                                                                    headers: { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }
+                                                                                });
+                                                                                setFormData(prev => ({ ...prev, ogImage: res.data.url, twitterImage: res.data.url }));
+                                                                                showStatus('success', 'Social image uploaded!');
+                                                                            } catch (err) {
+                                                                                showStatus('error', 'Upload failed');
+                                                                            } finally {
+                                                                                setIsUploading(false);
+                                                                            }
+                                                                        }
+                                                                    };
+                                                                    input.click();
+                                                                }} className="w-full py-4 rounded-xl bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-[var(--primary-color)] transition-all flex items-center justify-center gap-3">
+                                                                    {isUploading ? <div className="w-3 h-3 border-2 border-white/20 border-t-white rounded-full animate-spin" /> : <FaImage />}
+                                                                    Upload Social Banner
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex flex-col gap-6">
+                                                        <div className="w-full aspect-[1.91/1] bg-white rounded-3xl border border-slate-200 overflow-hidden relative group shadow-inner">
+                                                            {formData.ogImage ? (
+                                                                <img src={formData.ogImage} className="w-full h-full object-cover" alt="OG Preview" />
+                                                            ) : (
+                                                                <div className="absolute inset-0 flex flex-col items-center justify-center text-slate-300">
+                                                                    <FaImage size={40} className="mb-4 opacity-10" />
+                                                                    <span className="text-[10px] font-black uppercase tracking-widest opacity-30">OG Preview</span>
+                                                                </div>
+                                                            )}
+                                                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent pointer-events-none" />
+                                                            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                                                                <div className="text-white text-[13px] font-black truncate mb-1 uppercase tracking-tight">{formData.ogTitle || formData.title || 'Preview Title'}</div>
+                                                                <div className="text-white/60 text-[10px] line-clamp-1 font-bold">{formData.ogDescription || formData.excerpt || 'Short preview description will appear here...'}</div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="grid grid-cols-2 gap-4">
+                                                            <div className="flex items-center gap-4 p-5 bg-white border border-slate-200 rounded-2xl">
+                                                                <div className="w-10 h-10 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center border border-blue-100 shrink-0">
+                                                                    <FaShareAlt />
+                                                                </div>
+                                                                <div className="min-w-0">
+                                                                    <h5 className="text-[8px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">X Card</h5>
+                                                                    <select className="bg-transparent text-[10px] font-black text-slate-900 border-none p-0 focus:ring-0 w-full cursor-pointer uppercase" value={formData.twitterCard} onChange={(e: any) => setFormData({ ...formData, twitterCard: e.target.value })}>
+                                                                        <option value="summary_large_image">Large</option>
+                                                                        <option value="summary">Standard</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div className="flex items-center gap-4 p-5 bg-emerald-500/5 border border-emerald-500/10 rounded-2xl">
+                                                                <div className="w-10 h-10 bg-emerald-500 text-white rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/20 shrink-0">
+                                                                    <FaCheck />
+                                                                </div>
+                                                                <div>
+                                                                    <h5 className="text-[8px] font-black text-emerald-600 uppercase tracking-widest leading-none mb-1">Status</h5>
+                                                                    <span className="text-[10px] font-black text-emerald-600 uppercase">Ready</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

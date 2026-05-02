@@ -31,7 +31,7 @@ export const createBlog = createAsyncThunk(
             });
             return response.data.data;
         } catch (err: any) {
-            return rejectWithValue(err.response.data.error);
+            return rejectWithValue(err.response?.data?.error || err.message || 'Server error');
         }
     }
 );
@@ -47,7 +47,7 @@ export const updateBlog = createAsyncThunk(
             });
             return response.data.data;
         } catch (err: any) {
-            return rejectWithValue(err.response.data.error);
+            return rejectWithValue(err.response?.data?.error || err.message || 'Server error');
         }
     }
 );

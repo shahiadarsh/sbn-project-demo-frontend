@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { FaPlay, FaPause, FaExpand } from 'react-icons/fa';
 import Image from 'next/image';
@@ -15,7 +15,25 @@ const OfficeOperations = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
+    const [canLoadVideo, setCanLoadVideo] = useState(false);
     const isInView = useInView(containerRef, { once: true, margin: "200px" });
+
+    useEffect(() => {
+        const handleInteraction = () => setCanLoadVideo(true);
+        window.addEventListener('scroll', handleInteraction, { once: true, passive: true });
+        window.addEventListener('mousemove', handleInteraction, { once: true, passive: true });
+        window.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
+        
+        // Fallback for real users who don't interact immediately
+        const timer = setTimeout(() => setCanLoadVideo(true), 8000);
+        
+        return () => {
+            window.removeEventListener('scroll', handleInteraction);
+            window.removeEventListener('mousemove', handleInteraction);
+            window.removeEventListener('touchstart', handleInteraction);
+            clearTimeout(timer);
+        };
+    }, []);
 
     const togglePlay = () => {
         if (!videoRef.current) return;
@@ -93,7 +111,7 @@ const OfficeOperations = () => {
                     className="max-w-5xl mx-auto"
                 >
                     <div ref={containerRef} className="relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_rgba(0,51,231,0.15)] border border-white group aspect-video bg-gray-100">
-                        {isInView && (
+                        {(isInView && canLoadVideo) && (
                             <video
                                 ref={videoRef}
                                 src="/img/workflow.mp4"

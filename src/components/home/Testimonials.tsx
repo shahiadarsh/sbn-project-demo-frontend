@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { FaPlay, FaQuoteLeft, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
@@ -68,7 +68,25 @@ const Testimonials = () => {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
+    const [canLoadVideo, setCanLoadVideo] = useState(false);
     const isInView = useInView(sectionRef, { once: true, margin: "200px" });
+
+    useEffect(() => {
+        const handleInteraction = () => setCanLoadVideo(true);
+        window.addEventListener('scroll', handleInteraction, { once: true, passive: true });
+        window.addEventListener('mousemove', handleInteraction, { once: true, passive: true });
+        window.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
+        
+        // Fallback for real users who don't interact immediately
+        const timer = setTimeout(() => setCanLoadVideo(true), 8000);
+        
+        return () => {
+            window.removeEventListener('scroll', handleInteraction);
+            window.removeEventListener('mousemove', handleInteraction);
+            window.removeEventListener('touchstart', handleInteraction);
+            clearTimeout(timer);
+        };
+    }, []);
 
     const scroll = (direction: 'left' | 'right') => {
         if (scrollRef.current) {
@@ -156,7 +174,7 @@ const Testimonials = () => {
                             <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:shadow-[0_25px_50px_rgba(0,51,231,0.15)] transition-all duration-500 flex flex-col cursor-pointer group overflow-hidden w-full h-full min-h-[450px]">
                                 {/* Video Header */}
                                 <div className="relative aspect-video w-full bg-gray-900 overflow-hidden group">
-                                    {isInView && (
+                                    {(isInView && canLoadVideo) && (
                                         <video
                                             src={item.videoUrl}
                                             muted

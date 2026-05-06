@@ -16,31 +16,33 @@ const OfficeOperations = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
     const [canLoadVideo, setCanLoadVideo] = useState(false);
+    const [isMobile, setIsMobile] = useState(true); // Assume mobile first
     const isInView = useInView(containerRef, { once: true, margin: "200px" });
 
     useEffect(() => {
-        const handleInteraction = () => setCanLoadVideo(true);
-        window.addEventListener('mousemove', handleInteraction, { once: true, passive: true });
-        window.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
-        window.addEventListener('keydown', handleInteraction, { once: true, passive: true });
-        
-        // Fallback for real users who don't interact immediately
-        const timer = setTimeout(() => setCanLoadVideo(true), 8000);
-        
-        return () => {
-            window.removeEventListener('mousemove', handleInteraction);
-            window.removeEventListener('touchstart', handleInteraction);
-            window.removeEventListener('keydown', handleInteraction);
-            clearTimeout(timer);
+        // Only load video automatically on desktop devices
+        const checkMobile = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            if (!mobile) {
+                // Delay loading slightly to prioritize LCP
+                setTimeout(() => setCanLoadVideo(true), 2000);
+            }
         };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     const togglePlay = () => {
-        if (!videoRef.current) return;
-        if (isPlaying) {
-            videoRef.current.pause();
-        } else {
-            videoRef.current.play();
+        if (videoRef.current) {
+            if (isPlaying) {
+                videoRef.current.pause();
+            } else {
+                videoRef.current.play();
+            }
         }
         setIsPlaying(!isPlaying);
     };
@@ -111,15 +113,22 @@ const OfficeOperations = () => {
                     className="max-w-5xl mx-auto"
                 >
                     <div ref={containerRef} className="relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_rgba(0,51,231,0.15)] border border-white group aspect-video bg-gray-100">
-                        {(isInView && canLoadVideo) && (
+                        {(!isMobile && isInView && canLoadVideo) || (!isPlaying && isMobile) ? (
                             <video
                                 ref={videoRef}
                                 src="/img/workflow.mp4"
-                                autoPlay
+                                autoPlay={!isMobile}
                                 muted
                                 loop
                                 playsInline
                                 className="w-full aspect-video object-cover"
+                            />
+                        ) : (
+                            <Image
+                                src="/Home image1.webp"
+                                alt="Operations Poster"
+                                fill
+                                className="object-cover opacity-80"
                             />
                         )}
 

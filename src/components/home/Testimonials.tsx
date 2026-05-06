@@ -69,23 +69,24 @@ const Testimonials = () => {
     const scrollRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLElement>(null);
     const [canLoadVideo, setCanLoadVideo] = useState(false);
+    const [isMobile, setIsMobile] = useState(true); // Assume mobile first
     const isInView = useInView(sectionRef, { once: true, margin: "200px" });
 
     useEffect(() => {
-        const handleInteraction = () => setCanLoadVideo(true);
-        window.addEventListener('mousemove', handleInteraction, { once: true, passive: true });
-        window.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
-        window.addEventListener('keydown', handleInteraction, { once: true, passive: true });
-        
-        // Fallback for real users who don't interact immediately
-        const timer = setTimeout(() => setCanLoadVideo(true), 8000);
-        
-        return () => {
-            window.removeEventListener('mousemove', handleInteraction);
-            window.removeEventListener('touchstart', handleInteraction);
-            window.removeEventListener('keydown', handleInteraction);
-            clearTimeout(timer);
+        // Only load background videos automatically on desktop devices
+        const checkMobile = () => {
+            const mobile = window.innerWidth < 768;
+            setIsMobile(mobile);
+            if (!mobile) {
+                // Delay loading slightly to prioritize LCP
+                setTimeout(() => setCanLoadVideo(true), 2000);
+            }
         };
+        
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        
+        return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
     const scroll = (direction: 'left' | 'right') => {
@@ -174,7 +175,7 @@ const Testimonials = () => {
                             <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:shadow-[0_25px_50px_rgba(0,51,231,0.15)] transition-all duration-500 flex flex-col cursor-pointer group overflow-hidden w-full h-full min-h-[450px]">
                                 {/* Video Header */}
                                 <div className="relative aspect-video w-full bg-gray-900 overflow-hidden group">
-                                    {(isInView && canLoadVideo) && (
+                                    {!isMobile && isInView && canLoadVideo ? (
                                         <video
                                             src={item.videoUrl}
                                             muted
@@ -182,6 +183,13 @@ const Testimonials = () => {
                                             loop
                                             playsInline
                                             className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-700 scale-105 group-hover:scale-100"
+                                        />
+                                    ) : (
+                                        <Image
+                                            src={item.avatar}
+                                            alt={item.name}
+                                            fill
+                                            className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 scale-105 group-hover:scale-100"
                                         />
                                     )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />

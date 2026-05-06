@@ -64,12 +64,14 @@ const SoftwareExpertise = () => {
                     {row1.map((sw, i) => (
                         <div
                             key={i}
-                            className="flex-shrink-0 w-[140px] h-[80px] bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm flex items-center justify-center p-3 hover:shadow-[0_15px_30px_rgba(0,51,231,0.15)] hover:-translate-y-1 transition-all duration-300"
+                            className="flex-shrink-0 w-[140px] h-[80px] bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm flex items-center justify-center p-3 hover:shadow-[0_15px_30px_rgba(0,51,231,0.15)] hover:-translate-y-1 transition-all duration-300 relative"
                         >
-                            <img
+                            <Image
                                 src={sw.logo}
                                 alt={`Software ${sw.id}`}
-                                className="max-w-full max-h-full object-contain filter grayscale-0 hover:grayscale-0 transition-all duration-300"
+                                fill
+                                className="object-contain p-3 filter grayscale-0 hover:grayscale-0 transition-all duration-300"
+                                sizes="140px"
                             />
                         </div>
                     ))}
@@ -82,12 +84,14 @@ const SoftwareExpertise = () => {
                     {row2.map((sw, i) => (
                         <div
                             key={i}
-                            className="flex-shrink-0 w-[140px] h-[80px] bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm flex items-center justify-center p-3 hover:shadow-[0_15px_30px_rgba(0,51,231,0.15)] hover:-translate-y-1 transition-all duration-300"
+                            className="flex-shrink-0 w-[140px] h-[80px] bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm flex items-center justify-center p-3 hover:shadow-[0_15px_30px_rgba(0,51,231,0.15)] hover:-translate-y-1 transition-all duration-300 relative"
                         >
-                            <img
+                            <Image
                                 src={sw.logo}
                                 alt={`Software ${sw.id}`}
-                                className="max-w-full max-h-full object-contain filter grayscale-0 hover:grayscale-0 transition-all duration-300"
+                                fill
+                                className="object-contain p-3 filter grayscale-0 hover:grayscale-0 transition-all duration-300"
+                                sizes="140px"
                             />
                         </div>
                     ))}

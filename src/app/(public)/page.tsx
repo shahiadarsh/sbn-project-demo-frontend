@@ -4,13 +4,15 @@
 import type { Metadata } from 'next';
 import { getDynamicMetadata, constructMetadata } from '@/utils/seo';
 import Hero from '@/components/home/Hero';
-import Stats from '@/components/home/Stats';
-import ProcessFlow from '@/components/home/ProcessFlow';
-import WhatWeDo from '@/components/home/WhatWeDo';
-import OfficeOperations from '@/components/home/OfficeOperations';
-import SoftwareExpertise from '@/components/home/SoftwareExpertise';
-import Pricing from '@/components/home/Pricing';
-import Testimonials from '@/components/home/Testimonials';
+import dynamic from 'next/dynamic';
+
+const Stats = dynamic(() => import('@/components/home/Stats'), { ssr: true });
+const ProcessFlow = dynamic(() => import('@/components/home/ProcessFlow'), { ssr: true });
+const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'), { ssr: true });
+const OfficeOperations = dynamic(() => import('@/components/home/OfficeOperations'), { ssr: false });
+const SoftwareExpertise = dynamic(() => import('@/components/home/SoftwareExpertise'), { ssr: true });
+const Pricing = dynamic(() => import('@/components/home/Pricing'), { ssr: true });
+const Testimonials = dynamic(() => import('@/components/home/Testimonials'), { ssr: true });
 
 export async function generateMetadata(): Promise<Metadata> {
   const dynamic = await getDynamicMetadata('home');

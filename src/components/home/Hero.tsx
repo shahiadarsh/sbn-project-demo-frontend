@@ -3,16 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { heroData } from '@/data/home';
 
 const Hero = () => {
-    // Fade-up style identical to AOS
-    const fadeUp: any = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-    };
-
     return (
         <section
             className="relative min-h-screen pt-[100px] pb-16 flex items-center overflow-hidden"
@@ -27,7 +20,7 @@ const Hero = () => {
             {/* Overlay gradient to keep the content highly readable while showing the background image */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
 
-            6            {/* Very light abstract background shapes to mimic eff-dashboard gradient overlays */}
+            {/* Very light abstract background shapes to mimic eff-dashboard gradient overlays */}
             <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] rounded-full bg-blue-200/40 blur-[100px] opacity-70 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[400px] h-[400px] rounded-full bg-blue-300/30 blur-[100px] opacity-70 pointer-events-none"></div>
 
@@ -35,46 +28,30 @@ const Hero = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
                     {/* Content (Left) */}
                     <div className="text-center lg:text-left pt-10 lg:pt-0">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeUp}
+                        <div
                             className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-8 px-5 py-2 rounded-full backdrop-blur-sm"
                         >
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                             {heroData.subheadline || 'RCM Excellence'}
-                        </motion.div>
+                        </div>
 
-                        <motion.h1
+                        <h1
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.5rem] font-extrabold text-gray-900 leading-[1.2] mb-5 tracking-tight"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeUp}
                         >
                             Medical Insurance <br className="hidden xl:block" />
                             <span className="text-[#0033e7]">Verification Services</span> <br />
                             in New York
-                        </motion.h1>
+                        </h1>
 
-                        <motion.p
+                        <p
                             className="text-base md:text-[1.1rem] text-gray-600 mb-8 max-w-[550px] mx-auto lg:mx-0 leading-relaxed font-medium"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeUp}
                         >
                             Unified eligibility, billing, denial management, and analytics —
                             engineered to accelerate cash flow and eliminate administrative friction.
-                        </motion.p>
+                        </p>
 
-                        <motion.div
+                        <div
                             className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-100px" }}
-                            variants={fadeUp}
                         >
                             <div className="flex flex-col gap-4 items-center lg:items-start">
                                 <Link
@@ -104,19 +81,12 @@ const Hero = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                 </svg>
                             </Link>
-                        </motion.div>
+                        </div>
                     </div>
 
                     {/* Platform Visual Anchor (Right) */}
-                    <motion.div
+                    <div
                         className="relative lg:block"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={{
-                            hidden: { opacity: 0, y: 50 },
-                            visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut", delay: 0.2 } }
-                        } as any}
                     >
                         <div className="relative group transition-transform duration-500 hover:scale-[1.02]">
                             {/* Glow effect closely matching eff-dashboard style */}
@@ -131,18 +101,16 @@ const Hero = () => {
                                 priority
                             />
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
 
             {/* Subtle Scroll Indicator */}
-            <motion.div
-                className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-3"
-                animate={{ y: [0, 8, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            <div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-3 animate-bounce"
             >
                 <div className="w-[2px] h-12 bg-gradient-to-b from-[#0033e7]/50 to-transparent rounded-full"></div>
-            </motion.div>
+            </div>
         </section>
     );
 };

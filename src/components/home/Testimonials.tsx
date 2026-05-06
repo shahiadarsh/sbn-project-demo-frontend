@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { FaPlay, FaQuoteLeft, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 
@@ -67,6 +67,8 @@ const testimonialsData: Testimonial[] = [
 const Testimonials = () => {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
+    const isInView = useInView(sectionRef, { once: true, margin: "200px" });
 
     const scroll = (direction: 'left' | 'right') => {
         if (scrollRef.current) {
@@ -83,6 +85,7 @@ const Testimonials = () => {
 
     return (
         <section
+            ref={sectionRef}
             className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100"
         >
             <Image
@@ -152,15 +155,17 @@ const Testimonials = () => {
                         >
                             <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:shadow-[0_25px_50px_rgba(0,51,231,0.15)] transition-all duration-500 flex flex-col cursor-pointer group overflow-hidden w-full h-full min-h-[450px]">
                                 {/* Video Header */}
-                                <div className="relative aspect-video w-full bg-black overflow-hidden group">
-                                    <video
-                                        src={item.videoUrl}
-                                        muted
-                                        autoPlay
-                                        loop
-                                        playsInline
-                                        className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-700 scale-105 group-hover:scale-100"
-                                    />
+                                <div className="relative aspect-video w-full bg-gray-900 overflow-hidden group">
+                                    {isInView && (
+                                        <video
+                                            src={item.videoUrl}
+                                            muted
+                                            autoPlay
+                                            loop
+                                            playsInline
+                                            className="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-700 scale-105 group-hover:scale-100"
+                                        />
+                                    )}
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent" />
 
                                     {/* Play Overlay */}

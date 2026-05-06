@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { FaPlay, FaPause, FaExpand } from 'react-icons/fa';
 import Image from 'next/image';
 
@@ -13,7 +13,9 @@ const fadeUp: any = {
 
 const OfficeOperations = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
+    const isInView = useInView(containerRef, { once: true, margin: "200px" });
 
     const togglePlay = () => {
         if (!videoRef.current) return;
@@ -90,16 +92,18 @@ const OfficeOperations = () => {
                     } as any}
                     className="max-w-5xl mx-auto"
                 >
-                    <div className="relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_rgba(0,51,231,0.15)] border border-white group">
-                        <video
-                            ref={videoRef}
-                            src="/img/workflow.mp4"
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            className="w-full aspect-video object-cover"
-                        />
+                    <div ref={containerRef} className="relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_rgba(0,51,231,0.15)] border border-white group aspect-video bg-gray-100">
+                        {isInView && (
+                            <video
+                                ref={videoRef}
+                                src="/img/workflow.mp4"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full aspect-video object-cover"
+                            />
+                        )}
 
                         {/* Gradient Overlay bottom for controls readability */}
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none transition-opacity duration-500 group-hover:opacity-70" />

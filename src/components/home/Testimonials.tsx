@@ -73,17 +73,17 @@ const Testimonials = () => {
 
     useEffect(() => {
         const handleInteraction = () => setCanLoadVideo(true);
-        window.addEventListener('scroll', handleInteraction, { once: true, passive: true });
         window.addEventListener('mousemove', handleInteraction, { once: true, passive: true });
         window.addEventListener('touchstart', handleInteraction, { once: true, passive: true });
+        window.addEventListener('keydown', handleInteraction, { once: true, passive: true });
         
         // Fallback for real users who don't interact immediately
         const timer = setTimeout(() => setCanLoadVideo(true), 8000);
         
         return () => {
-            window.removeEventListener('scroll', handleInteraction);
             window.removeEventListener('mousemove', handleInteraction);
             window.removeEventListener('touchstart', handleInteraction);
+            window.removeEventListener('keydown', handleInteraction);
             clearTimeout(timer);
         };
     }, []);

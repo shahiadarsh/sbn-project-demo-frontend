@@ -3,10 +3,6 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Asap } from 'next/font/google';
 import './globals.css';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import CookieConsent from '@/components/layout/CookieConsent';
-import Chatbot from '@/components/chat/Chatbot';
 import { ReduxProvider } from '@/components/providers/ReduxProvider';
 
 const asap = Asap({

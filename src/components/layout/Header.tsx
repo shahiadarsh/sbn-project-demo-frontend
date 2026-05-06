@@ -5,7 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { FaBars, FaTimes, FaAngleDown } from 'react-icons/fa';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
     { name: 'Home', href: '/' },
@@ -168,60 +167,54 @@ const Header = () => {
             </div>
 
             {/* Mobile Navigation - Light Theme */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        className="xl:hidden absolute top-full left-0 right-0 bg-white p-[30px] shadow-2xl z-[1001] border-b border-slate-100 max-h-[calc(100vh-80px)] overflow-y-auto"
-                    >
-                        <ul className="flex flex-col gap-[20px] p-0 m-0 list-none">
-                            {navLinks.map((link) => {
-                                const active = isLinkActive(link);
-                                return (
-                                    <motion.li
-                                        key={link.name}
-                                        whileTap={{ scale: 0.98 }}
-                                    >
-                                        {link.dropdown ? (
-                                            <>
-                                                <span className={`text-[12px] font-black uppercase tracking-[2px] block mb-3 ${active ? 'text-[#0033e7]' : 'text-slate-900'}`}>
-                                                    {link.name}
-                                                </span>
-                                                <ul className="mt-[10px] mb-[10px] flex flex-col gap-[12px] border-l-2 border-slate-100 ml-2">
-                                                    {link.dropdown.map(subLink => {
-                                                        const subActive = pathname === subLink.href;
-                                                        return (
-                                                            <li key={subLink.name}>
-                                                                <Link
-                                                                    href={subLink.href}
-                                                                    className={`text-[11px] font-bold block pl-[20px] uppercase no-underline transition-colors ${subActive ? 'text-[#0033e7]' : 'text-slate-500 hover:text-[#0033e7]'}`}
-                                                                    onClick={toggleMenu}
-                                                                >
-                                                                    {subLink.name}
-                                                                </Link>
-                                                            </li>
-                                                        );
-                                                    })}
-                                                </ul>
-                                            </>
-                                        ) : (
-                                            <Link
-                                                href={link.href}
-                                                className={`text-[12px] font-black block uppercase tracking-[2px] no-underline transition-colors ${active ? 'text-[#0033e7]' : 'text-slate-900 hover:text-[#0033e7]'}`}
-                                                onClick={toggleMenu}
-                                            >
+            {isOpen && (
+                <div
+                    className="xl:hidden absolute top-full left-0 right-0 bg-white p-[30px] shadow-2xl z-[1001] border-b border-slate-100 max-h-[calc(100vh-80px)] overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-300"
+                >
+                    <ul className="flex flex-col gap-[20px] p-0 m-0 list-none">
+                        {navLinks.map((link) => {
+                            const active = isLinkActive(link);
+                            return (
+                                <li
+                                    key={link.name}
+                                >
+                                    {link.dropdown ? (
+                                        <>
+                                            <span className={`text-[12px] font-black uppercase tracking-[2px] block mb-3 ${active ? 'text-[#0033e7]' : 'text-slate-900'}`}>
                                                 {link.name}
-                                            </Link>
-                                        )}
-                                    </motion.li>
-                                );
-                            })}
-                        </ul>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                                            </span>
+                                            <ul className="mt-[10px] mb-[10px] flex flex-col gap-[12px] border-l-2 border-slate-100 ml-2">
+                                                {link.dropdown.map(subLink => {
+                                                    const subActive = pathname === subLink.href;
+                                                    return (
+                                                        <li key={subLink.name}>
+                                                            <Link
+                                                                href={subLink.href}
+                                                                className={`text-[11px] font-bold block pl-[20px] uppercase no-underline transition-colors ${subActive ? 'text-[#0033e7]' : 'text-slate-500 hover:text-[#0033e7]'}`}
+                                                                onClick={toggleMenu}
+                                                            >
+                                                                {subLink.name}
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        </>
+                                    ) : (
+                                        <Link
+                                            href={link.href}
+                                            className={`text-[12px] font-black block uppercase tracking-[2px] no-underline transition-colors ${active ? 'text-[#0033e7]' : 'text-slate-900 hover:text-[#0033e7]'}`}
+                                            onClick={toggleMenu}
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    )}
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            )}
         </header>
     );
 };

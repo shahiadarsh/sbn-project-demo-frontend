@@ -1,23 +1,15 @@
 'use client';
 
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
 import { FaPlay, FaPause, FaExpand } from 'react-icons/fa';
 import Image from 'next/image';
-
-// Fade-up style identical to AOS
-const fadeUp: any = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
 
 const OfficeOperations = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const [isPlaying, setIsPlaying] = useState(true);
     const [canLoadVideo, setCanLoadVideo] = useState(false);
-    const [isMobile, setIsMobile] = useState(true); // Assume mobile first
-    const isInView = useInView(containerRef, { once: true, margin: "200px" });
+    const [isMobile, setIsMobile] = useState(true);
 
     useEffect(() => {
         // Only load video automatically on desktop devices
@@ -54,66 +46,28 @@ const OfficeOperations = () => {
     };
 
     return (
-        <section
-            className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100"
-        >
-            <Image
-                src="/background image.webp"
-                alt="Background"
-                fill
-                className="object-cover object-center pointer-events-none -z-20"
-            />
-            {/* Overlay gradient identical to Hero section to maintain high readability */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
-
+        <section className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100 bg-slate-50/50">
             <div className="container mx-auto px-4 relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeUp}
-                        className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm"
-                    >
+                    <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                         Behind The Scenes
-                    </motion.div>
+                    </div>
 
-                    <motion.h2
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeUp}
-                        className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-8 leading-[1.2]"
-                    >
+                    <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-8 leading-[1.2]">
                         Sovereign Operations Center
-                    </motion.h2>
+                    </h2>
 
-                    <motion.p
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeUp}
-                        className="text-lg text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed"
-                    >
+                    <p className="text-lg text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
                         A look inside our state-of-the-art infrastructure where precision meets performance. Our expert analysts work around the clock to ensure your revenue cycles remain friction-less.
-                    </motion.p>
+                    </p>
                 </div>
 
                 {/* Video Player */}
-                <motion.div
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    variants={{
-                        hidden: { opacity: 0, scale: 0.95, y: 40 },
-                        visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
-                    } as any}
-                    className="max-w-5xl mx-auto"
-                >
+                <div className="max-w-5xl mx-auto">
                     <div ref={containerRef} className="relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_rgba(0,51,231,0.15)] border border-white group aspect-video bg-gray-100">
-                        {(!isMobile && isInView && canLoadVideo) || (!isPlaying && isMobile) ? (
+                        {(!isMobile && canLoadVideo) || (!isPlaying && isMobile) ? (
                             <video
                                 ref={videoRef}
                                 src="/img/workflow.mp4"
@@ -161,7 +115,7 @@ const OfficeOperations = () => {
                             <span className="text-[8px] md:text-[10px] font-black text-white/50 uppercase tracking-[4px] drop-shadow-md">SBN System</span>
                         </div>
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Stats Below Video */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
@@ -170,20 +124,10 @@ const OfficeOperations = () => {
                         { value: '24/7/365', label: 'Operations Coverage' },
                         { value: '14+ Yrs', label: 'Market Leadership' },
                     ].map((stat, i) => (
-                        <motion.div
-                            key={i}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, margin: "-50px" }}
-                            variants={{
-                                hidden: { opacity: 0, y: 30 },
-                                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: i * 0.15 } }
-                            } as any}
-                            className="relative py-6 md:py-0"
-                        >
+                        <div key={i} className="relative py-6 md:py-0">
                             <div className="text-4xl md:text-5xl font-black text-[#0033e7] tracking-tighter mb-3">{stat.value}</div>
                             <div className="text-gray-500 font-bold uppercase text-[11px] tracking-[3px]">{stat.label}</div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

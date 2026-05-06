@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { FaPlay, FaQuoteLeft, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 
@@ -67,10 +66,8 @@ const testimonialsData: Testimonial[] = [
 const Testimonials = () => {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
-    const sectionRef = useRef<HTMLElement>(null);
     const [canLoadVideo, setCanLoadVideo] = useState(false);
-    const [isMobile, setIsMobile] = useState(true); // Assume mobile first
-    const isInView = useInView(sectionRef, { once: true, margin: "200px" });
+    const [isMobile, setIsMobile] = useState(true);
 
     useEffect(() => {
         // Only load background videos automatically on desktop devices
@@ -92,7 +89,7 @@ const Testimonials = () => {
     const scroll = (direction: 'left' | 'right') => {
         if (scrollRef.current) {
             const { scrollLeft, clientWidth } = scrollRef.current;
-            const scrollAmount = clientWidth * 0.8; // Scroll by 80% of visible width
+            const scrollAmount = clientWidth * 0.8;
             const targetScroll = direction === 'left' ? scrollLeft - scrollAmount : scrollLeft + scrollAmount;
 
             scrollRef.current.scrollTo({
@@ -103,40 +100,18 @@ const Testimonials = () => {
     };
 
     return (
-        <section
-            ref={sectionRef}
-            className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100"
-        >
-            <Image
-                src="/background image.webp"
-                alt="Background"
-                fill
-                className="object-cover object-center pointer-events-none -z-20"
-            />
-            {/* Overlay gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
-
+        <section className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100 bg-slate-50/50">
             <div className="container mx-auto px-4 relative z-10 mb-12">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="max-w-2xl">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm"
-                        >
+                        <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                             Proof of Success
-                        </motion.div>
+                        </div>
 
-                        <motion.h2
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2]"
-                        >
+                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2]">
                             Trusted by High-Performance Practices
-                        </motion.h2>
+                        </h2>
                     </div>
 
                     {/* Navigation Buttons */}
@@ -175,7 +150,7 @@ const Testimonials = () => {
                             <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:shadow-[0_25px_50px_rgba(0,51,231,0.15)] transition-all duration-500 flex flex-col cursor-pointer group overflow-hidden w-full h-full min-h-[450px]">
                                 {/* Video Header */}
                                 <div className="relative aspect-video w-full bg-gray-900 overflow-hidden group">
-                                    {!isMobile && isInView && canLoadVideo ? (
+                                    {!isMobile && canLoadVideo ? (
                                         <video
                                             src={item.videoUrl}
                                             muted
@@ -241,38 +216,30 @@ const Testimonials = () => {
             </div>
 
             {/* Video Modal */}
-            <AnimatePresence>
-                {selectedVideo && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-gray-900/95 backdrop-blur-md"
-                        onClick={() => setSelectedVideo(null)}
+            {selectedVideo && (
+                <div
+                    className="fixed inset-0 z-[10000] flex items-center justify-center p-4 bg-gray-900/95 backdrop-blur-md"
+                    onClick={() => setSelectedVideo(null)}
+                >
+                    <div
+                        className="relative w-full max-w-[1000px] aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10 transition-all transform scale-100"
+                        onClick={(e) => e.stopPropagation()}
                     >
-                        <motion.div
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
-                            className="relative w-full max-w-[1000px] aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10"
-                            onClick={(e) => e.stopPropagation()}
+                        <button
+                            className="absolute top-6 right-6 z-20 w-12 h-12 bg-white/10 hover:bg-white/20 hover:text-[#0033e7] backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
+                            onClick={() => setSelectedVideo(null)}
                         >
-                            <button
-                                className="absolute top-6 right-6 z-20 w-12 h-12 bg-white/10 hover:bg-white/20 hover:text-[#0033e7] backdrop-blur-sm text-white rounded-full flex items-center justify-center transition-all duration-300 border border-white/20"
-                                onClick={() => setSelectedVideo(null)}
-                            >
-                                <FaTimes size={18} />
-                            </button>
-                            <video
-                                src={selectedVideo}
-                                autoPlay
-                                controls
-                                className="w-full h-full object-cover"
-                            />
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                            <FaTimes size={18} />
+                        </button>
+                        <video
+                            src={selectedVideo}
+                            autoPlay
+                            controls
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                </div>
+            )}
 
             <style jsx global>{`
                 .scrollbar-hide::-webkit-scrollbar {

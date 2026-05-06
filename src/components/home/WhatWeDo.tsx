@@ -2,65 +2,28 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { featuresData } from '@/data/home';
 
-// Fade-up style identical to AOS / Hero section
-const fadeUp: any = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-};
-
 const WhatWeDo = () => {
-    // Benefit tags for cards
     const benefitTags = ["Automation First", "High Accuracy", "Fast Turnaround"];
 
     return (
-        <section
-            className="py-24 md:py-32 relative overflow-hidden border-t border-slate-100"
-        >
-            <Image
-                src="/background image.webp"
-                alt="Background"
-                fill
-                className="object-cover object-center pointer-events-none -z-20"
-            />
-            {/* Overlay gradient to keep content highly readable over background image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
-
+        <section className="py-24 md:py-32 relative overflow-hidden border-t border-slate-100">
             <div className="container mx-auto px-4 relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-20">
-                    <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeUp}
-                        className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full"
-                    >
+                    <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
                         Capabilities
-                    </motion.div>
+                    </div>
 
-                    <motion.h2
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeUp}
-                        className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-8"
-                    >
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-[1.2] mb-8">
                         One Strategic Platform. <br className="hidden md:block" /> Superior Performance.
-                    </motion.h2>
+                    </h2>
 
-                    <motion.p
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={fadeUp}
-                        className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium"
-                    >
+                    <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed font-medium">
                         We leverage intelligent automation and deep healthcare expertise to eliminate friction and maximize yield across your entire revenue ecosystem.
-                    </motion.p>
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -69,16 +32,9 @@ const WhatWeDo = () => {
                         const imgSrc = `/Section 4-${imgNum}.webp`;
 
                         return (
-                            <motion.div
+                            <div
                                 key={index}
                                 className="group bg-white/80 backdrop-blur-md rounded-2xl shadow-sm hover:shadow-[0_25px_50px_rgba(0,51,231,0.15)] transition-all duration-500 hover:-translate-y-2 overflow-hidden border border-white flex flex-col h-full"
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-50px" }}
-                                variants={{
-                                    hidden: { opacity: 0, y: 40 },
-                                    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut", delay: index * 0.15 } }
-                                } as any}
                             >
                                 <div className="relative overflow-hidden aspect-[16/11]">
                                     <Image
@@ -110,7 +66,7 @@ const WhatWeDo = () => {
                                         </Link>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </div>
                         );
                     })}
                 </div>

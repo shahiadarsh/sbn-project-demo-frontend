@@ -6,13 +6,13 @@ import { getDynamicMetadata, constructMetadata } from '@/utils/seo';
 import Hero from '@/components/home/Hero';
 import dynamic from 'next/dynamic';
 
-const Stats = dynamic(() => import('@/components/home/Stats'), { ssr: false });
-const ProcessFlow = dynamic(() => import('@/components/home/ProcessFlow'), { ssr: false });
-const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'), { ssr: false });
-const OfficeOperations = dynamic(() => import('@/components/home/OfficeOperations'), { ssr: false });
-const SoftwareExpertise = dynamic(() => import('@/components/home/SoftwareExpertise'), { ssr: false });
-const Pricing = dynamic(() => import('@/components/home/Pricing'), { ssr: false });
-const Testimonials = dynamic(() => import('@/components/home/Testimonials'), { ssr: false });
+const Stats = dynamic(() => import('@/components/home/Stats'), { ssr: true });
+const ProcessFlow = dynamic(() => import('@/components/home/ProcessFlow'), { ssr: true });
+const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'), { ssr: true });
+const OfficeOperations = dynamic(() => import('@/components/home/OfficeOperations'), { ssr: true });
+const SoftwareExpertise = dynamic(() => import('@/components/home/SoftwareExpertise'), { ssr: true });
+const Pricing = dynamic(() => import('@/components/home/Pricing'), { ssr: true });
+const Testimonials = dynamic(() => import('@/components/home/Testimonials'), { ssr: true });
 
 export async function generateMetadata(): Promise<Metadata> {
   const dynamic = await getDynamicMetadata('home');

@@ -87,7 +87,7 @@ const Hero = () => {
                                 alt="SBN Healthcare Solution"
                                 width={850}
                                 height={600}
-                                className="w-full h-auto max-w-[850px] mx-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] rounded-[32px] relative z-10"
+                                className="w-full h-auto max-w-[850px] mx-auto shadow-2xl shadow-blue-900/10 rounded-[32px] relative z-10"
                                 priority
                                 fetchPriority="high"
                                 unoptimized

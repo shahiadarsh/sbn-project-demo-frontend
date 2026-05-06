@@ -81,7 +81,7 @@ const Header = () => {
             className={`fixed top-0 left-0 right-0 z-[1000] shadow-sm transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
         >
             {/* Main Header - EFFAH Style Light Theme */}
-            <div className="bg-white/95 backdrop-blur-xl h-[80px] xl:h-[90px] flex items-center border-b border-slate-100 relative">
+            <div className="bg-white/95 md:backdrop-blur-xl h-[80px] xl:h-[90px] flex items-center border-b border-slate-100 relative">
                 <div className="w-full px-6 lg:px-12 2xl:px-20 flex items-center h-full relative z-10 transition-all duration-300">
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">

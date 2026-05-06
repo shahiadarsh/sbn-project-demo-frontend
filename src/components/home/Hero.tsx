@@ -8,18 +8,8 @@ import { heroData } from '@/data/home';
 const Hero = () => {
     return (
         <section
-            className="relative min-h-screen pt-[100px] pb-16 flex items-center overflow-hidden"
+            className="relative min-h-screen pt-[100px] pb-16 flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/50"
         >
-            <Image
-                src="/background image.webp"
-                alt="Background"
-                fill
-                className="object-cover object-center pointer-events-none -z-20"
-                priority
-            />
-            {/* Overlay gradient to keep the content highly readable while showing the background image */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/70 to-blue-100/60 pointer-events-none"></div>
-
             {/* Very light abstract background shapes to mimic eff-dashboard gradient overlays */}
             <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] rounded-full bg-blue-200/40 blur-[100px] opacity-70 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[400px] h-[400px] rounded-full bg-blue-300/30 blur-[100px] opacity-70 pointer-events-none"></div>
@@ -99,6 +89,7 @@ const Hero = () => {
                                 height={600}
                                 className="w-full h-auto max-w-[850px] mx-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] rounded-[32px] relative z-10"
                                 priority
+                                fetchPriority="high"
                             />
                         </div>
                     </div>

@@ -3,6 +3,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { FaPlay, FaPause, FaExpand } from 'react-icons/fa';
 import Image from 'next/image';
+import { useNativeInView } from '@/hooks/useNativeInView';
 
 const OfficeOperations = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -10,6 +11,7 @@ const OfficeOperations = () => {
     const [isPlaying, setIsPlaying] = useState(true);
     const [canLoadVideo, setCanLoadVideo] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
+    const isInView = useNativeInView(containerRef, { margin: "200px", once: true });
 
     useEffect(() => {
         // Only load video automatically on desktop devices
@@ -18,7 +20,7 @@ const OfficeOperations = () => {
             setIsMobile(mobile);
             if (!mobile) {
                 // Delay loading slightly to prioritize LCP
-                setTimeout(() => setCanLoadVideo(true), 2000);
+                setTimeout(() => setCanLoadVideo(true), 1000);
             }
         };
         
@@ -67,7 +69,7 @@ const OfficeOperations = () => {
                 {/* Video Player */}
                 <div className="max-w-5xl mx-auto">
                     <div ref={containerRef} className="relative rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-[0_40px_80px_rgba(0,51,231,0.15)] border border-white group aspect-video bg-gray-100">
-                        {(!isMobile && canLoadVideo) || (!isPlaying && isMobile) ? (
+                        {(!isMobile && isInView && canLoadVideo) || (!isPlaying && isMobile) ? (
                             <video
                                 ref={videoRef}
                                 src="/img/workflow.mp4"

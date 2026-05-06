@@ -11,8 +11,8 @@ const Hero = () => {
             className="relative min-h-screen pt-[100px] pb-16 flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-blue-50/50"
         >
             {/* Very light abstract background shapes to mimic eff-dashboard gradient overlays */}
-            <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] rounded-full bg-blue-200/40 blur-[100px] opacity-70 pointer-events-none"></div>
-            <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[400px] h-[400px] rounded-full bg-blue-300/30 blur-[100px] opacity-70 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 -mr-32 -mt-32 w-[500px] h-[500px] rounded-full bg-blue-200/40 blur-[100px] opacity-70 pointer-events-none hidden md:block"></div>
+            <div className="absolute bottom-0 left-0 -ml-32 -mb-32 w-[400px] h-[400px] rounded-full bg-blue-300/30 blur-[100px] opacity-70 pointer-events-none hidden md:block"></div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-8 items-center">
@@ -80,7 +80,7 @@ const Hero = () => {
                     >
                         <div className="relative group transition-transform duration-500 hover:scale-[1.02]">
                             {/* Glow effect closely matching eff-dashboard style */}
-                            <div className="absolute inset-x-0 bottom-0 top-10 bg-gradient-to-b from-[#0033e7]/20 to-[#0033e7]/5 rounded-[32px] blur-[60px] opacity-70 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
+                            <div className="absolute inset-x-0 bottom-0 top-10 bg-gradient-to-b from-[#0033e7]/20 to-[#0033e7]/5 rounded-[32px] blur-[60px] opacity-70 group-hover:opacity-100 transition-opacity duration-700 -z-10 hidden md:block"></div>
 
                             <Image
                                 src="/Home image1.webp"
@@ -90,6 +90,7 @@ const Hero = () => {
                                 className="w-full h-auto max-w-[850px] mx-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)] rounded-[32px] relative z-10"
                                 priority
                                 fetchPriority="high"
+                                unoptimized
                             />
                         </div>
                     </div>

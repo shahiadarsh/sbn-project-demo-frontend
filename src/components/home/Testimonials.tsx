@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaPlay, FaQuoteLeft, FaTimes, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
+import { useNativeInView } from '@/hooks/useNativeInView';
 
 interface Testimonial {
     id: number;
@@ -66,8 +67,10 @@ const testimonialsData: Testimonial[] = [
 const Testimonials = () => {
     const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLElement>(null);
     const [canLoadVideo, setCanLoadVideo] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
+    const isInView = useNativeInView(sectionRef, { margin: "200px", once: true });
 
     useEffect(() => {
         // Only load background videos automatically on desktop devices
@@ -76,7 +79,7 @@ const Testimonials = () => {
             setIsMobile(mobile);
             if (!mobile) {
                 // Delay loading slightly to prioritize LCP
-                setTimeout(() => setCanLoadVideo(true), 2000);
+                setTimeout(() => setCanLoadVideo(true), 1000);
             }
         };
         
@@ -100,7 +103,7 @@ const Testimonials = () => {
     };
 
     return (
-        <section className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100 bg-slate-50/50">
+        <section ref={sectionRef} className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100 bg-slate-50/50">
             <div className="container mx-auto px-4 relative z-10 mb-12">
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
                     <div className="max-w-2xl">
@@ -150,7 +153,7 @@ const Testimonials = () => {
                             <div className="bg-white/80 backdrop-blur-md rounded-2xl border border-white shadow-sm hover:shadow-[0_25px_50px_rgba(0,51,231,0.15)] transition-all duration-500 flex flex-col cursor-pointer group overflow-hidden w-full h-full min-h-[450px]">
                                 {/* Video Header */}
                                 <div className="relative aspect-video w-full bg-gray-900 overflow-hidden group">
-                                    {!isMobile && canLoadVideo ? (
+                                    {!isMobile && isInView && canLoadVideo ? (
                                         <video
                                             src={item.videoUrl}
                                             muted

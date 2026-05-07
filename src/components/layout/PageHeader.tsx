@@ -18,7 +18,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
 }) => {
     return (
         <div
-            className="relative py-[140px] md:py-[220px] text-center text-white overflow-hidden bg-no-repeat bg-center bg-cover"
+            className="relative py-[80px] md:py-[100px] text-center text-white overflow-hidden bg-no-repeat bg-center bg-cover"
             style={{ backgroundImage: `linear-gradient(rgba(11, 31, 51, 0.80), rgba(11, 31, 51, 0.80)), url('${bgImage}')` }}
         >
             <div className="container mx-auto px-4 relative z-10">
@@ -39,7 +39,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                             {subtitle}
                         </motion.div>
                     )}
-                    <h1 className="text-[3.5rem] md:text-[5.5rem] font-black text-white leading-[1.05] mb-8 tracking-[-0.03em] drop-shadow-2xl">
+                    <h1 className="text-[2.2rem] md:text-[3.8rem] font-black text-white leading-[1.05] mb-8 tracking-[-0.03em] drop-shadow-2xl">
                         {title.split(' ').map((word, i) => (
                             <span key={i} className="inline-block mr-[0.2em] last:mr-0">{word}</span>
                         ))}

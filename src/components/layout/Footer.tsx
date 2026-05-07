@@ -30,10 +30,10 @@ const Footer = () => {
                             <Link href="/" className="flex items-center gap-4 no-underline group">
                                 <div className="p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-white transition-transform group-hover:scale-105">
                                     <Image
-                                        src="/img/Logo.webp"
+                                        src="/Logo.webp"
                                         alt="SBN Healthcare Solution"
-                                        width={150}
-                                        height={50}
+                                        width={60}
+                                        height={60}
                                         className="h-[50px] md:h-[60px] w-auto mix-blend-multiply object-contain"
                                     />
                                 </div>
@@ -102,7 +102,7 @@ const Footer = () => {
                         <ul className="flex flex-col gap-5 p-0 list-none">
                             {[
                                 { name: 'About Us', href: '/about-us' },
-                                { name: 'Insights', href: '/blog' },
+                                { name: 'Blog', href: '/blog' },
                                 { name: 'RCM Tool', href: '/rcm-calculator' },
                                 { name: 'Pricing', href: '/pricing' },
                                 { name: 'Contact Us', href: '/contact-us' }

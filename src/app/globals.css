@@ -306,3 +306,29 @@ button {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   position: relative;
 }
+
+/* Blog Content Styles */
+.prose h1 { @apply text-3xl md:text-4xl font-black mb-6 mt-10 text-slate-900; }
+.prose h2 { @apply text-2xl md:text-3xl font-black mb-5 mt-8 text-slate-900; }
+.prose h3 { @apply text-xl md:text-2xl font-black mb-4 mt-6 text-slate-900; }
+.prose p { @apply mb-6 text-slate-600 leading-relaxed; }
+.prose ul { @apply list-disc list-inside mb-6 space-y-2 text-slate-600; }
+.prose ol { @apply list-decimal list-inside mb-6 space-y-2 text-slate-600; }
+.prose li { @apply ml-4; }
+.prose a { @apply text-[#0033e7] underline font-bold; }
+.prose strong { @apply font-bold text-slate-900; }
+.prose blockquote { @apply border-l-4 border-[#0033e7] pl-6 py-2 my-8 italic text-slate-700 bg-blue-50/50 rounded-r-xl; }
+
+/* Responsive Blog Images */
+.blog-content img {
+  @apply max-w-full h-auto rounded-2xl my-8 shadow-lg;
+}
+.blog-content table {
+  @apply w-full border-collapse mb-8 overflow-x-auto block;
+}
+.blog-content th, .blog-content td {
+  @apply border border-slate-200 p-4 text-left;
+}
+.blog-content th {
+  @apply bg-slate-50 font-black uppercase text-[10px] tracking-widest text-slate-400;
+}

@@ -481,35 +481,42 @@ export default function BlogManagement() {
                                                                         Sync Main
                                                                     </button>
                                                                 </div>
-                                                                <button type="button" onClick={() => {
-                                                                    const input = document.createElement('input');
-                                                                    input.type = 'file';
-                                                                    input.accept = 'image/*';
-                                                                    input.onchange = async (e: any) => {
+                                                                <input
+                                                                    type="file"
+                                                                    id="social-image-upload"
+                                                                    className="hidden"
+                                                                    accept="image/*"
+                                                                    onChange={async (e) => {
                                                                         const file = e.target.files?.[0];
-                                                                        if (file) {
-                                                                            const formDataUpload = new FormData();
-                                                                            formDataUpload.append('image', file);
-                                                                            setIsUploading(true);
-                                                                            try {
-                                                                                const token = localStorage.getItem('adminToken');
-                                                                                const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formDataUpload, {
-                                                                                    headers: { 'Content-Type': 'multipart/form-data', Authorization: `Bearer ${token}` }
-                                                                                });
-                                                                                setFormData(prev => ({ ...prev, ogImage: res.data.url, twitterImage: res.data.url }));
-                                                                                showStatus('success', 'Social image uploaded!');
-                                                                            } catch (err) {
-                                                                                showStatus('error', 'Upload failed');
-                                                                            } finally {
-                                                                                setIsUploading(false);
-                                                                            }
+                                                                        if (!file) return;
+
+                                                                        const formDataUpload = new FormData();
+                                                                        formDataUpload.append('image', file);
+                                                                        setIsUploading(true);
+                                                                        try {
+                                                                            const token = localStorage.getItem('adminToken');
+                                                                            const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formDataUpload, {
+                                                                                headers: {
+                                                                                    'Content-Type': 'multipart/form-data',
+                                                                                    Authorization: `Bearer ${token}`
+                                                                                }
+                                                                            });
+                                                                            setFormData(prev => ({ ...prev, ogImage: res.data.url, twitterImage: res.data.url }));
+                                                                            showStatus('success', 'Social image uploaded!');
+                                                                        } catch (err: any) {
+                                                                            showStatus('error', err.response?.data?.message || 'Social upload failed');
+                                                                        } finally {
+                                                                            setIsUploading(false);
                                                                         }
-                                                                    };
-                                                                    input.click();
-                                                                }} className="w-full py-4 rounded-xl bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-[var(--primary-color)] transition-all flex items-center justify-center gap-3">
+                                                                    }}
+                                                                />
+                                                                <label
+                                                                    htmlFor="social-image-upload"
+                                                                    className="w-full py-4 rounded-xl bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-[var(--primary-color)] transition-all flex items-center justify-center gap-3 cursor-pointer"
+                                                                >
                                                                     {isUploading ? <div className="w-3 h-3 border-2 border-white/20 border-t-white rounded-full animate-spin" /> : <FaImage />}
                                                                     Upload Social Banner
-                                                                </button>
+                                                                </label>
                                                             </div>
                                                         </div>
                                                     </div>

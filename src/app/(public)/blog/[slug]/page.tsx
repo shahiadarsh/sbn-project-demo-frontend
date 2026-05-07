@@ -109,8 +109,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             </div>
 
             <article className="py-20 md:py-24">
-                <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                <div className="max-w-[1550px] mx-auto px-2 md:px-6">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 
                         {/* Left Sidebar / Meta */}
                         <div className="lg:col-span-1 hidden lg:block">
@@ -127,8 +127,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                         </div>
 
                         {/* Main Content */}
-                        <div className="lg:col-span-8">
-                            <div className="max-w-[760px] mx-auto">
+                        <div className="lg:col-span-9 min-w-0">
+                            <div className="max-w-full mx-auto">
 
                                 {/* Post Metadata Info */}
                                 <div className="flex flex-wrap items-center gap-6 md:gap-10 mb-12 py-8 border-b border-slate-100">
@@ -150,7 +150,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
 
                                 {/* Table of Contents (Mobile/Tablet and Desktop inline) */}
                                 {toc.length > 0 && (
-                                    <div className="mb-16 p-8 bg-slate-50 rounded-3xl border border-slate-100">
+                                    <div className="mb-16 p-8 bg-slate-50 rounded-3xl border border-slate-100 overflow-hidden">
                                         <div className="flex items-center gap-3 mb-6">
                                             <FaListUl className="text-[var(--primary-color)]" />
                                             <h4 className="text-[11px] font-black uppercase tracking-[3px] text-slate-900">Inside this article</h4>
@@ -170,17 +170,18 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                                 )}
 
                                 {/* Article Body */}
-                                <div className="prose prose-slate prose-lg max-w-none">
-                                    <div className="text-slate-700 leading-relaxed whitespace-pre-wrap font-medium text-lg lg:text-xl">
-                                        {post.content}
-                                    </div>
+                                <div className="max-w-none break-words overflow-x-hidden">
+                                    <div 
+                                        className="blog-content prose prose-slate prose-lg max-w-none text-slate-700 leading-relaxed font-medium text-base lg:text-lg"
+                                        dangerouslySetInnerHTML={{ __html: post.content }}
+                                    />
 
                                     {/* Author Box */}
-                                    <div className="mt-20 p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
+                                    <div className="mt-20 p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left overflow-hidden">
                                         <div className="w-24 h-24 rounded-full overflow-hidden bg-white border-4 border-white shadow-xl flex-shrink-0">
-                                            <img src={post.author?.image || '/img/team/ceo.webp'} alt={post.author?.name} className="w-full h-full object-cover" />
+                                            <img src={post.author?.image || '/Logo.webp'} alt={post.author?.name} className="w-full h-full object-contain p-2" />
                                         </div>
-                                        <div>
+                                        <div className="min-w-0">
                                             <div className="inline-block px-3 py-1 bg-[var(--primary-color)]/10 text-[var(--primary-color)] rounded-lg text-[9px] font-black uppercase tracking-widest mb-3">Author Insight</div>
                                             <h4 className="text-xl font-black text-slate-900 mb-4">{post.author?.name || 'SBN Healthcare Team'}</h4>
                                             <p className="text-slate-500 font-bold text-sm leading-relaxed mb-6">
@@ -190,17 +191,17 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                                     </div>
 
                                     {/* Call to Action */}
-                                    <div className="my-16 p-12 bg-slate-900 rounded-[3rem] text-white overflow-hidden relative shadow-2xl group transition-all duration-700 hover:shadow-[0_40px_100px_rgba(0,0,0,0.3)]">
+                                    <div className="my-16 p-12 bg-[#0033E7] rounded-[3rem] text-white overflow-hidden relative shadow-2xl group transition-all duration-700 hover:shadow-[0_40px_100px_rgba(0,51,231,0.3)]">
                                         <div className="relative z-10">
-                                            <h3 className="text-3xl font-black mb-6 uppercase tracking-tighter">Ready to Scale Your Practice?</h3>
-                                            <p className="text-slate-400 mb-10 max-w-[500px] font-bold text-sm">
+                                            <h3 className="text-3xl font-black mb-6 uppercase tracking-tighter text-white">Ready to Scale Your Practice?</h3>
+                                            <p className="text-blue-100 mb-10 max-w-[500px] font-bold text-sm">
                                                 Speak with an SBN platform specialist to discover how our Governance Framework can transform your Revenue Cycle.
                                             </p>
-                                            <Link href="/contact-us" className="inline-block bg-[var(--primary-color)] text-white font-black px-10 py-5 rounded-2xl uppercase tracking-[2px] text-xs hover:scale-105 transition-all shadow-xl shadow-[var(--primary-color)]/20 active:scale-95">
+                                            <Link href="/contact-us" className="inline-block bg-white text-[#0033E7] font-black px-10 py-5 rounded-2xl uppercase tracking-[2px] text-xs hover:scale-105 transition-all shadow-xl active:scale-95">
                                                 Get Expert Consultation
                                             </Link>
                                         </div>
-                                        <div className="absolute -top-20 -right-20 w-80 h-80 bg-[var(--primary-color)] rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                                        <div className="absolute -top-20 -right-20 w-80 h-80 bg-white/20 rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity"></div>
                                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full border border-white/5 rounded-full scale-150 pointer-events-none"></div>
                                     </div>
                                 </div>
@@ -208,7 +209,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                         </div>
 
                         {/* Right Sidebar (Optional) */}
-                        <div className="lg:col-span-3 hidden lg:block">
+                        <div className="lg:col-span-2 hidden lg:block">
                             <div className="sticky top-32 space-y-12">
                                 <div className="p-8 bg-slate-50 rounded-3xl border border-slate-100">
                                     <h4 className="text-[10px] font-black uppercase tracking-[3px] text-slate-900 mb-6">Article Categories</h4>

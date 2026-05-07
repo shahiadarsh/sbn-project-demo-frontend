@@ -37,6 +37,7 @@ const navLinks = [
     { name: 'Compliance & Security', href: '/security' },
     { name: 'RCM Calculator', href: '/rcm-calculator' },
     { name: 'Pricing', href: '/pricing' },
+    { name: 'Blog', href: '/blog' },
     { name: 'Contact Us', href: '/contact-us' },
 ];
 
@@ -87,11 +88,11 @@ const Header = () => {
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">
                         <div className="transition-transform group-hover:scale-105">
                     <Image 
-                        src="/img/Logo.webp" 
+                        src="/Logo.webp" 
                         alt="SBN Healthcare Solution" 
-                        width={180}
-                        height={55}
-                        className="max-h-[44px] xl:max-h-[55px] w-auto mix-blend-multiply object-contain" 
+                        width={60}
+                        height={60}
+                        className="max-h-[50px] xl:max-h-[60px] w-auto mix-blend-multiply object-contain" 
                         priority
                     />
                         </div>

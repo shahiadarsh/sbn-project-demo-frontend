@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '@/store';
 import { fetchAllSeo, upsertSeo, deleteSeo } from '@/store/slices/seoSlice';
-import { FaSave, FaGlobe, FaTrash, FaPlus, FaLightbulb, FaShareAlt, FaRobot, FaCode, FaLink, FaSitemap, FaExclamationTriangle, FaCheck, FaTimes, FaKeyboard, FaEye } from 'react-icons/fa';
+import { FaSave, FaGlobe, FaTrash, FaPlus, FaLightbulb, FaShareAlt, FaRobot, FaCode, FaLink, FaSitemap, FaExclamationTriangle, FaCheck, FaTimes, FaKeyboard, FaEye, FaImage } from 'react-icons/fa';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,6 +16,7 @@ export default function SeoManagement() {
     const [robotsTxt, setRobotsTxt] = useState('');
     const [newRedirect, setNewRedirect] = useState({ fromPath: '', toPath: '', code: 301 });
     const [isSavingRobots, setIsSavingRobots] = useState(false);
+    const [isUploading, setIsUploading] = useState(false);
     const [status, setStatus] = useState({ type: '', message: '' });
     const [formData, setFormData] = useState({
         _id: '',
@@ -351,12 +352,50 @@ export default function SeoManagement() {
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Social Image URL</label>
-                                                <input
-                                                    className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-[var(--primary-color)] focus:outline-none transition-all font-bold text-slate-800"
-                                                    value={formData.ogImage}
-                                                    onChange={(e) => setFormData({ ...formData, ogImage: e.target.value })}
-                                                    placeholder="/img/og-preview.webp"
-                                                />
+                                                <div className="flex flex-col gap-3">
+                                                    <input
+                                                        className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-[var(--primary-color)] focus:outline-none transition-all font-bold text-slate-800"
+                                                        value={formData.ogImage}
+                                                        onChange={(e) => setFormData({ ...formData, ogImage: e.target.value })}
+                                                        placeholder="/img/og-preview.webp"
+                                                    />
+                                                    <input
+                                                        type="file"
+                                                        id="social-image-upload"
+                                                        className="hidden"
+                                                        accept="image/*"
+                                                        onChange={async (e) => {
+                                                            const file = e.target.files?.[0];
+                                                            if (!file) return;
+
+                                                            const formDataUpload = new FormData();
+                                                            formDataUpload.append('image', file);
+                                                            setIsUploading(true);
+                                                            try {
+                                                                const token = localStorage.getItem('adminToken');
+                                                                const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/upload`, formDataUpload, {
+                                                                    headers: {
+                                                                        'Content-Type': 'multipart/form-data',
+                                                                        Authorization: `Bearer ${token}`
+                                                                    }
+                                                                });
+                                                                setFormData(prev => ({ ...prev, ogImage: res.data.url }));
+                                                                showStatus('success', 'Image uploaded!');
+                                                            } catch (err: any) {
+                                                                showStatus('error', err.response?.data?.message || 'Upload failed');
+                                                            } finally {
+                                                                setIsUploading(false);
+                                                            }
+                                                        }}
+                                                    />
+                                                    <label
+                                                        htmlFor="social-image-upload"
+                                                        className="w-full py-4 rounded-xl bg-slate-900 text-white text-[10px] font-black uppercase tracking-widest hover:bg-[var(--primary-color)] transition-all flex items-center justify-center gap-3 cursor-pointer"
+                                                    >
+                                                        {isUploading ? <div className="w-3 h-3 border-2 border-white/20 border-t-white rounded-full animate-spin" /> : <FaImage />}
+                                                        Upload Social Banner
+                                                    </label>
+                                                </div>
                                             </div>
                                             <div className="space-y-4">
                                                 <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">Twitter Card Type</label>

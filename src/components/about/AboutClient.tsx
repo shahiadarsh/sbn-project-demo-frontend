@@ -93,7 +93,7 @@ export default function AboutClient() {
                         className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white font-bold uppercase text-[11px] tracking-[4px] mb-8 px-5 py-2 rounded-full backdrop-blur-md"
                     >
                         <span className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></span>
-                        About SBN Healthcare
+                        About SBN Healthcare | Founded 2021
                     </motion.div>
                     <motion.h1
                         initial={{ opacity: 0, y: 30 }}
@@ -202,7 +202,7 @@ export default function AboutClient() {
                                     Let’s be honest, most healthcare billing systems are messy. Too many gaps, too many delays, and way too many denials.
                                 </p>
                                 <p className="text-[18px] text-slate-600 font-bold leading-relaxed mb-0 opacity-80">
-                                    That’s exactly why SBN Healthcare matters. We’re not here just to “do billing.” We focus on building proper, structured revenue systems that actually work in real life.
+                                    That’s exactly why SBN Healthcare matters. Founded in 2021, we’re not here just to “do billing.” We focus on building proper, structured revenue systems that actually work in real life.
                                 </p>
                             </div>
                         </div>

@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 const Footer = dynamic(() => import('@/components/layout/Footer'), { ssr: true });
 const CookieConsent = dynamic(() => import('@/components/layout/CookieConsent'), { ssr: false });
 const Chatbot = dynamic(() => import('@/components/chat/Chatbot'), { ssr: false });
+const JsonLd = dynamic(() => import('@/components/seo/JsonLd'), { ssr: true });
 
 export default function PublicLayout({
     children,
@@ -15,6 +16,7 @@ export default function PublicLayout({
 }) {
     return (
         <>
+            <JsonLd />
             <Header />
             <main>{children}</main>
             <Footer />

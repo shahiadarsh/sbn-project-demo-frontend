@@ -28,16 +28,15 @@ const Hero = () => {
                         <h1
                             className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3.5rem] font-extrabold text-gray-900 leading-[1.2] mb-5 tracking-tight"
                         >
-                            Medical Insurance <br className="hidden xl:block" />
-                            <span className="text-[#0033e7]">Verification Services</span> <br />
-                            in New York
+                            Trusted Medical <br className="hidden xl:block" />
+                            <span className="text-[#0033e7]">Billing Services</span> <br />
+                            That Put Your Practice First
                         </h1>
 
                         <p
                             className="text-base md:text-[1.1rem] text-gray-600 mb-8 max-w-[550px] mx-auto lg:mx-0 leading-relaxed font-medium"
                         >
-                            Unified eligibility, billing, denial management, and analytics —
-                            engineered to accelerate cash flow and eliminate administrative friction.
+                            You became a healthcare provider to care for patients, not to chase insurance companies, decode claim rejections, or spend hours buried in billing paperwork. At SBN Healthcare Solution, we handle all of that for you.
                         </p>
 
                         <div
@@ -50,14 +49,18 @@ const Hero = () => {
                                 >
                                     Get Started
                                 </Link>
-                                <div className="flex gap-4 text-sm font-medium text-gray-500">
-                                    <span className="flex items-center gap-1.5">
+                                <div className="flex flex-wrap gap-4 text-sm font-medium text-gray-500 justify-center lg:justify-start">
+                                    <span className="flex items-center gap-1.5 whitespace-nowrap">
                                         <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
                                         HIPAA Compliant
                                     </span>
-                                    <span className="flex items-center gap-1.5">
+                                    <span className="flex items-center gap-1.5 whitespace-nowrap">
                                         <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
-                                        US-Based
+                                        US-Based Support
+                                    </span>
+                                    <span className="flex items-center gap-1.5 whitespace-nowrap">
+                                        <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path></svg>
+                                        14+ Years Experience
                                     </span>
                                 </div>
                             </div>

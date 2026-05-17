@@ -54,15 +54,15 @@ const OfficeOperations = () => {
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
-                        Behind The Scenes
+                        Why Providers Choose SBN
                     </div>
 
                     <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-gray-900 tracking-tight mb-8 leading-[1.2]">
-                        Sovereign Operations Center
+                        We Treat Your Revenue Like Our Own
                     </h2>
 
                     <p className="text-lg text-gray-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                        A look inside our state-of-the-art infrastructure where precision meets performance. Our expert analysts work around the clock to ensure your revenue cycles remain friction-less.
+                        There are many billing companies out there. Here’s why healthcare providers across the USA choose SBN — and stay with us:
                     </p>
                 </div>
 
@@ -119,16 +119,23 @@ const OfficeOperations = () => {
                     </div>
                 </div>
 
-                {/* Stats Below Video */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-4xl mx-auto text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
+                {/* Reasons List Below Video */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16 max-w-6xl mx-auto">
                     {[
-                        { value: '200+', label: 'Billing Specialists' },
-                        { value: '24/7/365', label: 'Operations Coverage' },
-                        { value: '14+ Yrs', label: 'Market Leadership' },
-                    ].map((stat, i) => (
-                        <div key={i} className="relative py-6 md:py-0">
-                            <div className="text-4xl md:text-5xl font-black text-[#0033e7] tracking-tighter mb-3">{stat.value}</div>
-                            <div className="text-gray-500 font-bold uppercase text-[11px] tracking-[3px]">{stat.label}</div>
+                        { title: '14+ Years of Hands-On Experience', desc: 'We’ve seen every billing scenario' },
+                        { title: '200+ Dedicated Billing Specialists', desc: 'Real experts on your claims, not just software' },
+                        { title: '98% First-Pass Claim Acceptance Rate', desc: 'Fewer rejections, faster payments' },
+                        { title: 'Claims Submitted Within 48 Hours', desc: 'No delays, no backlogs' },
+                        { title: 'Compatible with 50+ EMR/EHR Platforms', desc: 'Seamless integration with your systems' },
+                        { title: 'Full Transparency and Reporting', desc: 'You always know where your money stands' },
+                        { title: 'HIPAA-Compliant Operations', desc: 'Your patient data is always protected' },
+                    ].map((reason, i) => (
+                        <div key={i} className="flex flex-col p-6 bg-white rounded-2xl shadow-sm border border-slate-100 items-start text-left hover:shadow-md transition-shadow">
+                            <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-[#0033e7] mb-4">
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <h4 className="text-lg font-bold text-slate-900 mb-2">{reason.title}</h4>
+                            <p className="text-slate-500 text-sm font-medium leading-relaxed">{reason.desc}</p>
                         </div>
                     ))}
                 </div>

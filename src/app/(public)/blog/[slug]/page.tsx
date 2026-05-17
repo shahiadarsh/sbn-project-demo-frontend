@@ -92,7 +92,6 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 title={post.title}
                 subtitle={post.category || 'Insights'}
                 description={post.excerpt}
-                bgImage={post.image}
             />
 
             {/* Breadcrumbs */}
@@ -129,6 +128,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                         {/* Main Content */}
                         <div className="lg:col-span-9 min-w-0">
                             <div className="max-w-full mx-auto">
+                                
+                                {/* Post Thumbnail */}
+                                {post.image && post.image !== 'default-blog.webp' && (
+                                    <div className="mb-10 rounded-[2rem] overflow-hidden border border-slate-100 shadow-xl relative">
+                                        <img src={post.image} alt={post.title} className="w-full h-auto max-h-[600px] object-cover" />
+                                    </div>
+                                )}
 
                                 {/* Post Metadata Info */}
                                 <div className="flex flex-wrap items-center gap-6 md:gap-10 mb-12 py-8 border-b border-slate-100">

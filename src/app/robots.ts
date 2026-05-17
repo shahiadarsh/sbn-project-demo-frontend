@@ -15,14 +15,26 @@ export default async function robots(): Promise<MetadataRoute.Robots> {
     console.warn('Failed to fetch robots.txt settings:', error)
   }
 
-  // Parse basic rules if needed, but Next.js robots.ts expects an object
-  // For simplicity, we'll return a standard object but you can expand this
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-      disallow: '/admin/',
-    },
+    rules: [
+      {
+        userAgent: '*',
+        allow: '/',
+        disallow: '/admin/',
+      },
+      {
+        userAgent: 'GPTBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+      },
+      {
+        userAgent: 'ChatGPT-User',
+        allow: '/',
+      }
+    ],
     sitemap: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sbnhealthcaresolution.com'}/sitemap.xml`,
   }
 }

@@ -23,9 +23,9 @@ const testimonialsData: Testimonial[] = [
         name: "Dr. Sarah Mitchell",
         title: "Medical Director",
         practice: "Mitchell Family Practice",
-        metric: "35%",
-        metricLabel: "Reduction in A/R Days",
-        quote: "SBN Healthcare transformed our revenue cycle. We saw an immediate impact on our cash flow within the first 90 days. Their automated scrubbing is a game changer.",
+        metric: "90 Days",
+        metricLabel: "To See Impact",
+        quote: "SBN Healthcare transformed our revenue cycle. We saw an immediate impact on cash flow within the first 90 days.",
         avatar: "/img/avatar1.webp",
         videoUrl: "/img/v2.mp4"
     },
@@ -34,33 +34,11 @@ const testimonialsData: Testimonial[] = [
         name: "James Wilson",
         title: "Practice Administrator",
         practice: "Oakwood Orthopedics",
-        metric: "98%",
-        metricLabel: "First-Pass Acceptance",
+        metric: "100%",
+        metricLabel: "Transparency",
         quote: "The level of transparency SBN provides is unmatched. We finally feel like we have a partner who is as invested in our financial success as we are.",
         avatar: "/img/avatar2.webp",
         videoUrl: "/img/v3.mp4"
-    },
-    {
-        id: 3,
-        name: "Elena Rodriguez",
-        title: "Operations Manager",
-        practice: "Sunshine Pediatrics",
-        metric: "$1.2M+",
-        metricLabel: "Revenue Recovered",
-        quote: "Processing denials used to be a nightmare. With SBN, it's seamless. Our staff can finally focus on patient care instead of fighting with payers.",
-        avatar: "/img/avatar3.webp",
-        videoUrl: "/img/v4.mp4"
-    },
-    {
-        id: 4,
-        name: "Dr. Michael Chen",
-        title: "Chief Financial Officer",
-        practice: "Harmony Health Group",
-        metric: "42%",
-        metricLabel: "Denial Rate Reduced",
-        quote: "Switching to SBN was the best operational decision we made. Their proactive denial management and real-time reporting give us full visibility into our finances.",
-        avatar: "/img/avatar4.webp",
-        videoUrl: "/img/v5.mp4"
     }
 ];
 

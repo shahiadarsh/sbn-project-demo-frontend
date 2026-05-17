@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { servicesList, specialtiesList } from '@/data/services'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.sbnhealthcaresolution.com'
@@ -19,8 +20,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // 2. Specialized Content Slugs (Static-Dynamic)
-  const serviceSlugs = ['eligibility-verification', 'benefits-check', 'prior-authorization', 'exclusion-check']
-  const specialtySlugs = ['behavioral-health', 'dme-orthopedics', 'urgent-care-telehealth', 'small-mid-practices', 'multi-speciality-hospitals']
+  const serviceSlugs = servicesList.map(s => s.slug)
+  const specialtySlugs = specialtiesList.map(s => s.slug)
 
   try {
     // 3. Dynamic SEO Entries from Database

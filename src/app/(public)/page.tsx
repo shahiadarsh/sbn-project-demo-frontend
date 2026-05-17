@@ -10,15 +10,16 @@ const Stats = dynamic(() => import('@/components/home/Stats'), { ssr: true });
 const ProcessFlow = dynamic(() => import('@/components/home/ProcessFlow'), { ssr: true });
 const WhatWeDo = dynamic(() => import('@/components/home/WhatWeDo'), { ssr: true });
 const OfficeOperations = dynamic(() => import('@/components/home/OfficeOperations'), { ssr: true });
-const SoftwareExpertise = dynamic(() => import('@/components/home/SoftwareExpertise'), { ssr: true });
 const Pricing = dynamic(() => import('@/components/home/Pricing'), { ssr: true });
 const Testimonials = dynamic(() => import('@/components/home/Testimonials'), { ssr: true });
+const FAQ = dynamic(() => import('@/components/home/FAQ'), { ssr: true });
 
 export async function generateMetadata(): Promise<Metadata> {
   const dynamic = await getDynamicMetadata('home');
   return constructMetadata(dynamic, {
-    title: 'Medical Insurance Verification Service in New York | SBN',
-    description: 'SBN provides medical insurance verification service in New York. Reduce claim denials with real-time checks and accurate eligibility verification.',
+    title: 'Medical Billing Services | SBN Healthcare Solution',
+    description: 'Struggling with claim denials? SBN expert medical billing services help USA practices recover more revenue reduce AR days and get paid faster. Free consultation!',
+    keywords: 'Medical Billing Services',
     slug: ''
   });
 }
@@ -27,13 +28,13 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <Stats />
       <ProcessFlow />
       <WhatWeDo />
       <OfficeOperations />
-      <SoftwareExpertise />
-      <Pricing />
+      <Stats />
       <Testimonials />
+      <Pricing />
+      <FAQ />
     </>
   );
 }

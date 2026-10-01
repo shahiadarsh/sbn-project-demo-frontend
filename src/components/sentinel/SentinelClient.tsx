@@ -47,21 +47,21 @@ const SentinelClient = () => {
                                 </p>
                             </div>
 
-                            <div className="not-prose mt-12 bg-[#010614] rounded-2xl p-8 text-white relative overflow-hidden shadow-xl">
+                            <div className="mt-12 bg-[#010614] rounded-2xl p-8 text-white relative overflow-hidden shadow-xl">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#0033e7] rounded-full blur-[60px] opacity-50 -mr-10 -mt-10 pointer-events-none"></div>
-                                <h3 className="text-xl text-white mt-0 mb-4 font-bold tracking-tight">
+                                <h3 className="text-xl !text-white mt-0 mb-4 font-bold tracking-tight">
                                     Contact SBN
                                 </h3>
-                                <p className="text-slate-300 mb-6 text-sm">
+                                <p className="!text-slate-300 mb-6 text-sm">
                                     For product information, integration enquiries or privacy questions:
                                 </p>
                                 <div className="space-y-2 text-sm font-medium mb-8">
-                                    <p className="m-0 text-white font-bold">SBN Healthcare Solution LLC</p>
-                                    <p className="m-0 text-slate-300">Email: <a href="mailto:info@sbnhealthcaresolution.com" className="text-blue-400 hover:text-white transition-colors no-underline">info@sbnhealthcaresolution.com</a></p>
+                                    <p className="m-0 !text-white font-bold">SBN Healthcare Solution LLC</p>
+                                    <p className="m-0 !text-slate-300">Email: <a href="mailto:info@sbnhealthcaresolution.com" className="!text-blue-400 hover:!text-white transition-colors no-underline">info@sbnhealthcaresolution.com</a></p>
                                 </div>
                                 <Link 
                                     href="/contact-us"
-                                    className="inline-block bg-[#0033e7] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded-xl transition-colors no-underline"
+                                    className="inline-block bg-[#0033e7] hover:bg-blue-600 !text-white font-bold py-3 px-8 rounded-xl transition-colors no-underline"
                                 >
                                     Enquire About Sentinel
                                 </Link>

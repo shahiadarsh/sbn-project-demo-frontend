@@ -108,7 +108,7 @@ const Header = () => {
 
             {/* Main Header - EFFAH Style Light Theme */}
             <div className="bg-white/95 md:backdrop-blur-xl h-[80px] xl:h-[90px] flex items-center border-b border-slate-100 relative">
-                <div className="container mx-auto px-4 flex items-center h-full relative z-10 transition-all duration-300">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 flex items-center h-full relative z-10 transition-all duration-300">
                     {/* Logo Section */}
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">
                         <div className="transition-transform group-hover:scale-105">

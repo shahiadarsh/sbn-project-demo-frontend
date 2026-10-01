@@ -24,6 +24,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/patient-collections-ar-recovery',
+        destination: '/services/patient-collections-ar-recovery',
+        permanent: true,
+      },
+      {
+        source: '/consulting',
+        destination: '/services/consulting',
+        permanent: true,
+      },
+      {
         source: '/medical-billing',
         destination: '/services',
         permanent: true,

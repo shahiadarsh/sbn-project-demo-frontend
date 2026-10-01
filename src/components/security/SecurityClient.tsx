@@ -137,6 +137,48 @@ export default function SecurityClient() {
                     </div>
                 </section>
 
+                {/* Security Scope & Responsible Disclosure */}
+                <section className="py-20 relative bg-white border-t border-slate-100" id="report-security-concern">
+                    <div className="container mx-auto px-4 max-w-4xl">
+                        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="prose prose-lg prose-slate max-w-none">
+                            <div className="flex justify-between items-end mb-8 border-b border-slate-200 pb-4">
+                                <h2 className="text-3xl font-black text-slate-900 m-0 tracking-tight">Security Scope & Application</h2>
+                                <div className="text-sm font-medium text-slate-500 text-right">
+                                    <div>Last Revised: October 2026</div>
+                                    <div className="text-xs">Prior Version: September 2026 (Approved by Compliance)</div>
+                                </div>
+                            </div>
+
+                            <p className="text-slate-700 font-medium leading-relaxed">
+                                This security overview applies distinctly across our different operational boundaries:
+                            </p>
+                            <ul className="space-y-3 mt-4 text-slate-700 font-medium">
+                                <li><strong>Public Marketing Website:</strong> Hosted independently. No patient data or PHI is collected, processed, or stored on this platform.</li>
+                                <li><strong>Contracted Billing Services:</strong> Operations are governed by individual Business Associate Agreements (BAAs). Access is strictly restricted to authorized personnel operating within secure, compliant environments where appropriate.</li>
+                                <li><strong>SBN Sentinel:</strong> Operates as a distinct application. Sentinel retrieves only practice-authorized data for operational reporting and does not modify source records in external EHR systems.</li>
+                            </ul>
+
+                            <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Report a Security Concern</h3>
+                            <div className="bg-blue-50/50 p-6 rounded-xl border border-blue-100">
+                                <p className="text-slate-700 font-medium mb-4">
+                                    If you believe you have discovered a potential security vulnerability or concern, please report it to our security team. We value the efforts of security researchers and will review all legitimate reports.
+                                </p>
+                                <p className="text-slate-800 font-bold mb-4">
+                                    Contact: <a href="mailto:info@sbnhealthcaresolution.com" className="text-[#0033e7] hover:underline">info@sbnhealthcaresolution.com</a>
+                                </p>
+                                <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mt-6">
+                                    <p className="text-amber-800 text-sm font-bold m-0">Important Reporting Guidelines:</p>
+                                    <ul className="text-amber-700 text-sm mt-2 mb-0 space-y-1">
+                                        <li>Do NOT include patient records, PHI, passwords, or active tokens in your initial email.</li>
+                                        <li>Provide a technical description of the issue and steps to reproduce (if applicable).</li>
+                                        <li>We review all reports, but we do not provide a guaranteed response-time promise for initial triage.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </section>
+
                 {/* Sub-sections Bottom: Takeaways & FAQ */}
                 <section className="py-20 lg:py-28 relative border-t border-blue-50/50 bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                     <div className="absolute inset-0 bg-[#f8faff]/85 backdrop-blur-sm pointer-events-none z-0"></div>

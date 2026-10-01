@@ -10,7 +10,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: 'about-us', priority: 0.8, changeFrequency: 'monthly' },
     { url: 'contact-us', priority: 0.9, changeFrequency: 'monthly' },
     { url: 'services', priority: 0.8, changeFrequency: 'weekly' },
-    { url: 'specialties', priority: 0.8, changeFrequency: 'weekly' },
     { url: 'pricing', priority: 0.7, changeFrequency: 'monthly' },
     { url: 'rcm-calculator', priority: 0.7, changeFrequency: 'monthly' },
     { url: 'resources', priority: 0.7, changeFrequency: 'monthly' },

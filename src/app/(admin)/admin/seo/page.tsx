@@ -7,8 +7,11 @@ import { fetchAllSeo, upsertSeo, deleteSeo } from '@/store/slices/seoSlice';
 import { FaSave, FaGlobe, FaTrash, FaPlus, FaLightbulb, FaShareAlt, FaRobot, FaCode, FaLink, FaSitemap, FaExclamationTriangle, FaCheck, FaTimes, FaKeyboard, FaEye, FaImage } from 'react-icons/fa';
 import axios from 'axios';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAdminAuth } from '@/components/admin/AdminAuthProvider';
 
 export default function SeoManagement() {
+    const { admin } = useAdminAuth();
+    const isSeoEditor = admin?.role === 'seo_editor';
     const dispatch = useDispatch<AppDispatch>();
     const { seoList: seos, loading } = useSelector((state: RootState) => state.seo);
     const [activeTab, setActiveTab] = useState('general');
@@ -306,19 +309,20 @@ export default function SeoManagement() {
                                                         placeholder="e.g. medical billing"
                                                     />
                                                 </div>
-                                                <div className="space-y-4">
-                                                    <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">URL Slug (Path)</label>
-                                                    <input
-                                                        className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-[var(--primary-color)] focus:outline-none transition-all font-bold text-slate-800"
-                                                        value={formData.slug}
-                                                        onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
-                                                        placeholder="managed-services"
-                                                    />
+                                                    <div className="space-y-4">
+                                                        <label className="text-[10px] font-black uppercase text-slate-500 tracking-[3px]">URL Slug (Path)</label>
+                                                        <input
+                                                            className="w-full px-7 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:border-[var(--primary-color)] focus:outline-none transition-all font-bold text-slate-800 disabled:opacity-50 disabled:cursor-not-allowed"
+                                                            value={formData.slug}
+                                                            onChange={(e) => setFormData({ ...formData, slug: e.target.value })}
+                                                            placeholder="managed-services"
+                                                            disabled={isSeoEditor}
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </motion.div>
-                                )}
+                                        </motion.div>
+                                    )}
 
                                 {activeTab === 'social' && (
                                     <motion.div
@@ -650,12 +654,14 @@ export default function SeoManagement() {
                                             >
                                                 <FaPlus size={14} title="Load into editor" />
                                             </button>
-                                            <button
-                                                onClick={() => handleDelete(seo._id)}
-                                                className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-red-300 hover:bg-red-500 hover:text-white transition-all shadow-sm"
-                                            >
-                                                <FaTrash size={14} />
-                                            </button>
+                                            {!isSeoEditor && (
+                                                <button
+                                                    onClick={() => handleDelete(seo._id)}
+                                                    className="w-10 h-10 flex items-center justify-center rounded-xl bg-slate-50 text-red-300 hover:bg-red-500 hover:text-white transition-all shadow-sm"
+                                                >
+                                                    <FaTrash size={14} />
+                                                </button>
+                                            )}
                                         </div>
                                     </div>
                                     <div className="flex items-center gap-3 mb-4">

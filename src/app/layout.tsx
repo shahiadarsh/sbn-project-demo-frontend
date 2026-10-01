@@ -58,7 +58,10 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-QR6MRMK47G');
+            gtag('config', 'G-QR6MRMK47G', {
+              allow_google_signals: false,
+              allow_ad_personalization_signals: false
+            });
           `}
         </Script>
         <ReduxProvider>

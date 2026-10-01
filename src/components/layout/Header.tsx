@@ -38,7 +38,19 @@ const navLinks = [
         ]
     },
     { name: 'Resources', tKey: 'nav.resources', href: '/resources' },
-    { name: 'Compliance & Security', tKey: 'nav.compliance', href: '/security' },
+    {
+        name: 'Security',
+        tKey: 'nav.security',
+        href: '#',
+        dropdown: [
+            { name: 'Security Overview', tKey: 'nav.security_overview', href: '/security' },
+            { name: 'Privacy Notice', tKey: 'nav.privacy_notice', href: '/privacy' },
+            { name: 'Compliance Overview', tKey: 'nav.compliance_overview', href: '/compliance' },
+            { name: 'Terms of Service', tKey: 'nav.terms_of_service', href: '/terms' },
+            { name: 'Report a Security Concern', tKey: 'nav.report_security', href: '/security#report-security-concern' },
+            { name: 'Cookie Settings', tKey: 'nav.cookie_settings', action: 'openCookieSettings', href: '#' }
+        ]
+    },
     { name: 'RCM Calculator', tKey: 'nav.rcm_calculator', href: '/rcm-calculator' },
     { name: 'Pricing', tKey: 'nav.pricing', href: '/pricing' },
     { name: 'Blog', tKey: 'nav.blog', href: '/blog' },
@@ -101,11 +113,11 @@ const Header = () => {
                     <Link href="/" className="flex items-center gap-3 no-underline group py-1 flex-shrink-0 mr-4 transition-all">
                         <div className="transition-transform group-hover:scale-105">
                     <Image 
-                        src="/Logo.webp" 
+                        src="/SBN_LOGO.png" 
                         alt="SBN Healthcare Solution" 
-                        width={60}
-                        height={60}
-                        className="max-h-[50px] xl:max-h-[60px] w-auto mix-blend-multiply object-contain" 
+                        width={200}
+                        height={70}
+                        className="max-h-[40px] xl:max-h-[50px] w-auto object-contain" 
                         priority
                     />
                         </div>
@@ -148,13 +160,24 @@ const Header = () => {
                                                     const subActive = pathname === subLink.href;
                                                     return (
                                                         <li key={subLink.name}>
-                                                            <Link
-                                                                href={subLink.href}
-                                                                className={`block py-[10px] px-[25px] text-[12px] font-bold border-b border-slate-50 last:border-0 transition-all duration-300 hover:bg-blue-50 hover:text-[#0033e7] hover:pl-[30px] no-underline uppercase ${subActive ? 'text-[#0033e7] bg-blue-50/50 pl-[30px] border-l-4 border-l-[#0033e7]' : 'text-slate-600'
-                                                                    }`}
-                                                            >
-                                                                {subLink.tKey ? t(subLink.tKey) : subLink.name}
-                                                            </Link>
+                                                            {subLink.action === 'openCookieSettings' ? (
+                                                                <button
+                                                                    onClick={() => {
+                                                                        window.dispatchEvent(new Event('openCookieSettings'));
+                                                                    }}
+                                                                    className={`w-full text-left block py-[10px] px-[25px] text-[12px] font-bold border-b border-slate-50 last:border-0 transition-all duration-300 hover:bg-blue-50 hover:text-[#0033e7] hover:pl-[30px] uppercase text-slate-600 cursor-pointer`}
+                                                                >
+                                                                    {subLink.tKey ? t(subLink.tKey) : subLink.name}
+                                                                </button>
+                                                            ) : (
+                                                                <Link
+                                                                    href={subLink.href}
+                                                                    className={`block py-[10px] px-[25px] text-[12px] font-bold border-b border-slate-50 last:border-0 transition-all duration-300 hover:bg-blue-50 hover:text-[#0033e7] hover:pl-[30px] no-underline uppercase ${subActive ? 'text-[#0033e7] bg-blue-50/50 pl-[30px] border-l-4 border-l-[#0033e7]' : 'text-slate-600'
+                                                                        }`}
+                                                                >
+                                                                    {subLink.tKey ? t(subLink.tKey) : subLink.name}
+                                                                </Link>
+                                                            )}
                                                         </li>
                                                     );
                                                 })}
@@ -205,13 +228,25 @@ const Header = () => {
                                                     const subActive = pathname === subLink.href;
                                                     return (
                                                         <li key={subLink.name}>
-                                                            <Link
-                                                                href={subLink.href}
-                                                                className={`text-[11px] font-bold block pl-[20px] uppercase no-underline transition-colors ${subActive ? 'text-[#0033e7]' : 'text-slate-500 hover:text-[#0033e7]'}`}
-                                                                onClick={toggleMenu}
-                                                            >
-                                                                {subLink.tKey ? t(subLink.tKey) : subLink.name}
-                                                            </Link>
+                                                            {subLink.action === 'openCookieSettings' ? (
+                                                                <button
+                                                                    onClick={() => {
+                                                                        window.dispatchEvent(new Event('openCookieSettings'));
+                                                                        toggleMenu();
+                                                                    }}
+                                                                    className={`w-full text-left text-[11px] font-bold block pl-[20px] uppercase transition-colors text-slate-500 hover:text-[#0033e7] cursor-pointer bg-transparent border-none`}
+                                                                >
+                                                                    {subLink.tKey ? t(subLink.tKey) : subLink.name}
+                                                                </button>
+                                                            ) : (
+                                                                <Link
+                                                                    href={subLink.href}
+                                                                    className={`text-[11px] font-bold block pl-[20px] uppercase no-underline transition-colors ${subActive ? 'text-[#0033e7]' : 'text-slate-500 hover:text-[#0033e7]'}`}
+                                                                    onClick={toggleMenu}
+                                                                >
+                                                                    {subLink.tKey ? t(subLink.tKey) : subLink.name}
+                                                                </Link>
+                                                            )}
                                                         </li>
                                                     );
                                                 })}

@@ -27,6 +27,15 @@ const CookieConsent = () => {
         }
     }, []);
 
+    useEffect(() => {
+        const handleOpenSettings = () => {
+            setIsVisible(true);
+            setShowSettings(true);
+        };
+        window.addEventListener('openCookieSettings', handleOpenSettings);
+        return () => window.removeEventListener('openCookieSettings', handleOpenSettings);
+    }, []);
+
     const updateGoogleConsent = (status: 'granted' | 'denied') => {
         if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
             (window as any).gtag('consent', 'update', {

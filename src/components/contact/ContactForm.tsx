@@ -28,6 +28,18 @@ export default function ContactForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (formData.website_url) return; // Honeypot triggered
+        if (!formData.name.trim() || !formData.email.trim() || !formData.practiceName.trim()) {
+            setStatus({ type: 'error', message: 'Please fill out all required fields.' });
+            return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(formData.email)) {
+            setStatus({ type: 'error', message: 'Please enter a valid email address.' });
+            return;
+        }
+
         setStatus({ type: 'loading', message: 'Submitting consultation request...' });
 
         try {

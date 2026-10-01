@@ -32,11 +32,11 @@ const Footer = () => {
                             <Link href="/" className="flex items-center gap-4 no-underline group">
                                 <div className="p-2 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-white transition-transform group-hover:scale-105">
                                     <Image
-                                        src="/Logo.webp"
+                                        src="/SBN_LOGO.png"
                                         alt="SBN Healthcare Solution"
-                                        width={60}
-                                        height={60}
-                                        className="h-[50px] md:h-[60px] w-auto mix-blend-multiply object-contain"
+                                        width={200}
+                                        height={70}
+                                        className="h-[40px] md:h-[50px] w-auto object-contain"
                                     />
                                 </div>
                                 <div className="flex flex-col justify-center leading-none">

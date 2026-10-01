@@ -18,11 +18,13 @@ const RCMCalculator = () => {
     const [projectedAnnualRecovery, setProjectedAnnualRecovery] = useState(0);
 
     useEffect(() => {
-        const rev = monthlyClaims * avgBilledAmount;
-        const leakage = rev * (denialRate / 100) * 12;
+        const grossRev = monthlyClaims * avgBilledAmount;
+        // Assume an average allowable net collections rate of 50% for realistic projection
+        const netExpectedRev = grossRev * 0.50; 
+        const leakage = netExpectedRev * (denialRate / 100) * 12;
         const recovery = leakage * (recoveryPotential / 100);
 
-        setMonthlyRevenue(rev);
+        setMonthlyRevenue(grossRev);
         setAnnualLeakage(leakage);
         setProjectedAnnualRecovery(recovery);
     }, [monthlyClaims, avgBilledAmount, denialRate, recoveryPotential]);

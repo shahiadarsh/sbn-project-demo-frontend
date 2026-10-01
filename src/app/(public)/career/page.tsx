@@ -1,14 +1,15 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import PageHeader from '@/components/layout/PageHeader';
-import { getDynamicMetadata } from '@/utils/seo';
+import { getDynamicMetadata, constructMetadata } from '@/utils/seo';
 
 export async function generateMetadata(): Promise<Metadata> {
     const dynamic = await getDynamicMetadata('career');
-    return {
-        title: dynamic?.title || 'Careers - SBN Healthcare Solution',
-        description: dynamic?.description || 'Join our team of healthcare professionals and experts.',
-    };
+    return constructMetadata(dynamic, {
+        title: 'Careers - SBN Healthcare Solution',
+        description: 'Join our team of healthcare professionals and experts.',
+        slug: 'career'
+    });
 }
 
 const Career = () => {

@@ -66,7 +66,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                 <div className="pt-16 pb-12 px-8">
                     <div className="flex items-center gap-4 group cursor-pointer">
                         <div className="w-12 h-12 relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 p-2.5 shadow-2xl transition-all duration-500 group-hover:border-[#0033e7]/50">
-                            <Image src="/Logo.webp" alt="Logo" fill className="object-contain p-1.5" />
+                            <Image src="/SBN_LOGO.png" alt="Logo" fill className="object-contain p-1.5" />
                         </div>
                         <div className="min-w-0">
                             <h2 className="text-[18px] font-black text-white tracking-[5px] leading-none uppercase">Nexus</h2>
@@ -151,7 +151,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
             <div className="lg:hidden fixed top-0 left-0 right-0 h-20 bg-[#0F172A]/90 backdrop-blur-2xl border-b border-white/5 z-50 px-6 flex items-center justify-between">
                 <div className="flex items-center gap-3.5">
                     <div className="w-9 h-9 relative rounded-xl overflow-hidden border border-white/10 bg-white/5 p-2">
-                        <Image src="/Logo.webp" alt="Logo" fill className="object-contain p-1.5" />
+                        <Image src="/SBN_LOGO.png" alt="Logo" fill className="object-contain p-1.5" />
                     </div>
                     <div>
                         <h2 className="text-[14px] font-black text-white uppercase tracking-[3px] leading-none">Nexus</h2>
@@ -187,7 +187,7 @@ function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
                             <div className="p-8 border-b border-white/5">
                                 <div className="flex items-center gap-4">
                                     <div className="w-10 h-10 relative rounded-xl overflow-hidden border border-white/10 bg-white/5">
-                                        <Image src="/Logo.webp" alt="Logo" fill className="object-contain p-2" />
+                                        <Image src="/SBN_LOGO.png" alt="Logo" fill className="object-contain p-2" />
                                     </div>
                                     <div>
                                         <h2 className="text-lg font-black text-white tracking-[4px] leading-none uppercase">Nexus</h2>

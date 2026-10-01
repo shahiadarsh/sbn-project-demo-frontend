@@ -135,6 +135,7 @@ const Footer = () => {
                         <ul className="flex flex-col gap-5 p-0 list-none">
                             {[
                                 { name: 'About Us', tKey: 'nav.about_us', href: '/about-us' },
+                                { name: 'SBN Sentinel', href: '/sentinel' },
                                 { name: 'Blog', tKey: 'nav.blog', href: '/blog' },
                                 { name: 'RCM Tool', tKey: 'nav.rcm_calculator', href: '/rcm-calculator' },
                                 { name: 'Pricing', tKey: 'nav.pricing', href: '/pricing' },

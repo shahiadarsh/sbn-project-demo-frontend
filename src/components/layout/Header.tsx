@@ -123,7 +123,7 @@ const Header = () => {
                         </div>
                         <div className="flex flex-col justify-center leading-none min-w-fit">
                             <span className="text-[#010614] font-black text-[15px] xl:text-[19px] tracking-tight uppercase">
-                                SBN Healthcare
+                                Healthcare
                             </span>
                             <span className="text-[var(--primary-color)] text-[#0033e7] font-black text-[9px] xl:text-[10px] tracking-[3px] uppercase mt-0.5">
                                 Solution

@@ -47,7 +47,7 @@ const SentinelClient = () => {
                                 </p>
                             </div>
 
-                            <div className="mt-12 bg-[#010614] rounded-2xl p-8 text-white relative overflow-hidden">
+                            <div className="not-prose mt-12 bg-[#010614] rounded-2xl p-8 text-white relative overflow-hidden shadow-xl">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#0033e7] rounded-full blur-[60px] opacity-50 -mr-10 -mt-10 pointer-events-none"></div>
                                 <h3 className="text-xl text-white mt-0 mb-4 font-bold tracking-tight">
                                     Contact SBN

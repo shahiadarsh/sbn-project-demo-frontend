@@ -24,7 +24,7 @@ const Footer = () => {
             {/* Overlay gradient identical to other sections */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-blue-100/70 pointer-events-none"></div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-[80px]">
                     {/* Brand Info */}
                     <div className="lg:col-span-4">
@@ -111,15 +111,25 @@ const Footer = () => {
                                         { name: 'Privacy Notice', href: '/privacy' },
                                         { name: 'Security Overview', href: '/security' },
                                         { name: 'Compliance Overview', href: '/compliance' },
-                                        { name: 'Terms of Service', href: '/terms' }
+                                        { name: 'Terms of Service', href: '/terms' },
+                                        { name: 'Cookie Settings', action: 'openCookieSettings' }
                                     ].map((item) => (
                                         <li key={item.name}>
-                                            <Link
-                                                href={item.href}
-                                                className="text-gray-500 text-[13px] font-bold hover:text-[#0033e7] transition-all no-underline block"
-                                            >
-                                                {item.name}
-                                            </Link>
+                                            {item.action === 'openCookieSettings' ? (
+                                                <button
+                                                    onClick={() => window.dispatchEvent(new Event('openCookieSettings'))}
+                                                    className="text-gray-500 text-[13px] font-bold hover:text-[#0033e7] transition-all bg-transparent border-none p-0 cursor-pointer text-left"
+                                                >
+                                                    {item.name}
+                                                </button>
+                                            ) : (
+                                                <Link
+                                                    href={item.href || '#'}
+                                                    className="text-gray-500 text-[13px] font-bold hover:text-[#0033e7] transition-all no-underline block"
+                                                >
+                                                    {item.name}
+                                                </Link>
+                                            )}
                                         </li>
                                     ))}
                                 </ul>
@@ -178,7 +188,7 @@ const Footer = () => {
                             </div>
                             <div className="space-y-4">
                                 <a
-                                    href="tel:8054264609"
+                                    href="tel:+18054264609"
                                     aria-label="Call US Headquarters at +1 805 426 4609"
                                     className="text-gray-600 text-[15px] flex items-center gap-4 transition-all hover:text-[#0033e7] group no-underline"
                                 >
@@ -214,7 +224,7 @@ const Footer = () => {
             </div>
 
             <div className="border-t border-slate-200/50 pt-10 pb-10 text-center relative z-10 bg-white/30 backdrop-blur-sm">
-                <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="text-left">
                         <p className="text-slate-500 text-[11px] font-black uppercase tracking-[3px] mb-2">
                             {t('footer.rights')}

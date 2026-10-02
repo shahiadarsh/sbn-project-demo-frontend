@@ -36,7 +36,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
 
             {/* Custom Premium Hero */}
             <section className="pt-32 pb-16 md:pt-44 md:pb-28 text-center px-4 relative overflow-hidden z-10">
-                <div className="container mx-auto max-w-5xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -88,7 +88,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                                     style={{ backgroundImage: 'url("/background%20image.webp")' }}
                                 >
                                     <div className="absolute inset-0 bg-[#0B1F33]/90 z-0"></div>
-                                    <div className="container mx-auto px-10 relative z-10 text-center">
+                                    <div className="w-full px-6 lg:px-12 2xl:px-20 px-10 relative z-10 text-center">
                                         <h2 className="text-3xl md:text-5xl font-black mb-8 text-white tracking-tighter">
                                             {section.title}
                                         </h2>
@@ -108,7 +108,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                         // Regular Content Section (Glass Card Style)
                         return (
                             <section key={index} className="py-12 lg:py-16 relative">
-                                <div className="container mx-auto px-4 max-w-7xl">
+                                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl">
                                     <motion.div 
                                         initial="hidden"
                                         whileInView="visible"

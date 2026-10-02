@@ -15,7 +15,7 @@ const row2 = [...softwareList.slice(8, 16), ...softwareList.slice(8, 16)];
 const SoftwareExpertise = () => {
     return (
         <section className="py-24 md:py-32 relative overflow-hidden border-t border-slate-100 bg-slate-50/50">
-            <div className="container mx-auto px-4 mb-16 relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 mb-16 relative z-10">
                 <div className="text-center">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>

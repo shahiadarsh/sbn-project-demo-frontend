@@ -57,6 +57,21 @@ export default function RCMCalculatorPageClient() {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
+    const handleExecuteAudit = (revenue: number) => {
+        setFormData({ ...formData, revenue: revenue.toString() });
+        const formElement = document.getElementById('report-form-section');
+        if (formElement) {
+            formElement.scrollIntoView({ behavior: 'smooth' });
+            // Optionally focus the first empty input or the revenue input
+            setTimeout(() => {
+                const revenueInput = document.getElementById('revenue-input');
+                if (revenueInput) {
+                    revenueInput.focus();
+                }
+            }, 500);
+        }
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -100,7 +115,7 @@ export default function RCMCalculatorPageClient() {
                 <div className="absolute inset-0 bg-white/10 pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/40 to-[#0033e7]/5 pointer-events-none z-10"></div>
                 
-                <div className="container mx-auto max-w-4xl relative z-20">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-20">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
                         <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-[#0033e7] font-bold uppercase text-[11px] tracking-[3px] mb-8 px-5 py-2 rounded-full shadow-sm">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
@@ -128,7 +143,7 @@ export default function RCMCalculatorPageClient() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/85 to-blue-50/70 pointer-events-none"></div>
 
                 <section className="py-20 relative z-10 pb-20">
-                    <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-16 max-w-[800px] mx-auto">
                             <span className="bg-white/60 backdrop-blur-md border border-white px-5 py-2 rounded-full text-[11px] font-black text-[#0033e7] uppercase tracking-[3px] mb-6 inline-block shadow-sm">
                                 {t('rcm_calculator.tool_tag')}
@@ -142,7 +157,7 @@ export default function RCMCalculatorPageClient() {
                         </motion.div>
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="max-w-[1100px] mx-auto relative z-10">
                             {/* Original Intact Calculator */}
-                            <RCMCalculator />
+                            <RCMCalculator onExecuteAudit={handleExecuteAudit} />
                         </motion.div>
                     </div>
                 </section>
@@ -150,7 +165,7 @@ export default function RCMCalculatorPageClient() {
 
             {/* What These Numbers Actually Mean & Why Use Our Calculator - CONVERTED TO LIGHT THEME */}
             <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
-                <div className="container mx-auto px-4 max-w-7xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         
                         {/* What These Numbers Mean */}
@@ -195,7 +210,7 @@ export default function RCMCalculatorPageClient() {
             </section>
 
             {/* Detailed Analysis Form View */}
-            <section className="py-20 border-b border-blue-50/50 relative">
+            <section id="report-form-section" className="py-20 border-b border-blue-50/50 relative">
                 <Image
                     src="/background image.webp"
                     alt="Background"
@@ -203,7 +218,7 @@ export default function RCMCalculatorPageClient() {
                     className="object-cover object-center pointer-events-none -z-10"
                 />
                 <div className="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none z-0"></div>
-                <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white border border-blue-100 rounded-[3rem] p-10 md:p-14 shadow-2xl text-center">
                         <h2 className="text-4xl font-black text-slate-900 mb-6 tracking-tight">{t('rcm_calculator.form_title')}</h2>
                         <p className="text-lg text-slate-600 font-bold max-w-2xl mx-auto mb-10 opacity-70">
@@ -222,20 +237,20 @@ export default function RCMCalculatorPageClient() {
                                 </div>
                             )}
                             <div>
-                                <label className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_name')}</label>
-                                <input type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder={t('rcm_calculator.form_name')} />
+                                <label htmlFor="name-input" className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_name')}</label>
+                                <input id="name-input" type="text" name="name" value={formData.name} onChange={handleChange} required className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder={t('rcm_calculator.form_name')} />
                             </div>
                             <div>
-                                <label className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_email')}</label>
-                                <input type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder={t('rcm_calculator.form_email')} />
+                                <label htmlFor="email-input" className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_email')}</label>
+                                <input id="email-input" type="email" name="email" value={formData.email} onChange={handleChange} required className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder={t('rcm_calculator.form_email')} />
                             </div>
                             <div>
-                                <label className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_practice')}</label>
-                                <input type="text" name="practiceName" value={formData.practiceName} onChange={handleChange} required className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder={t('rcm_calculator.form_practice')} />
+                                <label htmlFor="practice-input" className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_practice')}</label>
+                                <input id="practice-input" type="text" name="practiceName" value={formData.practiceName} onChange={handleChange} required className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder={t('rcm_calculator.form_practice')} />
                             </div>
                             <div>
-                                <label className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_revenue')}</label>
-                                <input type="text" name="revenue" value={formData.revenue} onChange={handleChange} className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder="$" />
+                                <label htmlFor="revenue-input" className="block text-[11px] font-black text-slate-400 uppercase tracking-widest mb-2 px-1">{t('rcm_calculator.form_revenue')}</label>
+                                <input id="revenue-input" type="text" name="revenue" value={formData.revenue} onChange={handleChange} className="w-full bg-slate-50 border border-slate-100 rounded-2xl px-6 py-4.5 focus:outline-none focus:ring-2 focus:ring-[#0033e7] focus:bg-white transition-all shadow-sm" placeholder="$" />
                             </div>
                             <div className="md:col-span-2 text-center mt-6">
                                 <button type="submit" disabled={status.type === 'loading'} className="inline-block bg-[#0033e7] text-white px-14 py-5 rounded-[2rem] font-black uppercase tracking-[2px] transition-all hover:bg-black hover:-translate-y-1 hover:shadow-2xl shadow-xl w-full md:w-auto disabled:opacity-50">
@@ -256,7 +271,7 @@ export default function RCMCalculatorPageClient() {
                     className="object-cover object-center pointer-events-none -z-10"
                 />
                     <div className="absolute inset-0 bg-[#f8faff]/95 backdrop-blur-sm pointer-events-none z-0"></div>
-                    <div className="container mx-auto px-4 max-w-6xl relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                             {/* Quick Takeaways */}
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
@@ -303,7 +318,7 @@ export default function RCMCalculatorPageClient() {
                         className="object-cover object-center pointer-events-none -z-10"
                     />
                    <div className="absolute inset-0 bg-[#f8faff]/95 backdrop-blur-sm pointer-events-none z-0"></div>
-                   <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
+                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl text-center relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-8 uppercase" dangerouslySetInnerHTML={{ __html: t('rcm_calculator.cta_title') }}>
                             </h2>

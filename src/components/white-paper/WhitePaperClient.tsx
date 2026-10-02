@@ -27,7 +27,7 @@ export default function WhitePaperClient() {
 
             {/* Premium Hero Section */}
             <section className="pt-32 pb-16 md:pt-44 md:pb-28 text-center px-4 relative overflow-hidden z-10">
-                <div className="container mx-auto max-w-5xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -49,7 +49,7 @@ export default function WhitePaperClient() {
 
             {/* Main Article Content */}
             <section className="pb-24 relative z-10">
-                <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
                     <div className="space-y-12">
                         {/* Reality Section - Glass Card */}
                         <motion.div 

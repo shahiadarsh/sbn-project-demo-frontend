@@ -16,7 +16,7 @@ const ComplianceClient = () => {
             />
             
             <section className="py-20 relative">
-                <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
                     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200/60 relative overflow-hidden">
                         
                         {/* Decorative background element */}

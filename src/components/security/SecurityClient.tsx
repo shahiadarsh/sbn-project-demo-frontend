@@ -38,7 +38,7 @@ export default function SecurityClient() {
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(0,51,231,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,51,231,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
                 </div>
                 
-                <div className="container mx-auto max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -67,7 +67,7 @@ export default function SecurityClient() {
                     className="object-cover object-center pointer-events-none -z-10"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-[#f8faff]/90 pointer-events-none z-0"></div>
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                         <motion.div 
                             initial="hidden"
                             whileInView="visible"
@@ -100,7 +100,7 @@ export default function SecurityClient() {
                 {/* Core Pillars Grid */}
                 <section className="py-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                     <div className="absolute inset-0 bg-white/90 pointer-events-none z-0"></div>
-                    <div className="container mx-auto px-4 max-w-7xl relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {securityData && Array.isArray(securityData) && securityData.map((item: any, idx: number) => (
                                 <motion.div 
@@ -139,7 +139,7 @@ export default function SecurityClient() {
 
                 {/* Security Scope & Responsible Disclosure */}
                 <section className="py-20 relative bg-white border-t border-slate-100" id="report-security-concern">
-                    <div className="container mx-auto px-4 max-w-4xl">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="prose prose-lg prose-slate max-w-none">
                             <div className="flex justify-between items-end mb-8 border-b border-slate-200 pb-4">
                                 <h2 className="text-3xl font-black text-slate-900 m-0 tracking-tight">Security Scope & Application</h2>
@@ -168,9 +168,10 @@ export default function SecurityClient() {
                                 </p>
                                 <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mt-6">
                                     <p className="text-amber-800 text-sm font-bold m-0">Important Reporting Guidelines:</p>
-                                    <ul className="text-amber-700 text-sm mt-2 mb-0 space-y-1">
-                                        <li>Do NOT include patient records, PHI, passwords, or active tokens in your initial email.</li>
+                                    <ul className="text-amber-700 text-sm mt-2 mb-0 space-y-1 list-disc pl-4">
+                                        <li>Do NOT include patient records, PHI, passwords, private keys, or active tokens in your report. Use redacted evidence.</li>
                                         <li>Provide a technical description of the issue and steps to reproduce (if applicable).</li>
+                                        <li>Reporting a concern does NOT authorize disruptive testing, DDoS attacks, or unauthorized access to our systems.</li>
                                         <li>We review all reports, but we do not provide a guaranteed response-time promise for initial triage.</li>
                                     </ul>
                                 </div>
@@ -182,7 +183,7 @@ export default function SecurityClient() {
                 {/* Sub-sections Bottom: Takeaways & FAQ */}
                 <section className="py-20 lg:py-28 relative border-t border-blue-50/50 bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                     <div className="absolute inset-0 bg-[#f8faff]/85 backdrop-blur-sm pointer-events-none z-0"></div>
-                    <div className="container mx-auto px-4 max-w-6xl relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                             
                             {/* Quick Takeaways */}
@@ -225,7 +226,7 @@ export default function SecurityClient() {
                 {/* Final CTA */}
                 <section className="pt-10 pb-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                    <div className="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none z-0"></div>
-                   <div className="container mx-auto px-4 max-w-4xl text-center relative z-10">
+                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl text-center relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <h2 className="text-4xl font-extrabold text-slate-900 leading-[1.2] tracking-tight mb-6">
                                 {t('security_page.cta_title')}

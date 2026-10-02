@@ -238,8 +238,8 @@
             "claim_volume": "Monthly Claim Volume",
             "optional": "(OPTIONAL)",
             "btn_loading": "Generating...",
-            "btn_submit": "Get Immediate Access",
-            "trust_1": "100% Data Privacy & Security.",
+            "btn_submit": "Request Consultation",
+            "trust_1": "Industry-Standard Data Privacy & Security.",
             "trust_2": "We don't spam or share your information."
         },
         "pricing_page": {
@@ -411,7 +411,7 @@
             "why_p1": "99% First-Pass Clean Claim Rate",
             "why_p2": "Average 20% Increase in Cash Flow",
             "why_p3": "Reduction in A/R Days by 30%",
-            "why_p4": "100% HIPAA Compliant Operations",
+            "why_p4": "Strictly HIPAA Compliant Operations",
             "what_get_title_1": "WHAT YOU",
             "what_get_title_2": "GET",
             "what_get_desc": "When you partner with us, you gain a dedicated extension of your practice.",
@@ -479,12 +479,12 @@
                     "a": "Access control, encryption, monitoring, audits, and risk management."
                 },
                 {
-                    "q": "Are security compliance jobs growing?",
-                    "a": "Yes, demand is increasing due to rising data security needs."
+                    "q": "How often should compliance checks be performed?",
+                    "a": "Continuous monitoring is recommended to ensure ongoing compliance with healthcare regulations."
                 },
                 {
-                    "q": "What is a Security Compliance Officer salary?",
-                    "a": "It depends on experience but is generally high due to the role’s importance."
+                    "q": "What happens if a vulnerability is discovered?",
+                    "a": "We have an incident response plan to quickly patch vulnerabilities and notify relevant parties."
                 }
             ],
             "cta_title": "Work With a Secure and Compliant Partner",
@@ -742,8 +742,8 @@
             "fa2": "They are estimates based on your inputs, but useful for identifying trends.",
             "fq3": "Can this improve my revenue?",
             "fa3": "Yes, by identifying gaps and opportunities for optimization.",
-            "fq4": "Is this similar to military pay calculators?",
-            "fa4": "No, tools like military pay calculator deployment or 2026 military pay chart calculator with BAH are unrelated to healthcare.",
+            "fq4": "Is patient data safe in this calculation?",
+            "fa4": "Yes, this calculator only requires general practice metrics, not any patient-level data.",
             "fq5": "Do I need technical knowledge to use it?",
             "fa5": "Not at all — just enter basic details and get results instantly.",
             "cta_title": "Start Understanding Your Revenue Today",
@@ -828,13 +828,13 @@
         "privacy_page": {
             "title": "Privacy Policy",
             "heading": "Privacy Policy Disclosure",
-            "p1": "<strong>Uses and Disclosures of Protected Health Information</strong><br />Your protected health information may be used and disclosed by your physician, our office staff and others outside of our office who are involved in your care and treatment for the purpose of providing health care services to you. Your protected health information may also be used and disclosed to pay your health care bills and to support the operation of your physician’s practice.",
-            "p2": "Following are examples of the types of uses and disclosures of your protected health information that your physician’s office is permitted to make. These examples are not meant to be exhaustive, but to describe the types of uses and disclosures that may be made by our office.",
-            "p3": "<strong>Treatment:</strong> We will use and disclose your protected health information to provide, coordinate, or manage your health care and any related services. This includes the coordination or management of your health care with another provider. For example, we would disclose your protected health information, as necessary, to a home health agency that provides care to you.",
-            "p4": "We will also disclose protected health information to other physicians who may be treating you.",
-            "p5": "For example, your protected health information may be provided to a physician to whom you have been referred to ensure that the physician has the necessary information to diagnose or treat you. In addition, we may disclose your protected health information from time-to-time to another physician or health care provider (e.g., a specialist or laboratory) who, at the request of your physician, becomes involved in your care by providing assistance with your health care diagnosis or treatment to your physician.",
-            "p6": "<strong>Payment:</strong> Your protected health information will be used and disclosed, as needed, to obtain payment for your health care services provided by us or by another provider.",
-            "p7": "This may include certain activities that your health insurance plan may undertake before it approves or pays for the health care services we recommend for you such as: making a determination of eligibility or coverage for insurance benefits, reviewing services provided to you for medical necessity, and undertaking utilization review activities. For example, obtaining approval for a hospital stay may require that your relevant protected health information be disclosed to the health plan to obtain approval for the hospital admission.",
+            "p1": "<strong>Information Collection and Use on This Corporate Website</strong><br />This Privacy Policy describes how SBN Healthcare Solution collects, uses, and protects information gathered through our corporate marketing website (sbnhealthcaresolution.com). This notice applies solely to our public marketing web properties and does not cover the SBN Sentinel application or protected health information (PHI) processed under our Business Associate Agreements.",
+            "p2": "We collect information you explicitly provide to us via contact forms, assessment requests, and the live chat widget. This may include your name, business email, practice name, and phone number.",
+            "p3": "<strong>Forms and Inquiries:</strong> When you submit a form to request an audit, download a whitepaper, or contact sales, we use your information solely to fulfill your request and communicate with you regarding our revenue cycle services.",
+            "p4": "<strong>Live Chat:</strong> Our live chat widget collects basic information to assist you in real-time. Please do not submit patient information or PHI through the public chat or forms.",
+            "p5": "<strong>Analytics and Cookies:</strong> We use standard analytics tools (like Google Analytics) and cookies to understand website traffic, measure campaign performance, and improve our user experience. These tools collect anonymized data such as your IP address, browser type, pages visited, and time spent on the site.",
+            "p6": "<strong>Data Handling and Sharing:</strong> We do not sell, rent, or trade your personal or business information to third parties for their marketing purposes. We only share information with trusted service providers who assist us in operating our website and conducting our business, under strict confidentiality agreements.",
+            "p7": "If you are a client using our specialized services or the Sentinel platform, your data is governed by our separate Service Agreements and HIPAA Business Associate Agreements, which outline our strict compliance and data protection standards.",
             "p8": "<strong>INFORMATION THAT IS GATHERED FROM VISITORS/USERS</strong>",
             "p9": "In common with other websites, mobile applications, log files are stored on the web server saving details such as the visitor's/user’s IP address, browser type, location, referring page, and time and duration of visit.",
             "p10": "Cookies* may be used to remember visitor preferences when interacting with the website.",
@@ -940,7 +940,7 @@
             "q3": "What does Revenue Cycle Management include?",
             "a3": "Everything: patient eligibility verification, prior authorization, charge entry, coding, claim submission, payment posting, AR follow-up, and denial management — managed end-to-end.",
             "q4": "Is outsourcing billing safe for my patient data?",
-            "a4": "Absolutely. SBN is fully HIPAA-compliant. All patient data is handled with strict security protocols, encrypted storage, and access controls.",
+            "a4": "Yes, SBN adheres to HIPAA guidelines. All patient data is handled with strict security protocols, encrypted storage, and access controls.",
             "q5": "How quickly are claims submitted?",
             "a5": "Within 48 hours of receiving the charge. Every claim goes through our scrubbing process first to catch errors before submission.",
             "q6": "Do you handle old unpaid claims?",

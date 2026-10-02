@@ -19,6 +19,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: 'terms', priority: 0.5, changeFrequency: 'yearly' },
     { url: 'security', priority: 0.5, changeFrequency: 'monthly' },
     { url: 'compliance', priority: 0.5, changeFrequency: 'monthly' },
+    { url: 'sentinel', priority: 0.8, changeFrequency: 'monthly' },
+    { url: 'sentinel/privacy', priority: 0.5, changeFrequency: 'monthly' },
   ]
 
   // 2. Specialized Content Slugs (Static-Dynamic)
@@ -45,18 +47,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
 
     const coreEntries = staticPages.map(page => ({
-      url: `${baseUrl}/${page.url}`,
+      url: page.url ? `${baseUrl}/${page.url}` : baseUrl,
       lastModified: new Date(),
       changeFrequency: page.changeFrequency as any,
       priority: page.priority,
     }))
 
-    const serviceEntries = serviceSlugs.map(slug => ({
-      url: `${baseUrl}/services/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly' as any,
-      priority: 0.8,
-    }))
+    const serviceEntries = serviceSlugs
+      .filter(slug => slug !== 'consulting' && slug !== 'patient-collections-ar-recovery')
+      .map(slug => ({
+        url: `${baseUrl}/services/${slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'weekly' as any,
+        priority: 0.8,
+      }))
 
     const specialtyEntries = specialtySlugs.map(slug => ({
       url: `${baseUrl}/specialties/${slug}`,
@@ -88,7 +92,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error('Sitemap generation error:', error)
     // Fallback to core entries only if DB fails
     return staticPages.map(page => ({
-      url: `${baseUrl}/${page.url}`,
+      url: page.url ? `${baseUrl}/${page.url}` : baseUrl,
       lastModified: new Date(),
       changeFrequency: page.changeFrequency as any,
       priority: page.priority,

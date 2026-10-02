@@ -13,7 +13,7 @@ const SentinelClient = () => {
             />
             
             <section className="py-20 relative">
-                <div className="container mx-auto px-4 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
                     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200/60 relative overflow-hidden">
                         
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>
@@ -30,7 +30,7 @@ const SentinelClient = () => {
 
                             <h3 className="text-xl text-slate-900 mt-10">Integration and availability</h3>
                             <p className="text-slate-600 leading-relaxed">
-                                The proposed Practice Fusion integration is intended to retrieve practice-authorised information for Sentinel's defined functions without modifying Practice Fusion records.
+                                The proposed integration is intended to retrieve practice-authorised information for Sentinel's defined functions without modifying EHR records.
                             </p>
                             <p className="text-slate-600 leading-relaxed">
                                 Integration availability depends on applicable approvals, practice authorisation, and technical validation. Contact SBN to discuss availability and suitability for your practice.
@@ -60,7 +60,7 @@ const SentinelClient = () => {
                                     <p className="m-0 !text-slate-300">Email: <a href="mailto:info@sbnhealthcaresolution.com" className="!text-blue-400 hover:!text-white transition-colors no-underline">info@sbnhealthcaresolution.com</a></p>
                                 </div>
                                 <Link 
-                                    href="/contact-us"
+                                    href="/contact-us?subject=Sentinel+enquiry"
                                     className="inline-block bg-[#0033e7] hover:bg-blue-600 !text-white font-bold py-3 px-8 rounded-xl transition-colors no-underline"
                                 >
                                     Enquire About Sentinel

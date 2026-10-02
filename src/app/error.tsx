@@ -33,7 +33,7 @@ export default function GlobalError({
   return (
     <main className="min-h-screen bg-white">
       <Header />
-      <div className="container mx-auto px-4 py-32 text-center">
+      <div className="w-full px-6 lg:px-12 2xl:px-20 py-32 text-center">
         <div className="max-w-2xl mx-auto">
           <div className="mb-8">
             <span className="text-[120px] font-black text-red-50 text-red-500/10 leading-none">500</span>

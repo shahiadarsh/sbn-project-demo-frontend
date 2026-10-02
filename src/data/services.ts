@@ -52,11 +52,11 @@ export const specialtiesList: Service[] = [
             },
             {
                 type: 'standard',
-                content: "Many people still ask, what is behavior health? It includes mental and emotional health services such as therapy, counseling, and ongoing care. In high-demand areas like Mental Health New York, providers see many patients every day. This makes a fast and accurate billing system very important."
+                content: "Behavior health includes mental and emotional health services such as therapy, counseling, and ongoing care. In high-demand areas, providers see many patients every day. This makes a fast and accurate billing system very important."
             },
             {
                 type: 'standard',
-                content: "Patients often search for behavior health near me when they need help. They also want to know how to find behavior health therapists covered by insurance near me. If your billing system is slow or confusing, it can affect both patient trust and your income."
+                content: "If your billing system is slow or confusing, it can affect both patient trust and your income."
             },
             {
                 type: 'problem-snapshot',
@@ -107,11 +107,11 @@ export const specialtiesList: Service[] = [
         sections: [
             {
                 type: 'standard',
-                content: "Orthopedic services and Durable Medical Equipment (DME) billing can be complex. Every claim must meet strict rules. Even a small mistake can lead to delays or denials. Orthopedic care often includes surgeries, therapy, and equipment support. Patients searching for an Orthopedic surgeon or even the Best orthopedic in Jersey City expect smooth service from start to finish. Your billing system plays a big role in that experience."
+                content: "Orthopedic services and Durable Medical Equipment (DME) billing can be complex. Every claim must meet strict rules. Even a small mistake can lead to delays or denials. Orthopedic care often includes surgeries, therapy, and equipment support. Your billing system plays a big role in ensuring smooth service from start to finish."
             },
             {
                 type: 'standard',
-                content: "Many patients also search for terms like Doctor Jersey City, ortho, or even pedic near me medicaid. This shows how important it is to verify insurance and follow payer rules carefully. Large providers like Orthopedic Montefiore already use structured billing systems to manage these challenges."
+                content: "This shows how important it is to verify insurance and follow payer rules carefully. Large providers rely on structured billing systems to manage these challenges effectively."
             },
             {
                 type: 'problem-snapshot',
@@ -162,7 +162,7 @@ export const specialtiesList: Service[] = [
         sections: [
             {
                 type: 'standard',
-                content: "Urgent care centers and telehealth providers move fast. Patients walk in, get treated, and leave quickly. Because of this, your billing system must work just as fast. If your urgent care billing is slow or full of mistakes, you will face delayed payments and more claim denials. This can hurt your revenue. Many patients searching for urgent care near me or even urgent care near me within 5 mi expect quick service. Your billing process should match that speed."
+                content: "Urgent care centers and telehealth providers move fast. Patients walk in, get treated, and leave quickly. Because of this, your billing system must work just as fast. If your urgent care billing is slow or full of mistakes, you will face delayed payments and more claim denials. This can hurt your revenue. Patients expect quick service, and your billing process should match that speed."
             },
             {
                 type: 'problem-snapshot',
@@ -218,7 +218,7 @@ export const specialtiesList: Service[] = [
             },
             {
                 type: 'standard',
-                content: "If you've ever searched for private practices near me offering smooth operations, the difference often comes down to how well their revenue cycle is managed."
+                content: "The difference between struggling clinics and successful ones often comes down to how well their revenue cycle is managed."
             },
             {
                 type: 'problem-snapshot',

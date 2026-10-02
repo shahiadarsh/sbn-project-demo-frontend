@@ -47,7 +47,7 @@ export default function AboutClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0033e7]/85 to-[#0B1F33]/85 mix-blend-multiply -z-10"></div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -80,7 +80,7 @@ export default function AboutClient() {
             <section className="py-24 relative z-10 overflow-hidden">
                 <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#0033e7]/5 rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"></div>
 
-                <div className="container mx-auto px-4 max-w-6xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-10">
                     <div className="text-center mb-20">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[6px] mb-4 block">{t('about_us_page.core_team')}</span>
@@ -151,7 +151,7 @@ export default function AboutClient() {
 
             {/* Introductory text - Standard Card Style */}
             <section className="py-24 relative z-10">
-                <div className="container mx-auto px-4 max-w-5xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative z-10">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-[2.5rem] p-10 md:p-16 border border-blue-50 shadow-[0_40px_100px_rgba(0,51,231,0.04)]">
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 items-center">
                             <div className="md:col-span-1 flex justify-center">
@@ -174,7 +174,7 @@ export default function AboutClient() {
 
             {/* Mission Vision - Redesigned to Light Theme */}
             <section className="py-24 relative z-10">
-                <div className="container mx-auto px-4 max-w-6xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ export default function AboutClient() {
 
             {/* Middle Grid Sections: Three Pillars */}
             <section className="py-24 relative z-10">
-                <div className="container mx-auto px-4 max-w-7xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* What We Actually Do */}
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 p-10 rounded-[2.5rem] border border-blue-50 shadow-sm hover:shadow-2xl transition-all duration-700">
@@ -253,7 +253,7 @@ export default function AboutClient() {
 
             {/* Case Study Table - Improved Light Theme */}
             <section className="py-24 relative z-10 overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
-                <div className="container mx-auto px-4 max-w-6xl relative z-20">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-20">
                     <div className="text-center mb-16">
                         <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[6px] mb-4 block">{t('about_us_page.proven_tag')}</span>
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter mb-6 text-slate-900">{t('about_us_page.proven_title')}</h2>
@@ -318,7 +318,7 @@ export default function AboutClient() {
 
             {/* Final FAQs & Call to Action */}
             <section className="py-24 relative z-10">
-                <div className="container mx-auto px-4 max-w-5xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                         <div>
                             <h2 className="text-4xl font-black text-slate-900 tracking-tighter mb-10 leading-tight uppercase">{t('about_us_page.faq_title')}</h2>

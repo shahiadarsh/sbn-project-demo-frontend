@@ -45,6 +45,7 @@ const navLinks = [
         dropdown: [
             { name: 'Security Overview', tKey: 'nav.security_overview', href: '/security' },
             { name: 'Privacy Notice', tKey: 'nav.privacy_notice', href: '/privacy' },
+            { name: 'Sentinel Privacy Notice', tKey: 'nav.sentinel_privacy_notice', href: '/sentinel/privacy' },
             { name: 'Compliance Overview', tKey: 'nav.compliance_overview', href: '/compliance' },
             { name: 'Terms of Service', tKey: 'nav.terms_of_service', href: '/terms' },
             { name: 'Report a Security Concern', tKey: 'nav.report_security', href: '/security#report-security-concern' },
@@ -62,9 +63,29 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const pathname = usePathname();
 
     const toggleMenu = () => setIsOpen(!isOpen);
+
+    useEffect(() => {
+        const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                setActiveDropdown(null);
+            }
+        };
+        window.addEventListener('keydown', handleEscape);
+        return () => window.removeEventListener('keydown', handleEscape);
+    }, []);
+
+    const handleKeyDown = (e: React.KeyboardEvent, linkName: string) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            setActiveDropdown(activeDropdown === linkName ? null : linkName);
+        } else if (e.key === 'Escape') {
+            setActiveDropdown(null);
+        }
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -137,31 +158,69 @@ const Header = () => {
                             {navLinks.map((link) => {
                                 const active = isLinkActive(link);
                                 return (
-                                    <li key={link.name} className="relative h-full flex items-center group">
-                                        <Link
-                                            href={link.href}
-                                            className={`font-bold px-[8px] 2xl:px-[12px] h-full flex items-center uppercase text-[11px] 2xl:text-[12px] transition-all duration-300 whitespace-nowrap relative group/link hover:text-[#0033e7] ${active
-                                                    ? 'text-[#0033e7] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:right-[8px] after:h-[3px] after:bg-[#0033e7] after:rounded-full after:shadow-[0_2px_8px_rgba(0,51,231,0.4)]'
-                                                    : 'text-[#1a1a1b] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:w-0 after:h-[3px] after:bg-[#0033e7] after:rounded-full after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)]'
-                                                }`}
-                                        >
-                                            <span className="relative z-10 flex items-center">
-                                                {link.tKey ? t(link.tKey) : link.name}
-                                                {link.dropdown && (
-                                                    <FaAngleDown className={`ml-1 text-[9px] transition-all ${active ? 'text-[#0033e7] opacity-100' : 'opacity-40 group-hover:text-[#0033e7] group-hover:opacity-100'}`} />
-                                                )}
-                                            </span>
-                                        </Link>
+                                    <li 
+                                        key={link.name} 
+                                        className="relative h-full flex items-center group"
+                                        onMouseEnter={() => setActiveDropdown(link.name)}
+                                        onMouseLeave={() => setActiveDropdown(null)}
+                                        onFocus={() => setActiveDropdown(link.name)}
+                                        onBlur={(e) => {
+                                            if (!e.currentTarget.contains(e.relatedTarget as Node)) {
+                                                setActiveDropdown(null);
+                                            }
+                                        }}
+                                    >
+                                        {link.href === '#' ? (
+                                            <button
+                                                type="button"
+                                                aria-expanded={activeDropdown === link.name || undefined}
+                                                aria-haspopup="true"
+                                                onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
+                                                onKeyDown={(e) => handleKeyDown(e, link.name)}
+                                                aria-controls={`dropdown-${link.name.replace(/\s+/g, '-').toLowerCase()}`}
+                                                className={`font-bold px-[8px] 2xl:px-[12px] h-full flex items-center uppercase text-[11px] 2xl:text-[12px] transition-all duration-300 whitespace-nowrap relative group/link hover:text-[#0033e7] ${active
+                                                        ? 'text-[#0033e7] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:right-[8px] after:h-[3px] after:bg-[#0033e7] after:rounded-full after:shadow-[0_2px_8px_rgba(0,51,231,0.4)]'
+                                                        : 'text-[#1a1a1b] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:w-0 after:h-[3px] after:bg-[#0033e7] after:rounded-full after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)]'
+                                                    }`}
+                                            >
+                                                <span className="relative z-10 flex items-center">
+                                                    {link.tKey ? t(link.tKey) : link.name}
+                                                    {link.dropdown && (
+                                                        <FaAngleDown className={`ml-1 text-[9px] transition-all ${active ? 'text-[#0033e7] opacity-100' : 'opacity-40 group-hover:text-[#0033e7] group-hover:opacity-100'}`} />
+                                                    )}
+                                                </span>
+                                            </button>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                className={`font-bold px-[8px] 2xl:px-[12px] h-full flex items-center uppercase text-[11px] 2xl:text-[12px] transition-all duration-300 whitespace-nowrap relative group/link hover:text-[#0033e7] ${active
+                                                        ? 'text-[#0033e7] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:right-[8px] after:h-[3px] after:bg-[#0033e7] after:rounded-full after:shadow-[0_2px_8px_rgba(0,51,231,0.4)]'
+                                                        : 'text-[#1a1a1b] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:w-0 after:h-[3px] after:bg-[#0033e7] after:rounded-full after:transition-all after:duration-300 hover:after:w-[calc(100%-16px)]'
+                                                    }`}
+                                            >
+                                                <span className="relative z-10 flex items-center">
+                                                    {link.tKey ? t(link.tKey) : link.name}
+                                                    {link.dropdown && (
+                                                        <FaAngleDown className={`ml-1 text-[9px] transition-all ${active ? 'text-[#0033e7] opacity-100' : 'opacity-40 group-hover:text-[#0033e7] group-hover:opacity-100'}`} />
+                                                    )}
+                                                </span>
+                                            </Link>
+                                        )}
 
                                         {/* Dropdown Menu - Light Theme */}
                                         {link.dropdown && (
-                                            <ul className="absolute top-[85%] left-1/2 -translate-x-1/2 bg-white min-w-[280px] shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-[20px] rounded-2xl border border-slate-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-[80%] transition-all duration-300 z-[1100]">
+                                            <ul 
+                                                id={`dropdown-${link.name.replace(/\s+/g, '-').toLowerCase()}`}
+                                                role="menu"
+                                                className={`absolute top-[85%] left-1/2 -translate-x-1/2 bg-white min-w-[280px] shadow-[0_15px_40px_rgba(0,0,0,0.1)] py-[20px] rounded-2xl border border-slate-100 transition-all duration-300 z-[1100] ${activeDropdown === link.name ? 'opacity-100 visible top-[80%]' : 'opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-[80%]'}`}
+                                            >
                                                 {link.dropdown.map((subLink) => {
                                                     const subActive = pathname === subLink.href;
                                                     return (
                                                         <li key={subLink.name}>
                                                             {subLink.action === 'openCookieSettings' ? (
                                                                 <button
+                                                                    role="menuitem"
                                                                     onClick={() => {
                                                                         window.dispatchEvent(new Event('openCookieSettings'));
                                                                     }}
@@ -171,6 +230,7 @@ const Header = () => {
                                                                 </button>
                                                             ) : (
                                                                 <Link
+                                                                    role="menuitem"
                                                                     href={subLink.href}
                                                                     className={`block py-[10px] px-[25px] text-[12px] font-bold border-b border-slate-50 last:border-0 transition-all duration-300 hover:bg-blue-50 hover:text-[#0033e7] hover:pl-[30px] no-underline uppercase ${subActive ? 'text-[#0033e7] bg-blue-50/50 pl-[30px] border-l-4 border-l-[#0033e7]' : 'text-slate-600'
                                                                         }`}

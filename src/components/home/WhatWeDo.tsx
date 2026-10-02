@@ -9,29 +9,34 @@ const WhatWeDo = () => {
     const services = [
         {
             title: t('what_we_do.s1_title'),
-            description: t('what_we_do.s1_desc')
+            description: t('what_we_do.s1_desc'),
+            href: '/services'
         },
         {
             title: t('what_we_do.s2_title'),
-            description: t('what_we_do.s2_desc')
+            description: t('what_we_do.s2_desc'),
+            href: '/services/eligibility-verification'
         },
         {
             title: t('what_we_do.s3_title'),
-            description: t('what_we_do.s3_desc')
+            description: t('what_we_do.s3_desc'),
+            href: '/services/benefits-check'
         },
         {
             title: t('what_we_do.s4_title'),
-            description: t('what_we_do.s4_desc')
+            description: t('what_we_do.s4_desc'),
+            href: '/services/patient-collections-ar-recovery'
         },
         {
             title: t('what_we_do.s5_title'),
-            description: t('what_we_do.s5_desc')
+            description: t('what_we_do.s5_desc'),
+            href: '/specialties'
         }
     ];
 
     return (
         <section className="py-24 md:py-32 relative overflow-hidden border-t border-slate-100 bg-white">
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-20">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>
@@ -60,7 +65,7 @@ const WhatWeDo = () => {
                                 {service.description}
                             </p>
                             <div className="pt-6 border-t border-slate-100 flex items-center justify-between mt-auto">
-                                <Link href="/services" className="text-[#0033e7] font-bold text-xs uppercase tracking-[2px] flex items-center group/link no-underline">
+                                <Link href={service.href} className="text-[#0033e7] font-bold text-xs uppercase tracking-[2px] flex items-center group/link no-underline">
                                     {t('what_we_do.explore')}
                                     <svg className="w-4 h-4 ml-2 transform group-hover/link:translate-x-2 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />

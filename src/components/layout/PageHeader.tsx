@@ -21,7 +21,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
             className="relative py-[80px] md:py-[100px] text-center text-white overflow-hidden bg-no-repeat bg-center bg-cover"
             style={{ backgroundImage: `linear-gradient(rgba(11, 31, 51, 0.80), rgba(11, 31, 51, 0.80)), url('${bgImage}')` }}
         >
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}

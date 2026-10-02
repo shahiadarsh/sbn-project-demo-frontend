@@ -21,7 +21,7 @@ export default function ContactUsClient() {
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(0,51,231,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,51,231,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
                 </div>
                 
-                <div className="container mx-auto max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function ContactUsClient() {
                 {/* Glass overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/85 to-blue-50/70 pointer-events-none"></div>
 
-                <div className="container mx-auto px-4 relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 max-w-7xl mx-auto items-center">
                         <ContactDetails />
                         <ContactForm />

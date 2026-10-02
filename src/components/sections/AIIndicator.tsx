@@ -24,7 +24,7 @@ const AIIndicator: React.FC<AIIndicatorProps> = ({ stage, description, impact })
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                 <div className="max-w-4xl mx-auto bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center hover:bg-white/10 transition-colors duration-500">
                     <div className="flex-shrink-0">
                         <div className="w-24 h-24 bg-[#0033e7] rounded-full flex items-center justify-center relative shadow-[0_0_50px_rgba(0,51,231,0.3)]">

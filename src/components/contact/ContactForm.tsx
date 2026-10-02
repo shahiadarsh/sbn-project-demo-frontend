@@ -15,9 +15,20 @@ export default function ContactForm() {
         practiceName: '',
         claimVolume: '',
         message: '',
+        subject: '',
         website_url: '' // Anti-spam honeypot
     });
     const [status, setStatus] = useState({ type: '', message: '' });
+
+    React.useEffect(() => {
+        if (typeof window !== 'undefined') {
+            const params = new URLSearchParams(window.location.search);
+            const subj = params.get('subject');
+            if (subj) {
+                setFormData(prev => ({ ...prev, subject: subj }));
+            }
+        }
+    }, []);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({
@@ -47,7 +58,7 @@ export default function ContactForm() {
             const res = await axios.post(`${apiBase}/contacts`, {
                 name: formData.name,
                 email: formData.email,
-                subject: `Free Consultation Request - ${formData.practiceName || 'Practice'}`,
+                subject: formData.subject ? formData.subject : `Free Consultation Request - ${formData.practiceName || 'Practice'}`,
                 message: `Consultation Lead Details:\n- Practice Name: ${formData.practiceName}\n- Phone: ${formData.phone || 'Not provided'}\n- Monthly Volume: ${formData.claimVolume || 'Not provided'}\n- Notes: ${formData.message || 'None'}`,
                 website_url: formData.website_url
             });
@@ -57,7 +68,7 @@ export default function ContactForm() {
                     type: 'success', 
                     message: 'Thank you! Your consultation request has been received. Our RCM team will reach out within 1 business day.' 
                 });
-                setFormData({ name: '', email: '', phone: '', practiceName: '', claimVolume: '', message: '', website_url: '' });
+                setFormData(prev => ({ ...prev, name: '', email: '', phone: '', practiceName: '', claimVolume: '', message: '', website_url: '' }));
             } else {
                 setStatus({ type: 'error', message: res.data?.error || 'Submission failed. Please try again.' });
             }
@@ -205,6 +216,21 @@ export default function ContactForm() {
                         className="w-full px-6 py-5 bg-slate-50/50 border border-slate-100 rounded-xl transition-all focus:outline-none focus:border-[#0033e7]/30 focus:bg-white focus:ring-4 focus:ring-blue-50 font-bold text-slate-800 text-[16px] placeholder:text-slate-300"
                     />
                 </div>
+
+                {/* Subject (Read Only if set via URL) */}
+                {formData.subject && (
+                    <div className="space-y-3">
+                        <label htmlFor="subject" className="block text-[12px] font-black uppercase text-[#0033e7]/60 tracking-[3px] ml-1">Enquiry Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            value={formData.subject}
+                            readOnly
+                            className="w-full px-6 py-5 bg-blue-50/30 border border-blue-100 rounded-xl font-bold text-[#0033e7] text-[16px] cursor-not-allowed"
+                        />
+                    </div>
+                )}
 
                 <div className="pt-4">
                     <button

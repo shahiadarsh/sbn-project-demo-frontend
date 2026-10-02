@@ -13,7 +13,7 @@ const PrivacyClient = () => {
                 className="relative bg-cover bg-center py-[60px] text-center text-white overflow-hidden"
                 style={{ backgroundImage: "linear-gradient(rgba(11, 31, 51, 0.8), rgba(11, 31, 51, 0.9)), url('/img/bg1.webp')" }}
             >
-                <div className="container mx-auto px-4">
+                <div className="w-full px-6 lg:px-12 2xl:px-20">
                     <h1 className="text-[42px] font-extrabold m-0 text-white drop-shadow-lg tracking-tighter">
                         {t('privacy_page.title')}
                     </h1>
@@ -21,7 +21,7 @@ const PrivacyClient = () => {
             </div>
 
             <section className="py-[60px]">
-                <div className="container mx-auto px-4">
+                <div className="w-full px-6 lg:px-12 2xl:px-20">
                     <div className="flex flex-wrap">
                         <div className="w-full">
                             <h2 className="text-[44px] leading-[50px] mb-[20px] text-[var(--heading-color)] font-bold">

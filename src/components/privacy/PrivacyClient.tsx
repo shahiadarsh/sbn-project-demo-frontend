@@ -31,13 +31,13 @@ const PrivacyClient = () => {
                                 <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p1') }}></p>
                                 <p className="mb-[20px]">{t('privacy_page.p2')}</p>
                                 <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p3') }}></p>
-                                <p className="mb-[20px]">{t('privacy_page.p4')}</p>
-                                <p className="mb-[20px]">{t('privacy_page.p5')}</p>
+                                <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p4') }}></p>
+                                <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p5') }}></p>
                                 <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p6') }}></p>
-                                <p className="mb-[20px]">{t('privacy_page.p7')}</p>
+                                <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p7') }}></p>
                                 <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p8') }}></p>
-                                <p className="mb-[20px]">{t('privacy_page.p9')}</p>
-                                <p className="mb-[20px]">{t('privacy_page.p10')}</p>
+                                <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p9') }}></p>
+                                <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p10') }}></p>
                                 <p className="mb-[20px]">{t('privacy_page.p11')}</p>
                                 <p className="mb-[20px]" dangerouslySetInnerHTML={{ __html: t('privacy_page.p12') }}></p>
                                 <p className="mb-[20px]">{t('privacy_page.p13')}</p>

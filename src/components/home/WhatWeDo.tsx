@@ -15,12 +15,12 @@ const WhatWeDo = () => {
         {
             title: t('what_we_do.s2_title'),
             description: t('what_we_do.s2_desc'),
-            href: '/services/eligibility-verification'
+            href: '/services'
         },
         {
             title: t('what_we_do.s3_title'),
             description: t('what_we_do.s3_desc'),
-            href: '/services/benefits-check'
+            href: '/services'
         },
         {
             title: t('what_we_do.s4_title'),

@@ -26,7 +26,7 @@ const SentinelPrivacyClient = () => {
                             
                             <h3 className="text-xl font-bold text-slate-900 mt-10">Information Retained & Security</h3>
                             <p className="text-slate-600 leading-relaxed">
-                                Data is processed to generate operational intelligence and revenue integrity audits. Derived insights and minimal patient-linked identifiers are retained securely. All data is protected by industry-standard encryption both in transit and at rest. Access is strictly governed by role-based permissions restricted to authorized practice administrators and supporting SBN staff.
+                                Data is processed to generate operational intelligence and revenue integrity audits. Derived insights and minimal patient-linked identifiers are retained securely. Data access and transmission are managed through secure protocols. Access is strictly governed by role-based permissions restricted to authorized practice administrators and supporting SBN staff.
                             </p>
                             
                             <h3 className="text-xl font-bold text-slate-900 mt-10">Hosting and Service Providers</h3>
@@ -42,8 +42,8 @@ const SentinelPrivacyClient = () => {
                             <h3 className="text-xl font-bold text-slate-900 mt-10">Retention, Deletion, and Disconnection</h3>
                             <ul className="list-disc pl-6 text-slate-600 mb-6 space-y-2">
                                 <li><strong>Retention:</strong> Operational data is retained only as long as necessary to provide the operational intelligence services and fulfill contractual compliance.</li>
-                                <li><strong>Deletion:</strong> System backups expire and are securely destroyed on a 30-day rolling basis.</li>
-                                <li><strong>Disconnection:</strong> You have the right to withdraw authorization at any time. Doing so immediately halts all automated data synchronization. Previously retained information can be securely purged upon request or archived strictly for legal compliance.</li>
+                                <li><strong>Deletion:</strong> System backups are managed according to retention schedules.</li>
+                                <li><strong>Disconnection:</strong> You have the right to withdraw authorization at any time. Doing so initiates the process to halt data synchronization. Previously retained information can be securely purged upon request or archived strictly for legal compliance.</li>
                             </ul>
 
                             <p className="text-slate-600 leading-relaxed font-bold mt-10">
@@ -51,7 +51,7 @@ const SentinelPrivacyClient = () => {
                             </p>
                             
                             <p className="text-slate-500 text-sm italic mt-12 border-t border-slate-100 pt-6">
-                                Last Updated: October 2026 (Management Approved)
+                                Last Updated: October 2026 
                             </p>
                         </div>
                     </div>

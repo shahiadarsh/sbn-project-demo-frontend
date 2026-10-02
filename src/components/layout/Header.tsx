@@ -175,8 +175,8 @@ const Header = () => {
                                                 type="button"
                                                 aria-expanded={activeDropdown === link.name || undefined}
                                                 aria-haspopup="true"
-                                                onClick={() => setActiveDropdown(activeDropdown === link.name ? null : link.name)}
-                                                onKeyDown={(e) => handleKeyDown(e, link.name)}
+                                                onClick={(e) => { e.preventDefault(); setActiveDropdown(activeDropdown === link.name ? null : link.name); }}
+                                                
                                                 aria-controls={`dropdown-${link.name.replace(/\s+/g, '-').toLowerCase()}`}
                                                 className={`font-bold px-[8px] 2xl:px-[12px] h-full flex items-center uppercase text-[11px] 2xl:text-[12px] transition-all duration-300 whitespace-nowrap relative group/link hover:text-[#0033e7] ${active
                                                         ? 'text-[#0033e7] after:content-[""] after:absolute after:bottom-[30%] after:left-[8px] after:right-[8px] after:h-[3px] after:bg-[#0033e7] after:rounded-full after:shadow-[0_2px_8px_rgba(0,51,231,0.4)]'

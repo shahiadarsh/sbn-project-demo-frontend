@@ -64,7 +64,7 @@ export default function RCMCalculatorPageClient() {
             formElement.scrollIntoView({ behavior: 'smooth' });
             // Optionally focus the first empty input or the revenue input
             setTimeout(() => {
-                const revenueInput = document.getElementById('revenue-input');
+                const revenueInput = document.getElementById('report-name-input');
                 if (revenueInput) {
                     revenueInput.focus();
                 }

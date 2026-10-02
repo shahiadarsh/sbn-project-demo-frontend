@@ -582,7 +582,7 @@
                             "p": "No lingering permissions"
                         }
                     ],
-                    "footer": "This is exactly what professionals in security compliance jobs deal with daily."
+                    "footer": "Essential for robust security operations."
                 },
                 {
                     "title": "Safe Data Handling & Encryption",
@@ -651,7 +651,7 @@
                             "p": "We don’t just set it and forget it"
                         }
                     ],
-                    "footer": "This level of tracking is expected in advanced security compliance certification setups."
+                    "footer": "This level of tracking is expected in advanced security setups."
                 },
                 {
                     "title": "Security Isn’t Just Tech — It’s Process Too",
@@ -674,7 +674,7 @@
                             "p": "Consistency matters"
                         }
                     ],
-                    "footer": "This is where many security compliance jobs actually operate."
+                    "footer": "Essential for robust security operations."
                 },
                 {
                     "title": "Risk Management (Before Problems Happen)",
@@ -697,14 +697,14 @@
                             "p": "System keeps getting better"
                         }
                     ],
-                    "footer": "This is why roles linked to Security Compliance Officer salary are high — the responsibility is huge."
+                    "footer": "This level of proactive management prevents critical failures."
                 }
             ]
         },
         "rcm_calculator": {
             "tag": "No Obligation | Instant Insights | Data-Driven Estimates",
             "title": "RCM Calculator – Estimate Your Revenue Loss & Recovery Potential",
-            "desc": "Let’s be honest — most practices don’t even realize how much revenue they’re losing every month. This RCM calculator helps you quickly understand where your money is leaking and how much you can recover with better systems.",
+            "desc": "This RCM calculator helps you quickly understand where your money might be leaking and provides an illustrative estimate of what you could potentially recover with better systems.",
             "tool_tag": "Interactive Tool",
             "tool_title": "Estimate Your Revenue Loss and Recovery Potential",
             "tool_desc": "Add your basic details below and get instant estimates.",
@@ -756,7 +756,7 @@
             "cta_btn": "Start Your Free Analysis",
             "calc_data": "System Data",
             "calc_profile": "Practice Profile",
-            "calc_profile_desc": "Adjust the sliders to reflect your current practice metrics for a high-precision ROI analysis.",
+            "calc_profile_desc": "Adjust the sliders to reflect your current practice metrics for an illustrative estimate of ROI potential.",
             "calc_claims": "Monthly Claim Volume",
             "calc_units_min": "100 Units",
             "calc_units_max": "10,000+ Units",
@@ -765,12 +765,12 @@
             "calc_di_opt": "1% (Optimal)",
             "calc_di_crit": "40% (Critical Alert)",
             "calc_gross": "Gross Monthly Revenue",
-            "calc_report": "Impact Report",
-            "calc_financial": "Financial Recovery Potential",
-            "calc_baseline": "Baseline Yearly Revenue Leakage",
+            "calc_report": "Estimated Impact Summary",
+            "calc_financial": "Estimated Recovery Potential",
+            "calc_baseline": "Estimated Yearly Revenue Leakage",
             "calc_high_exp": "High Exposure",
-            "calc_sbn": "SBN Projected Recovery (65% Target)",
-            "calc_audit": "Execute Full Audit",
+            "calc_sbn": "Assumed SBN Recovery Target (65%)",
+            "calc_audit": "Request Detailed Report",
             "calc_confidential": "Confidential Consultation Included"
         },
         "career_page": {
@@ -837,26 +837,26 @@
             "p2": "We collect information you explicitly provide to us via contact forms, assessment requests, and the live chat widget. This may include your name, business email, practice name, and phone number.",
             "p3": "<strong>Forms and Inquiries:</strong> When you submit a form to request an audit, download a whitepaper, or contact sales, we use your information solely to fulfill your request and communicate with you regarding our revenue cycle services.",
             "p4": "<strong>Live Chat:</strong> Our live chat widget collects basic information to assist you in real-time. Please do not submit patient information or PHI through the public chat or forms.",
-            "p5": "<strong>Analytics and Cookies:</strong> We use standard analytics tools (like Google Analytics) and cookies to understand website traffic, measure campaign performance, and improve our user experience. These tools collect anonymized data such as your IP address, browser type, pages visited, and time spent on the site.",
+            "p5": "<strong>Analytics and Cookies:</strong> We use standard analytics tools (like Google Analytics) and cookies to understand website traffic, measure campaign performance, and improve our user experience. These tools collect data such as your IP address, browser type, pages visited, and time spent on the site.",
             "p6": "<strong>Data Handling and Sharing:</strong> We do not sell, rent, or trade your personal or business information to third parties for their marketing purposes. We only share information with trusted service providers who assist us in operating our website and conducting our business, under strict confidentiality agreements.",
             "p7": "If you are a client using our specialized services or the Sentinel platform, your data is governed by our separate Service Agreements and HIPAA Business Associate Agreements, which outline our strict compliance and data protection standards.",
             "p8": "<strong>INFORMATION THAT IS GATHERED FROM VISITORS/USERS</strong>",
             "p9": "In common with other websites, mobile applications, log files are stored on the web server saving details such as the visitor's/user’s IP address, browser type, location, referring page, and time and duration of visit.",
             "p10": "Cookies* may be used to remember visitor preferences when interacting with the website.",
-            "p11": "Where registration is required, the visitor's email and a username will be stored on the server.",
+            "p11": "",
             "p12": "<strong>HOW THE INFORMATION IS USED</strong>",
-            "p13": "The information is used to enhance the visitor experience when using the website to display personalized content and possibly advertising.",
+            "p13": "The information is used to enhance the visitor experience when using the website to display personalized content.",
             "p14": "E-mail addresses will not be sold, rented, or leased to 3rd parties.",
-            "p15": "E-mail may be sent to inform you of news of our services or offers by us or our affiliates.",
+            "p15": "E-mail may be sent to inform you of news of our services.",
             "p16": "<strong>WHAT IS PERSONAL INFORMATION?</strong>",
-            "p17": "For the purposes of this privacy statement, 'Personal Information' shall mean and include any data which relates to an individual, that can be used to identify such individual, which is in possession of SBN Healthcare Solution. We collect, process, and use the Personal Information that is provided via our website, including information you provide when you register on our website, for example, name, email address, and telephone number, etc.",
+            "p17": "For the purposes of this privacy statement, 'Personal Information' shall mean and include any data which relates to an individual, that can be used to identify such individual, which is in possession of SBN Healthcare Solution. We collect, process, and use the Personal Information that is provided via our website, including information you provide when you contact us, for example, name, email address, and telephone number.",
             "p18": "1) Use of your Personal Information",
-            "p19": "We use your Personal Information for the following purposes:<br />a) to create your user ID;<br />b) to contact you and respond to your questions or requests; and<br />c) to process job applications.",
+            "p19": "We use your Personal Information for the following purposes:<br />a) to respond to your questions or requests; and<br />b) to process job applications.",
             "p20": "2) Data recipients, transfer, and disclosure of Personal Information:",
             "p21": "SBN Healthcare does not share your Personal Information for any commercial/marketing purposes. We share your Personal Information within the below groups, on a need-to-know basis.<br />a) SBN Healthcare or with any of its subsidiaries;<br />b) Vendors;<br />c) Authorized third-party agents; or<br />d) Contractors.",
             "p22": "3) Data Security<br />SBN Healthcare has adopted reasonable and appropriate security practices and procedures including administrative, physical security, and technical controls in order to safeguard your Personal Information.",
             "p23": "4) Data Retention and Deletion<br />Personal Data will not be retained for a period more than necessary to fulfil the purposes outlined in this privacy statement unless a longer retention period is required by law or for directly related legitimate business purposes.",
-            "p24": "Users may request permanent deletion of their Personal Data from our referral records by sending a request to info@sbnhealthcaresolution.com from their registered email ID.",
+            "p24": "Users may request deletion of their Personal Data by sending a request to info@sbnhealthcaresolution.com from their registered email ID.",
             "p25": "5) Amendments<br />SBN Healthcare may update or modify this privacy statement as and when required, at its discretion",
             "p26": "<strong>VISITOR OPTIONS</strong><br />If you have subscribed to one of our services, you may unsubscribe by following the instructions which are included in the email you receive.",
             "p27": "You may be able to block cookies via your browser settings but this may prevent you from access to certain features of the website.<br />*Cookies are small digital signature files that are stored by your web browser that allow your preferences to be recorded when visiting the website. Also, they may be used to track your return visits to the website."

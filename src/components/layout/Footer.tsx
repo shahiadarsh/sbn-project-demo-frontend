@@ -224,7 +224,7 @@ const Footer = () => {
             </div>
 
             <div className="border-t border-slate-200/50 pt-10 pb-10 text-center relative z-10 bg-white/30 backdrop-blur-sm">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="w-full px-6 lg:px-12 2xl:px-20  flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="text-left">
                         <p className="text-slate-500 text-[11px] font-black uppercase tracking-[3px] mb-2">
                             {t('footer.rights')}

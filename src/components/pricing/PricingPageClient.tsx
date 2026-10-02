@@ -192,7 +192,7 @@ export default function PricingPageClient() {
 
             {/* What You Get & Financial Outcomes Grid */}
             <section className="py-24 relative overflow-hidden">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20  relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                         
                         {/* What You Get */}

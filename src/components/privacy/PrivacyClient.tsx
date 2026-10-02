@@ -21,7 +21,7 @@ const PrivacyClient = () => {
             </div>
 
             <section className="py-[60px]">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 ">
                     <div className="flex flex-wrap">
                         <div className="w-full">
                             <h2 className="text-[44px] leading-[50px] mb-[20px] text-[var(--heading-color)] font-bold">

@@ -100,7 +100,7 @@ export default function SecurityClient() {
                 {/* Core Pillars Grid */}
                 <section className="py-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                     <div className="absolute inset-0 bg-white/90 pointer-events-none z-0"></div>
-                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20  relative z-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {securityData && Array.isArray(securityData) && securityData.map((item: any, idx: number) => (
                                 <motion.div 

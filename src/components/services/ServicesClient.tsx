@@ -138,7 +138,7 @@ export default function ServicesClient() {
 
             {/* Dynamic Specific Solutions with Enhanced Glass Design */}
             <section className="py-24 relative z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 ">
                     <div className="flex flex-col md:flex-row items-center gap-6 mb-20">
                         <div className="w-24 h-[1px] bg-[#0033e7]"></div>
                         <h2 className="text-[13px] font-black text-slate-900 uppercase tracking-[10px] text-center">{t('services_page.specific_title')}</h2>

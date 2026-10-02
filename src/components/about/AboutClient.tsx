@@ -204,7 +204,7 @@ export default function AboutClient() {
 
             {/* Middle Grid Sections: Three Pillars */}
             <section className="py-24 relative z-10">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20  relative z-10">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {/* What We Actually Do */}
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white/90 p-10 rounded-[2.5rem] border border-blue-50 shadow-sm hover:shadow-2xl transition-all duration-700">

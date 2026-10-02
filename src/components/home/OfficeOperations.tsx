@@ -51,7 +51,7 @@ const OfficeOperations = () => {
 
     return (
         <section className="py-24 md:py-32 overflow-hidden relative border-t border-slate-100 bg-slate-50/50">
-            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                 {/* Header */}
                 <div className="text-center mb-16">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full backdrop-blur-sm">

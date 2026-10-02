@@ -67,7 +67,7 @@ export default function SecurityClient() {
                     className="object-cover object-center pointer-events-none -z-10"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-white/95 to-[#f8faff]/90 pointer-events-none z-0"></div>
-                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                         <motion.div 
                             initial="hidden"
                             whileInView="visible"

@@ -22,7 +22,7 @@ const Career = () => {
             />
 
             <section className="py-[80px]">
-                <div className="w-full px-6 lg:px-12 2xl:px-20">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-[50px]">
                         <div className="flex-1 min-w-[300px]">
                             <h2 className="text-[32px] font-bold text-slate-800 mb-[25px] relative after:block after:content-[''] after:w-[60px] after:h-[4px] after:bg-[#FFAD01] after:mt-[15px] after:rounded-sm">

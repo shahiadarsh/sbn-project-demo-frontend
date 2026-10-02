@@ -70,6 +70,11 @@
             "s5_title": "Specialty-Specific Billing",
             "s5_desc": "Whether you’re in behavioral health, DME, orthopedics, urgent care, telehealth, or running a multi-specialty hospital, our team knows your specialty’s payer rules and compliance requirements."
         },
+        "office_ops": {
+            "tag": "SBN Global Operations",
+            "title": "A Global Team Built Around Your Practice",
+            "desc": "Behind every clean claim and recovered dollar is a dedicated team of billing specialists, coders, and AR experts working around the clock for your practice."
+        },
         "about_us_page": {
             "tag": "Who We Are & How We Work",
             "title": "We Build Reliable Medical Billing Systems",
@@ -1051,6 +1056,11 @@
             "s4_desc": "المطالبات غير المسددة لا تجلس في طابور. يقوم المتخصصون لدينا بتتبع كل مطالبة معلقة ومتابعتها والطعن فيها بفاعلية — مما يحافظ على استقرار تدفقك النقدي.",
             "s5_title": "فواتير خاصة بالتخصص",
             "s5_desc": "سواء كنت تعمل في مجال الصحة السلوكية، أو المعدات الطبية (DME)، أو جراحة العظام، أو الرعاية العاجلة، أو الخدمات الصحية عن بعد، أو تدير مستشفى متعدد التخصصات، فإن فريقنا يعرف قواعد الدافع ومتطلبات الامتثال الخاصة بتخصصك."
+        },
+        "office_ops": {
+            "tag": "العمليات العالمية لـ SBN",
+            "title": "فريق عالمي مبني حول ممارستك",
+            "desc": "خلف كل مطالبة نظيفة ودولار مُستعاد فريق متخصص من متخصصي الفواتير والمبرمجين وخبراء الذمم المدينة يعملون على مدار الساعة من أجل ممارستك."
         },
         "about_us_page": {
             "tag": "من نحن وكيف نعمل",

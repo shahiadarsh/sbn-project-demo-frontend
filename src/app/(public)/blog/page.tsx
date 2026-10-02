@@ -43,7 +43,7 @@ export default async function BlogPage() {
             />
 
             <section className="py-24 md:py-32">
-                <div className="w-full px-6 lg:px-12 2xl:px-20">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                     {blogPosts.length === 0 ? (
                         <div className="text-center py-32 bg-white rounded-[3rem] border-2 border-dashed border-slate-200">
                             <h3 className="text-2xl font-black text-slate-300">Stay Tuned</h3>

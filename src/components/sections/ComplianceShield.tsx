@@ -28,7 +28,7 @@ const ComplianceShield = () => {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0033e7]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
 
-            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-16">
                         <motion.div

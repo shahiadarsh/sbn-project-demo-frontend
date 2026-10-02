@@ -47,7 +47,7 @@ export default function AboutClient() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#0033e7]/85 to-[#0B1F33]/85 mix-blend-multiply -z-10"></div>
 
-                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}

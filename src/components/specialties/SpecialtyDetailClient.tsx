@@ -88,7 +88,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                                     style={{ backgroundImage: 'url("/background%20image.webp")' }}
                                 >
                                     <div className="absolute inset-0 bg-[#0B1F33]/90 z-0"></div>
-                                    <div className="w-full px-6 lg:px-12 2xl:px-20 px-10 relative z-10 text-center">
+                                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto px-10 relative z-10 text-center">
                                         <h2 className="text-3xl md:text-5xl font-black mb-8 text-white tracking-tighter">
                                             {section.title}
                                         </h2>

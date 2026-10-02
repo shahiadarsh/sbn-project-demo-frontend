@@ -13,7 +13,7 @@ const SentinelClient = () => {
             />
             
             <section className="py-20 relative">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200/60 relative overflow-hidden">
                         
                         <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-[80px] -mr-20 -mt-20 pointer-events-none"></div>

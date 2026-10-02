@@ -38,7 +38,7 @@ export default function SecurityClient() {
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(0,51,231,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,51,231,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
                 </div>
                 
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -100,7 +100,7 @@ export default function SecurityClient() {
                 {/* Core Pillars Grid */}
                 <section className="py-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                     <div className="absolute inset-0 bg-white/90 pointer-events-none z-0"></div>
-                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {securityData && Array.isArray(securityData) && securityData.map((item: any, idx: number) => (
                                 <motion.div 
@@ -139,7 +139,7 @@ export default function SecurityClient() {
 
                 {/* Security Scope & Responsible Disclosure */}
                 <section className="py-20 relative bg-white border-t border-slate-100" id="report-security-concern">
-                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="prose prose-lg prose-slate max-w-none">
                             <div className="flex justify-between items-end mb-8 border-b border-slate-200 pb-4">
                                 <h2 className="text-3xl font-black text-slate-900 m-0 tracking-tight">Security Scope & Application</h2>
@@ -183,7 +183,7 @@ export default function SecurityClient() {
                 {/* Sub-sections Bottom: Takeaways & FAQ */}
                 <section className="py-20 lg:py-28 relative border-t border-blue-50/50 bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                     <div className="absolute inset-0 bg-[#f8faff]/85 backdrop-blur-sm pointer-events-none z-0"></div>
-                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl mx-auto relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                             
                             {/* Quick Takeaways */}
@@ -226,7 +226,7 @@ export default function SecurityClient() {
                 {/* Final CTA */}
                 <section className="pt-10 pb-20 relative bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                    <div className="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none z-0"></div>
-                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl text-center relative z-10">
+                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto text-center relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <h2 className="text-4xl font-extrabold text-slate-900 leading-[1.2] tracking-tight mb-6">
                                 {t('security_page.cta_title')}

@@ -44,7 +44,7 @@ export default function ServicesClient() {
 
             {/* Custom Premium Hero */}
             <section className="pt-32 pb-20 md:pt-48 md:pb-32 text-center px-4 relative overflow-hidden z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl mx-auto relative">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -67,7 +67,7 @@ export default function ServicesClient() {
 
             {/* Intro Content Section */}
             <section className="pb-24 relative z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl mx-auto">
                     <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -93,7 +93,7 @@ export default function ServicesClient() {
 
             {/* What We Do Section */}
             <section className="py-24 relative z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                     <div className="text-center mb-20">
                         <motion.span 
                             initial={{ opacity: 0 }}
@@ -138,7 +138,7 @@ export default function ServicesClient() {
 
             {/* Dynamic Specific Solutions with Enhanced Glass Design */}
             <section className="py-24 relative z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                     <div className="flex flex-col md:flex-row items-center gap-6 mb-20">
                         <div className="w-24 h-[1px] bg-[#0033e7]"></div>
                         <h2 className="text-[13px] font-black text-slate-900 uppercase tracking-[10px] text-center">{t('services_page.specific_title')}</h2>
@@ -182,7 +182,7 @@ export default function ServicesClient() {
 
             {/* Why Content Section - REDESIGNED TO LIGHT THEME */}
             <section className="py-32 relative z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <motion.div

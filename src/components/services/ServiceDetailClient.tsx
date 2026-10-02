@@ -50,7 +50,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
 
             {/* Custom Premium Hero */}
             <section className="pt-32 pb-20 md:pt-48 md:pb-32 text-center px-4 relative overflow-hidden z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -98,7 +98,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                         if (isCta) {
                             return (
                                 <section key={index} 
-                                    className="relative py-20 overflow-hidden my-16 rounded-3xl mx-4 lg:mx-auto max-w-7xl shadow-[0_10px_40px_rgba(0,0,0,0.03)] group bg-[#f8faff] border border-blue-50"
+                                    className="relative py-20 overflow-hidden my-16 rounded-3xl mx-4 lg:mx-auto max-w-7xl mx-auto shadow-[0_10px_40px_rgba(0,0,0,0.03)] group bg-[#f8faff] border border-blue-50"
                                 >
                                     <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-[100px] -mr-32 -mt-32"></div>
                                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal-50/40 rounded-full blur-[100px] -ml-20 -mb-20"></div>
@@ -123,7 +123,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                         // Regular Content Section (Glass Card Style)
                         return (
                             <section key={index} className="py-12 lg:py-20 relative">
-                                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl">
+                                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl mx-auto">
                                     <motion.div 
                                         initial="hidden"
                                         whileInView="visible"
@@ -184,7 +184,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                 {service.features && (
                     <section className="py-24 relative z-10 overflow-hidden bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                         <div className="absolute inset-0 bg-white/95 pointer-events-none"></div>
-                        <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-20">
+                        <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-20">
                             {service.featuresTitle && (
                                 <div className="text-center mb-20">
                                     <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[6px] mb-4 block">Core Competencies</span>

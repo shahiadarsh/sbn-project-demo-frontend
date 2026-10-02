@@ -15,7 +15,7 @@ const ComplianceShield = () => {
 
     return (
         <section 
-            className="py-20 relative overflow-hidden rounded-3xl mx-4 lg:mx-auto max-w-7xl my-16 shadow-[0_30px_60px_rgba(0,0,0,0.15)] group"
+            className="py-20 relative overflow-hidden rounded-3xl mx-4 lg:mx-auto max-w-7xl mx-auto my-16 shadow-[0_30px_60px_rgba(0,0,0,0.15)] group"
         >
             <Image
                 src="/background image.webp"

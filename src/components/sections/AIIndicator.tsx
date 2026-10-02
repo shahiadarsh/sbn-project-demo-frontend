@@ -13,7 +13,7 @@ interface AIIndicatorProps {
 const AIIndicator: React.FC<AIIndicatorProps> = ({ stage, description, impact }) => {
     return (
         <div 
-            className="py-20 overflow-hidden relative rounded-3xl mx-4 lg:mx-auto max-w-7xl my-16 shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
+            className="py-20 overflow-hidden relative rounded-3xl mx-4 lg:mx-auto max-w-7xl mx-auto my-16 shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
             style={{ backgroundImage: 'url("/background%20image.webp")' }}
         >
             <div className="absolute inset-0 bg-[#0B1F33]/85 z-0 pointer-events-none"></div>

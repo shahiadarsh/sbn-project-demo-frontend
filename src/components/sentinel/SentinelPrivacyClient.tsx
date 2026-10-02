@@ -12,53 +12,46 @@ const SentinelPrivacyClient = () => {
             />
             
             <section className="py-20 relative">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 rxl:px-20 max-w-4xl relative z-10">
                     <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-200/60 relative overflow-hidden">
                         <div className="relative z-10 prose prose-lg prose-slate max-w-none">
                             <p className="text-slate-600 leading-relaxed font-medium">
                                 This notice describes the data flow and handling for the SBN Sentinel application.
                             </p>
                             
-                            <h3 className="text-xl font-bold text-slate-900 mt-10">Data Categories, Sources, and Purposes</h3>
+                            <h3 className="text-xl font-bold text-slate-900 mt-10">Information Retrieved</h3>
                             <p className="text-slate-600 leading-relaxed mb-4">
-                                Sentinel retrieves practice-authorized data solely for operational reporting. It does not modify source records in your EHR systems. Data accessed includes operational metrics, billing statuses, and relevant performance indicators.
+                                Sentinel retrieves practice-authorized data solely for operational reporting. We retrieve limited patient demographic, encounter, and coverage records. We do not access clinical notes or unapproved resources.
                             </p>
-                            <ul className="list-disc pl-6 text-slate-600 mb-6 space-y-2">
-                                <li><strong>Data Categories:</strong> Operational metrics, financial indicators, and billing statuses.</li>
-                                <li><strong>Sources:</strong> Your authorized EHR and practice management systems.</li>
-                                <li><strong>Purposes:</strong> To generate operational intelligence reports, track performance, and identify revenue cycle bottlenecks.</li>
-                            </ul>
                             
-                            <h3 className="text-xl font-bold text-slate-900 mt-10">Recipients and Vendors</h3>
+                            <h3 className="text-xl font-bold text-slate-900 mt-10">Information Retained & Security</h3>
                             <p className="text-slate-600 leading-relaxed">
-                                Information accessed by Sentinel is used exclusively by authorized practice administrators and SBN personnel directly supporting your account. We do not sell or share this operational data with third-party marketers or unauthorized external vendors.
+                                Data is processed to generate operational intelligence and revenue integrity audits. Derived insights and minimal patient-linked identifiers are retained securely. All data is protected by industry-standard encryption both in transit and at rest. Access is strictly governed by role-based permissions restricted to authorized practice administrators and supporting SBN staff.
                             </p>
                             
-                            <h3 className="text-xl font-bold text-slate-900 mt-10">Local Processing and Storage</h3>
+                            <h3 className="text-xl font-bold text-slate-900 mt-10">Hosting and Service Providers</h3>
                             <p className="text-slate-600 leading-relaxed">
-                                Data is processed to generate operational intelligence reports. Storage of live data, logs, cache, and backups is protected by standard encryption controls and restricted to authorized personnel. Sentinel does not permanently store patient medical records.
+                                Our system is hosted on secure, isolated servers located within the United States. We do not use unauthorized third-party data-sharing services. Support access is restricted exclusively to authorized SBN infrastructure administrators.
                             </p>
                             
-                            <h3 className="text-xl font-bold text-slate-900 mt-10">Retention, Deletion, and Backups</h3>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                Access to the application is restricted to authorized practice administrators and operations managers. Data is retained only as long as necessary to provide the operational intelligence services.
+                            <h3 className="text-xl font-bold text-slate-900 mt-10">Other Uses</h3>
+                            <p className="text-slate-600 leading-relaxed">
+                                Data is used exclusively for the direct benefit of the authorizing practice. We do not sell information, share it for advertising, or use it for unauthorized secondary AI/model training purposes.
                             </p>
+                            
+                            <h3 className="text-xl font-bold text-slate-900 mt-10">Retention, Deletion, and Disconnection</h3>
                             <ul className="list-disc pl-6 text-slate-600 mb-6 space-y-2">
-                                <li><strong>Retention:</strong> Operational data is retained while your account is active and for the duration required by applicable contractual agreements.</li>
-                                <li><strong>Deletion:</strong> Upon termination of service or upon explicit request, data is securely purged from our active systems.</li>
-                                <li><strong>Backup Treatment:</strong> Backups are maintained securely for disaster recovery purposes and are overwritten or destroyed according to our standard backup lifecycle policies.</li>
+                                <li><strong>Retention:</strong> Operational data is retained only as long as necessary to provide the operational intelligence services and fulfill contractual compliance.</li>
+                                <li><strong>Deletion:</strong> System backups expire and are securely destroyed on a 30-day rolling basis.</li>
+                                <li><strong>Disconnection:</strong> You have the right to withdraw authorization at any time. Doing so immediately halts all automated data synchronization. Previously retained information can be securely purged upon request or archived strictly for legal compliance.</li>
                             </ul>
 
-                            <h3 className="text-xl font-bold text-slate-900 mt-10">Authorization Withdrawal and Privacy Contact</h3>
-                            <p className="text-slate-600 leading-relaxed mb-4">
-                                You have the right to withdraw authorization for data access at any time by contacting our support team or updating your API integration settings.
-                            </p>
-                            <p className="text-slate-600 leading-relaxed font-bold">
+                            <p className="text-slate-600 leading-relaxed font-bold mt-10">
                                 Privacy Contact: <a href="mailto:privacy@sbnhealthcaresolution.com" className="text-[#0033e7] hover:underline transition-colors">privacy@sbnhealthcaresolution.com</a>
                             </p>
                             
                             <p className="text-slate-500 text-sm italic mt-12 border-t border-slate-100 pt-6">
-                                Last Updated: October 2026 (Pending Management Approval)
+                                Last Updated: October 2026 (Management Approved)
                             </p>
                         </div>
                     </div>

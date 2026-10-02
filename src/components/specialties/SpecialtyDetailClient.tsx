@@ -36,7 +36,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
 
             {/* Custom Premium Hero */}
             <section className="pt-32 pb-16 md:pt-44 md:pb-28 text-center px-4 relative overflow-hidden z-10">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -84,7 +84,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                         if (isCta) {
                             return (
                                 <section key={index} 
-                                    className="text-white relative py-20 overflow-hidden my-16 rounded-2xl mx-4 lg:mx-auto max-w-7xl shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
+                                    className="text-white relative py-20 overflow-hidden my-16 rounded-2xl mx-4 lg:mx-auto max-w-7xl mx-auto shadow-[0_30px_60px_rgba(0,0,0,0.15)] group bg-cover bg-center"
                                     style={{ backgroundImage: 'url("/background%20image.webp")' }}
                                 >
                                     <div className="absolute inset-0 bg-[#0B1F33]/90 z-0"></div>
@@ -108,7 +108,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                         // Regular Content Section (Glass Card Style)
                         return (
                             <section key={index} className="py-12 lg:py-16 relative">
-                                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl">
+                                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                                     <motion.div 
                                         initial="hidden"
                                         whileInView="visible"

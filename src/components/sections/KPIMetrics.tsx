@@ -18,7 +18,7 @@ interface KPIMetricsProps {
 const KPIMetrics: React.FC<KPIMetricsProps> = ({ metrics, title, subtitle }) => {
     return (
         <div className="py-20 bg-transparent">
-            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                 {(title || subtitle) && (
                     <div className="text-center mb-16">
                         {subtitle && <span className="text-[#0033e7] font-bold uppercase text-[11px] tracking-[4px] mb-4 block">{subtitle}</span>}

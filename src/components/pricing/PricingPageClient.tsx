@@ -98,7 +98,7 @@ export default function PricingPageClient() {
                 <div className="absolute inset-0 bg-[#f8faff]/80 pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff] via-white/40 to-[#0033e7]/5 pointer-events-none z-10"></div>
                 
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-20">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto relative z-20">
                     <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8 }}>
                         <div className="inline-flex items-center gap-2 bg-white/40 border border-white text-[#0033e7] font-black uppercase text-[11px] tracking-[4px] mb-8 px-6 py-2.5 rounded-full shadow-2xl">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-ping shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
@@ -116,7 +116,7 @@ export default function PricingPageClient() {
 
             {/* Philosophy Overview */}
             <section className="py-24 relative overflow-hidden">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-5xl mx-auto relative z-10">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-20 bg-white/60 backdrop-blur-3xl rounded-[3rem] p-12 md:p-20 border border-white shadow-[0_20px_50px_rgba(0,0,0,0.02)]">
                         <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-10 uppercase">
                             {t('pricing_page.overview_title_1')} <br /> {t('pricing_page.overview_title_2')}
@@ -147,7 +147,7 @@ export default function PricingPageClient() {
 
             {/* Pricing Models - CONVERTED TO LIGHT THEME */}
             <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                     <div className="text-center mb-20">
                         <span className="text-[#0033e7] font-black tracking-[6px] uppercase text-[12px] mb-6 block">{t('pricing_page.models_tag')}</span>
                         <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900 uppercase">{t('pricing_page.models_title')}</h2>
@@ -192,7 +192,7 @@ export default function PricingPageClient() {
 
             {/* What You Get & Financial Outcomes Grid */}
             <section className="py-24 relative overflow-hidden">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
                         
                         {/* What You Get */}
@@ -238,7 +238,7 @@ export default function PricingPageClient() {
 
              {/* Takeaways & FAQ Split */}
              <section className="py-24 relative border-t border-blue-50/50 bg-gradient-to-b from-[#f8faff] to-white">
-                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl mx-auto relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
                             {/* Quick Takeaways - LIGHT REDESIGN */}
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
@@ -278,7 +278,7 @@ export default function PricingPageClient() {
 
                 {/* Final CTA */}
                 <section className="py-32 relative text-center">
-                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
+                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <h2 className="text-5xl md:text-6xl font-black text-slate-900 leading-[1] tracking-tighter mb-10 uppercase">
                                 {t('pricing_page.cta_title_1')} <br/> <span className="text-[#0033e7]">{t('pricing_page.cta_title_2')}</span>

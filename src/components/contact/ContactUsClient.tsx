@@ -21,7 +21,7 @@ export default function ContactUsClient() {
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(0,51,231,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,51,231,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
                 </div>
                 
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto relative z-10">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}

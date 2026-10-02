@@ -18,7 +18,7 @@ interface ProblemSnapshotProps {
 const ProblemSnapshot: React.FC<ProblemSnapshotProps> = ({ points, title, description }) => {
     return (
         <div className="py-24 bg-transparent border-b border-white/50">
-            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
                 <div className="flex flex-col lg:flex-row gap-16 items-start">
                     <div className="lg:w-1/3">
                         <span className="text-[#0033e7] font-bold uppercase text-[11px] tracking-[4px] mb-4 flex items-center gap-2">

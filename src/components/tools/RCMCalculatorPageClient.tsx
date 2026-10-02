@@ -115,7 +115,7 @@ export default function RCMCalculatorPageClient() {
                 <div className="absolute inset-0 bg-white/10 pointer-events-none z-0"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/40 to-[#0033e7]/5 pointer-events-none z-10"></div>
                 
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-20">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto relative z-20">
                     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
                         <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-[#0033e7] font-bold uppercase text-[11px] tracking-[3px] mb-8 px-5 py-2 rounded-full shadow-sm">
                             <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse shadow-[0_0_10px_rgba(0,51,231,0.5)]"></span>
@@ -143,7 +143,7 @@ export default function RCMCalculatorPageClient() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/85 to-blue-50/70 pointer-events-none"></div>
 
                 <section className="py-20 relative z-10 pb-20">
-                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl mx-auto">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-16 max-w-[800px] mx-auto">
                             <span className="bg-white/60 backdrop-blur-md border border-white px-5 py-2 rounded-full text-[11px] font-black text-[#0033e7] uppercase tracking-[3px] mb-6 inline-block shadow-sm">
                                 {t('rcm_calculator.tool_tag')}
@@ -165,7 +165,7 @@ export default function RCMCalculatorPageClient() {
 
             {/* What These Numbers Actually Mean & Why Use Our Calculator - CONVERTED TO LIGHT THEME */}
             <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         
                         {/* What These Numbers Mean */}
@@ -218,7 +218,7 @@ export default function RCMCalculatorPageClient() {
                     className="object-cover object-center pointer-events-none -z-10"
                 />
                 <div className="absolute inset-0 bg-white/90 backdrop-blur-sm pointer-events-none z-0"></div>
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto relative z-10">
                     <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white border border-blue-100 rounded-[3rem] p-10 md:p-14 shadow-2xl text-center">
                         <h2 className="text-4xl font-black text-slate-900 mb-6 tracking-tight">{t('rcm_calculator.form_title')}</h2>
                         <p className="text-lg text-slate-600 font-bold max-w-2xl mx-auto mb-10 opacity-70">
@@ -271,7 +271,7 @@ export default function RCMCalculatorPageClient() {
                     className="object-cover object-center pointer-events-none -z-10"
                 />
                     <div className="absolute inset-0 bg-[#f8faff]/95 backdrop-blur-sm pointer-events-none z-0"></div>
-                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl relative z-10">
+                    <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-6xl mx-auto relative z-10">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                             {/* Quick Takeaways */}
                             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
@@ -318,7 +318,7 @@ export default function RCMCalculatorPageClient() {
                         className="object-cover object-center pointer-events-none -z-10"
                     />
                    <div className="absolute inset-0 bg-[#f8faff]/95 backdrop-blur-sm pointer-events-none z-0"></div>
-                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl text-center relative z-10">
+                   <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-4xl mx-auto text-center relative z-10">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tighter mb-8 uppercase" dangerouslySetInnerHTML={{ __html: t('rcm_calculator.cta_title') }}>
                             </h2>

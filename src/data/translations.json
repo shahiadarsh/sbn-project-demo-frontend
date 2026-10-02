@@ -22,7 +22,14 @@
             "dme_orthopedics": "DME / Orthopedics",
             "urgent_care": "Urgent Care & Telehealth",
             "small_mid_practices": "Small–Mid Practices",
-            "multi_speciality": "Multi-Speciality Hospitals"
+            "multi_speciality": "Multi-Speciality Hospitals",
+            "security": "Security",
+            "security_overview": "Security Overview",
+            "privacy_notice": "Privacy Notice",
+            "compliance_overview": "Compliance Overview",
+            "terms_of_service": "Terms of Service",
+            "report_security": "Report a Security Concern",
+            "cookie_settings": "Cookie Settings"
         },
         "footer": {
             "desc": "Next-generation RCM infrastructure engineered to accelerate cash flow and eliminate administrative friction for modern medical practices.",

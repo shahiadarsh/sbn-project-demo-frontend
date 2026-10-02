@@ -72,7 +72,9 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
             if (value && value[k]) {
                 value = value[k];
             } else {
-                return key; // fallback
+                // Formatting fallback: nav.privacy_notice -> Privacy Notice
+                const lastPart = keys[keys.length - 1];
+                return lastPart.split('_').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
             }
         }
         return value || key;

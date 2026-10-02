@@ -36,7 +36,7 @@ const WhatWeDo = () => {
 
     return (
         <section className="py-24 md:py-32 relative overflow-hidden border-t border-slate-100 bg-white">
-            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                 <div className="max-w-4xl mx-auto text-center mb-20">
                     <div className="inline-flex items-center gap-2 bg-blue-100/50 border border-blue-200 text-[#0033e7] font-semibold uppercase text-xs tracking-[2px] mb-6 px-5 py-2 rounded-full">
                         <span className="w-2 h-2 bg-[#0033e7] rounded-full animate-pulse"></span>

@@ -58,7 +58,7 @@ export default function ContactUsClient() {
                 {/* Glass overlay */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f8faff]/95 via-white/85 to-blue-50/70 pointer-events-none"></div>
 
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20  items-center">
                         <ContactDetails />
                         <ContactForm />

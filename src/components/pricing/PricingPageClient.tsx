@@ -147,7 +147,7 @@ export default function PricingPageClient() {
 
             {/* Pricing Models - CONVERTED TO LIGHT THEME */}
             <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                     <div className="text-center mb-20">
                         <span className="text-[#0033e7] font-black tracking-[6px] uppercase text-[12px] mb-6 block">{t('pricing_page.models_tag')}</span>
                         <h2 className="text-5xl md:text-6xl font-black mb-6 tracking-tighter text-slate-900 uppercase">{t('pricing_page.models_title')}</h2>

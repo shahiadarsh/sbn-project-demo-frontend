@@ -165,7 +165,7 @@ export default function RCMCalculatorPageClient() {
 
             {/* What These Numbers Actually Mean & Why Use Our Calculator - CONVERTED TO LIGHT THEME */}
             <section className="py-24 relative overflow-hidden bg-gradient-to-b from-white/40 to-[#f8faff]/80">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+                <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                         
                         {/* What These Numbers Mean */}

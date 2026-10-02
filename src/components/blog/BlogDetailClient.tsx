@@ -29,7 +29,7 @@ export default function BlogDetailClient({ post }: { post: any }) {
 
             {/* Breadcrumbs */}
             <div className="bg-slate-50 border-y border-slate-100 py-6">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
+                <div className="w-full px-6 lg:px-12 2xl:px-20">
                     <nav className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[2px] text-slate-400">
                         <Link href="/" className="hover:text-[var(--primary-color)] transition-colors">{t('blog_detail.home')}</Link>
                         <FaChevronRight size={8} />

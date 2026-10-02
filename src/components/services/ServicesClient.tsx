@@ -93,7 +93,7 @@ export default function ServicesClient() {
 
             {/* What We Do Section */}
             <section className="py-24 relative z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
+                <div className="w-full px-6 lg:px-12 2xl:px-20">
                     <div className="text-center mb-20">
                         <motion.span 
                             initial={{ opacity: 0 }}
@@ -182,7 +182,7 @@ export default function ServicesClient() {
 
             {/* Why Content Section - REDESIGNED TO LIGHT THEME */}
             <section className="py-32 relative z-20">
-                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
+                <div className="w-full px-6 lg:px-12 2xl:px-20">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
                             <motion.div

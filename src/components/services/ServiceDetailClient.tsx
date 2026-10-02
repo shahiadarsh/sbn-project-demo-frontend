@@ -184,7 +184,7 @@ export default function ServiceDetailClient({ slug }: { slug: string }) {
                 {service.features && (
                     <section className="py-24 relative z-10 overflow-hidden bg-cover bg-center" style={{ backgroundImage: 'url("/background%20image.webp")' }}>
                         <div className="absolute inset-0 bg-white/95 pointer-events-none"></div>
-                        <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-20">
+                        <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-20">
                             {service.featuresTitle && (
                                 <div className="text-center mb-20">
                                     <span className="text-[#0033e7] font-black uppercase text-[12px] tracking-[6px] mb-4 block">Core Competencies</span>

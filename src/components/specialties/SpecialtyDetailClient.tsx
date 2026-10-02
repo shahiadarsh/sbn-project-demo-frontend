@@ -108,7 +108,7 @@ export default function SpecialtyDetailClient({ slug }: { slug: string }) {
                         // Regular Content Section (Glass Card Style)
                         return (
                             <section key={index} className="py-12 lg:py-16 relative">
-                                <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto">
+                                <div className="w-full px-6 lg:px-12 2xl:px-20">
                                     <motion.div 
                                         initial="hidden"
                                         whileInView="visible"

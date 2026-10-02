@@ -24,7 +24,7 @@ const Footer = () => {
             {/* Overlay gradient identical to other sections */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-white/85 to-blue-100/70 pointer-events-none"></div>
 
-            <div className="w-full px-6 lg:px-12 2xl:px-20 max-w-7xl mx-auto relative z-10">
+            <div className="w-full px-6 lg:px-12 2xl:px-20 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-16 mb-[80px]">
                     {/* Brand Info */}
                     <div className="lg:col-span-4">

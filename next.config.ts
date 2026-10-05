@@ -4,6 +4,17 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'sbnhealthcare.vercel.app',
+          },
+        ],
+        destination: 'https://www.sbnhealthcaresolution.com/:path*',
+        permanent: true,
+      },
+      {
         source: '/:path*.html',
         destination: '/:path*',
         permanent: true,

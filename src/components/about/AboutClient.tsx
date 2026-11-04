@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaEnvelope, FaGlobeAmericas, FaShieldAlt } from 'react-icons/fa';
+import { FaLinkedin, FaEnvelope, FaGlobeAmericas, FaShieldAlt, FaUserTie } from 'react-icons/fa';
 import { useLanguage } from '@/context/LanguageContext';
 
 const fadeUp: any = {
@@ -95,15 +95,10 @@ export default function AboutClient() {
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
                             className="group bg-white/90 border border-blue-50 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-[#0033e7]/30 transition-all duration-500 min-h-[320px]"
                         >
-                            <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
-                                <Image
-                                    src="/Iftekhar Ali khan.png"
-                                    alt="Iftikhar Ali Khan"
-                                    width={400}
-                                    height={500}
-                                    className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 hidden sm:block"></div>
+                            <div className="sm:w-2/5 min-h-[220px] sm:min-h-full relative overflow-hidden bg-gradient-to-br from-slate-100 via-blue-50/40 to-slate-200/80 flex items-center justify-center p-8">
+                                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white/90 shadow-md border border-blue-100/60 flex items-center justify-center text-[#0033e7]/50 group-hover:scale-105 group-hover:text-[#0033e7] transition-all duration-500">
+                                    <FaUserTie className="w-12 h-12" />
+                                </div>
                             </div>
                             <div className="sm:w-3/5 p-8 flex flex-col justify-center relative overflow-hidden">
                                 <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-1">Iftikhar Ali Khan</h3>
@@ -123,15 +118,10 @@ export default function AboutClient() {
                             initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
                             className="group bg-white/90 border border-blue-50 rounded-2xl overflow-hidden backdrop-blur-xl shadow-2xl flex flex-col sm:flex-row items-stretch hover:border-teal-400/50 transition-all duration-500 min-h-[320px]"
                         >
-                            <div className="sm:w-2/5 relative overflow-hidden bg-slate-100">
-                                <Image
-                                    src="/Nematullah.webp"
-                                    alt="Md Nematullah"
-                                    width={400}
-                                    height={500}
-                                    className="w-full h-full object-cover transform scale-105 group-hover:scale-110 transition-transform duration-1000"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10 hidden sm:block"></div>
+                            <div className="sm:w-2/5 min-h-[220px] sm:min-h-full relative overflow-hidden bg-gradient-to-br from-slate-100 via-teal-50/40 to-slate-200/80 flex items-center justify-center p-8">
+                                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-white/90 shadow-md border border-teal-100/60 flex items-center justify-center text-teal-600/50 group-hover:scale-105 group-hover:text-teal-600 transition-all duration-500">
+                                    <FaUserTie className="w-12 h-12" />
+                                </div>
                             </div>
                             <div className="sm:w-3/5 p-8 flex flex-col justify-center relative overflow-hidden">
                                 <h3 className="text-2xl font-black text-slate-900 tracking-tighter mb-1">Md Nematullah</h3>

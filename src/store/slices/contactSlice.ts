@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { getApiUrl } from '@/utils/api';
 
 interface ContactState {
     contacts: any[];
@@ -19,12 +20,12 @@ export const fetchContacts = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/contacts`, {
+            const response = await axios.get(`${getApiUrl()}/contacts`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return response.data.data;
         } catch (err: any) {
-            return rejectWithValue(err.response.data.error);
+            return rejectWithValue(err.response?.data?.error || 'Server error');
         }
     }
 );
@@ -35,12 +36,12 @@ export const updateContactStatus = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            const response = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/contacts/${id}`, { status }, {
+            const response = await axios.put(`${getApiUrl()}/contacts/${id}`, { status }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return response.data.data;
         } catch (err: any) {
-            return rejectWithValue(err.response.data.error);
+            return rejectWithValue(err.response?.data?.error || 'Server error');
         }
     }
 );

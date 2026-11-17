@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { getApiUrl } from '@/utils/api';
 
 interface BlogState {
     blogs: any[];
@@ -16,7 +17,7 @@ const initialState: BlogState = {
 };
 
 export const fetchBlogs = createAsyncThunk('blogs/fetchAll', async () => {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/blogs`);
+    const response = await axios.get(`${getApiUrl()}/blogs`);
     return response.data.data;
 });
 
@@ -26,7 +27,7 @@ export const createBlog = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/blogs`, blogData, {
+            const response = await axios.post(`${getApiUrl()}/blogs`, blogData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return response.data.data;
@@ -42,7 +43,7 @@ export const updateBlog = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            const response = await axios.put(`${process.env.NEXT_PUBLIC_API_URL}/blogs/${id}`, data, {
+            const response = await axios.put(`${getApiUrl()}/blogs/${id}`, data, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return response.data.data;
@@ -58,7 +59,7 @@ export const deleteBlog = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/blogs/${id}`, {
+            await axios.delete(`${getApiUrl()}/blogs/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return id;

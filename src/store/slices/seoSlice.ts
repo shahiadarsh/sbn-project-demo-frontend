@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { getApiUrl } from '@/utils/api';
 
 interface SeoState {
     seoList: any[];
@@ -19,12 +20,12 @@ export const fetchAllSeo = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/seo`, {
+            const response = await axios.get(`${getApiUrl()}/seo`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return response.data.data;
         } catch (err: any) {
-            return rejectWithValue(err.response.data.error);
+            return rejectWithValue(err.response?.data?.error || 'Server error');
         }
     }
 );
@@ -35,12 +36,12 @@ export const upsertSeo = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/seo`, seoData, {
+            const response = await axios.post(`${getApiUrl()}/seo`, seoData, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return response.data.data;
         } catch (err: any) {
-            return rejectWithValue(err.response.data.error);
+            return rejectWithValue(err.response?.data?.error || 'Server error');
         }
     }
 );
@@ -51,12 +52,12 @@ export const deleteSeo = createAsyncThunk(
         const state: any = getState();
         const token = state.auth.token;
         try {
-            await axios.delete(`${process.env.NEXT_PUBLIC_API_URL}/seo/${id}`, {
+            await axios.delete(`${getApiUrl()}/seo/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return id;
         } catch (err: any) {
-            return rejectWithValue(err.response.data.error);
+            return rejectWithValue(err.response?.data?.error || 'Server error');
         }
     }
 );

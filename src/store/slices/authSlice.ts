@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { getApiUrl } from '@/utils/api';
 
 interface AuthState {
     admin: any | null;
@@ -19,7 +20,8 @@ export const loginAdmin = createAsyncThunk(
     'auth/login',
     async (credentials: any, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, credentials);
+            const apiUrl = getApiUrl();
+            const response = await axios.post(`${apiUrl}/auth/login`, credentials);
             if (response.data.success) {
                 localStorage.setItem('adminToken', response.data.token);
                 return response.data;
@@ -39,7 +41,8 @@ export const fetchMe = createAsyncThunk(
         if (!token) return rejectWithValue('No token');
 
         try {
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/auth/me`, {
+            const apiUrl = getApiUrl();
+            const response = await axios.get(`${apiUrl}/auth/me`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             return response.data.data;
